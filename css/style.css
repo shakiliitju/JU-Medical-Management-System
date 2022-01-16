@@ -144,7 +144,8 @@ section:nth-child(even){
 }
 
 .home .image img{
-    width: 100%;
+    width: 500px;
+    height: 320px;
 }
 
 .home .content{
