@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>SIGN UP</title>
+     <link rel="shortcut icon" href="https://juniv.edu/images/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/css/php-style.css">
 </head>
 <body>
