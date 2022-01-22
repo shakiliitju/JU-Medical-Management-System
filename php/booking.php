@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +13,7 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/director.css">
+    <link rel="stylesheet" href="/css/book.css">
 
 </head>
 
@@ -28,7 +29,7 @@
             <a href="/html/index.html">home</a>
             <a href="/html/services.html">services</a>
             <a href="/html/about.html">about</a>
-            <a href="#director">director</a>
+            <a href="/html/director.html">director</a>
             <a href="/html/doctors.html">doctors</a>
             <a href="/html/staff.html">staff</a>
             <a href="http://localhost:3000/php/booking.php">booking</a>
@@ -43,35 +44,39 @@
 
 
 
+    <!-- booking section starts   -->
 
+    <section class="book" id="book">
 
+        <h1 class="heading"> <span>book</span> now </h1>
 
-    <!-- director section starts  -->
+        <div class="row">
+            <form action="/php/book.php" method="post">
+                <h3>book appointment</h3>
 
-    <section class="director" id="director">
+                
+           <h2>Patient Name</h2>
+                <input type="text" placeholder="patient name" name="P_Name" class="box">
 
-        <h1 class="heading"> our <span>director</span> </h1>
+                <h2>Gender</h2>
+                <label for="male" class="box"><input type="radio" name="Gender" value="m"id="male" /> Male</label>
+                <label for="female" class="box"><input type="radio" name="Gender" value="f" id="female" /> Female</label>
+                <label for="others" class="box"><input type="radio" name="Gender" value="o" id="others" /> Others</label>
 
-        <div class="box-container">
+                <h2>Patient Age</h2>
+                <input type="number" placeholder="patient age" name="Age" class="box">
 
-            <div class="box">
-                <img src="/image/director.jpg" alt="">
-                <h3>DR. SHAMSUR RAHMAN</h3>
-                <span>Chief Medical Officer (Acting)</span>
-                <div class="share">
-                    <h4>Email: drsrlabu19@gmail.com</h4>
-                    <h4>Email: drsrlabu@yahoo.com</h4>
-                    <h4>Office Phone: 1324</h4>
-                    <h4>Home Phone: 01715054872</h4>
-                </div>
-            </div>
+                <h2>Patient Type</h2>
+                <input type="text" placeholder="patient type" name="P_Type" class="box">
 
+                <input type="submit" value="book now" class="btn">
+            </form>
 
         </div>
 
     </section>
 
-    <!-- director section ends -->
+    <!-- booking section ends -->
 
 
 
@@ -126,6 +131,7 @@
     </section>
 
     <!-- footer section ends -->
+
 
 
 
