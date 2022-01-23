@@ -35,7 +35,7 @@ section:nth-child(even){
 }
 
 .heading{
-    padding-top: 10rem;
+    padding-top: 15rem;
     padding-bottom: 2rem;
     text-align: center;
     text-shadow: var(--text-shadow);
