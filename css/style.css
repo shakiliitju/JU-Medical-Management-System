@@ -99,6 +99,7 @@ section:nth-child(even){
     font-size: 2.5rem;
     color: var(--black);
     width: 100;
+    margin-left: -100px;
 }
 
 .header .logo i{

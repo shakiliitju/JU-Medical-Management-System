@@ -18,13 +18,4 @@ if (isset($_POST['P_Name']) && isset($_POST['Gender']) && isset($_POST['Age']) &
    }else{
     echo 'Error';
    }
-
-
-    // $stmt = $conn->prepare("insert into patient(P_Name,Gender,Age,P_Type) values(?, ?, ?, ?)");
-    // $stmt->bind_param("ssis",$P_Name,$Gender,$Age,$P_Type);
-    // $execval = $stmt->execute();
-    // echo $execval;
-    // echo " Registration successfully...";
-    // $stmt->close();
-    // $conn->close();
 }
