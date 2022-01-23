@@ -16,7 +16,7 @@
 
 	<header class="header">
 
-		<img src="/image/logo-ju-small.png" alt style="height: 70px; width: 60px;">
+		<img src="/image/logo-ju-small.png" alt style="height: 70px; width: 65px;">
 		<a href="" class="logo">JU Medical Center</a>
 
 		<nav class="navbar">
