@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,9 +22,9 @@
 
     <header class="header">
 
-    <img src="/image/logo-ju-small.png" alt style="height: 70px; width: 65px;">
+        <img src="/image/logo-ju-small.png" alt style="height: 70px; width: 65px;">
         <a href="" class="logo">JU Medical Center</a>
-        
+
         <nav class="navbar">
             <a href="/html/index.html">home</a>
             <a href="/html/services.html">services</a>
@@ -55,20 +54,30 @@
             <form action="/php/book.php" method="post">
                 <h3>book appointment</h3>
 
-                
-           <h2>Patient Name</h2>
-                <input type="text" placeholder="patient name" name="P_Name" class="box">
+                <!-- <h2>Patient ID</h2>
+                <input type="number" placeholder="patient id" name="P_ID" class="box"> -->
+
+
+                <h2>Patient Name</h2>
+                <input type="text" placeholder="patient name" name="P_Name" class="box" required>
 
                 <h2>Gender</h2>
-                <label for="male" class="box"><input type="radio" name="Gender" value="m"id="male" /> Male</label>
-                <label for="female" class="box"><input type="radio" name="Gender" value="f" id="female" /> Female</label>
-                <label for="others" class="box"><input type="radio" name="Gender" value="o" id="others" /> Others</label>
+                <label for="male" class="box"><input type="radio" name="Gender" value="Male" id="male" /> Male</label>
+                <label for="female" class="box"><input type="radio" name="Gender" value="Female" id="female" /> Female</label>
+                <label for="others" class="box"><input type="radio" name="Gender" value="Others" id="others" /> Others</label>
 
                 <h2>Patient Age</h2>
-                <input type="number" placeholder="patient age" name="Age" class="box">
+                <input type="number" placeholder="patient age" name="Age" class="box" required>
 
                 <h2>Patient Type</h2>
-                <input type="text" placeholder="patient type" name="P_Type" class="box">
+                <input list="browsers" name="P_Type" id="browser" class="box" required>
+                <datalist id="browsers">
+                    <option value="Student">
+                    <option value="Teacher">
+                    <option value="Staff">
+                </datalist>
+
+                <!-- <input type="text" placeholder="patient type" name="P_Type" class="box" required> -->
 
                 <input type="submit" value="book now" class="btn">
             </form>
@@ -88,7 +97,7 @@
 
         <div class="box-container">
 
-        <div class="box">
+            <div class="box">
                 <h3>quick links</h3>
                 <a href="/html/index.html"> <i class="fas fa-chevron-right"></i> home </a>
                 <a href="services.html"> <i class="fas fa-chevron-right"></i> services </a>
