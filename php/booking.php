@@ -88,14 +88,13 @@
 
         <div class="box-container">
 
-            <div class="box">
+        <div class="box">
                 <h3>quick links</h3>
-                <a href="#"> <i class="fas fa-chevron-right"></i> home </a>
-                <a href="#"> <i class="fas fa-chevron-right"></i> services </a>
-                <a href="#"> <i class="fas fa-chevron-right"></i> about </a>
-                <a href="#"> <i class="fas fa-chevron-right"></i> doctors </a>
-                <a href="#"> <i class="fas fa-chevron-right"></i> book </a>
-
+                <a href="/html/index.html"> <i class="fas fa-chevron-right"></i> home </a>
+                <a href="services.html"> <i class="fas fa-chevron-right"></i> services </a>
+                <a href="about.html"> <i class="fas fa-chevron-right"></i> about </a>
+                <a href="doctors.html"> <i class="fas fa-chevron-right"></i> doctors </a>
+                <a href="http://localhost:3000/php/booking.php"> <i class="fas fa-chevron-right"></i> booking </a>
             </div>
 
             <div class="box">
@@ -112,13 +111,12 @@
                 <a href="#"> <i class="fas fa-phone"></i> 1324 </a>
                 <a href="#"> <i class="fas fa-phone"></i> 01715054872 </a>
                 <a href="#"> <i class="fas fa-envelope"></i> medicalju123@gmail.com </a>
-                <a href="#"> <i class="fas fa-map-marker-alt"></i> Jahangirnagar University, Savar, Dhaka-1342,
-                    Bangladesh. </a>
+                <a href="https://goo.gl/maps/gCv8rquk261n7FnXA"> <i class="fas fa-map-marker-alt"></i> Jahangirnagar University, Savar, Dhaka-1342, Bangladesh. </a>
             </div>
 
             <div class="box">
                 <h3>follow us</h3>
-                <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="https://www.facebook.com/Medical-Centre-Jahangirnagar-University-111006755903584/?ref=page_internal"> <i class="fab fa-facebook-f"></i> facebook </a>
                 <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
                 <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
                 <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
