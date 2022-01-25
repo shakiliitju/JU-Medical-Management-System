@@ -44,7 +44,9 @@
                color: rgb(89, 161, 87);
           }
 
-          .slidebar ul {}
+          .slidebar ul {
+               
+          }
 
           .slidebar ul li {
 
@@ -158,6 +160,7 @@
                </span>
                ADMIN
           </header>
+
           <ul>
                <li>
                     <a href="/php/Doctor/doctor.php"><i class="fas fa-user-md"></i> Doctors</a>
@@ -185,6 +188,7 @@
                </li>
 
           </ul>
+          
      </div>
 
      <!-- mainpart -->
