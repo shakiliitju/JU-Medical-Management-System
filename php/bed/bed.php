@@ -99,7 +99,7 @@ table, th, td {
                     <a href="/php/patient/patient.php"><i class="fas fa-user-injured"></i> Patients</a>
                </li>
                <li>
-                    <a href="#"><i class="fas fa-file-medical-alt"></i> Tests</a>
+                    <a href="/php/test/test.php"><i class="fas fa-file-medical-alt"></i> Tests</a>
 
                </li>
                <li>

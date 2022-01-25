@@ -155,7 +155,7 @@ table, th, td {
                 <a href="/php/patient/patient.php"><i class="fas fa-user-injured"></i> Patients</a>
             </li>
             <li>
-                <a href="/php/test/test.php"><i class="fas fa-file-medical-alt"></i> Tests</a>
+                <a href="#"><i class="fas fa-file-medical-alt"></i> Tests</a>
 
             </li>
             <li>
@@ -180,10 +180,10 @@ table, th, td {
 
         <div class="row">
             <div style="margin-left: 50%; margin-top: 5%;">
-                <h2>Manage <b>Doctor</b></h2>
+                <h2>Manage <b>Test</b></h2>
             </div>
             <div style="margin-left: 85%; margin-top: 3%;">
-                <button><a href="/php/Doctor/add-doctor.php">Add Doctor</a></button>
+                <button><a href="/php/test/add-test.php">Add Test</a></button>
             </div>
         </div>
     </div>
@@ -194,31 +194,25 @@ table, th, td {
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>D_ID</th>
-                        <th>D_Name</th>
-                        <th>Gender</th>
-                        <th>Work_Day</th>
-                        <th>Speciality</th>
-
+                        <th>T_ID</th>
+                        <th>T_Name</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
                     include 'db_conn.php';
-                    $D_ID = 0;
-                    $sql = " SELECT * FROM doctor ";
+                    $T_ID = 0;
+                    $sql = " SELECT * FROM test ";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                        $D_ID = $D_ID + 1;
+                        $T_ID = $T_ID + 1;
 
                     ?>
                         <tr>
-                            <td><b><?php echo $D_ID  ?></b></td>
-                            <td><?php echo $Patient_data['D_Name'];  ?></td>
-                            <td><?php echo $Patient_data['Gender'];  ?></td>
-                            <td><?php echo $Patient_data['Work_Day'];  ?></td>
-                            <td><?php echo $Patient_data['Speciality'];  ?></td>
+                            <td><b><?php echo $T_ID  ?></b></td>
+                            <td><?php echo $Patient_data['T_Name'];  ?></td>
+
                             <td style="width: 140px;">
                                 <button> <a href="update-data.php?ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
                                 <button><a href="/php/Doctor/delete-data.php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
