@@ -159,13 +159,13 @@ color: rgb(85, 12, 99);
         </header>
         <ul>
             <li>
-                <a href="#"><i class="fas fa-user-md"></i> Doctors</a>
+                <a href="/php/Doctor/doctor.php"><i class="fas fa-user-md"></i> Doctors</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-user-nurse"></i> Staffs</a>
+                <a href="/php/staff/staff.php"><i class="fas fa-user-nurse"></i> Staffs</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-user-injured"></i> Patients</a>
+                <a href="/php/patient/patient.php"><i class="fas fa-user-injured"></i> Patients</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-file-medical-alt"></i> Tests</a>
@@ -249,7 +249,7 @@ color: rgb(85, 12, 99);
 
     <div class="log">
         <h3>
-            <a href="#">
+            <a href="/php/login.php">
                 LOG OUT
             </a>
         </h3>
