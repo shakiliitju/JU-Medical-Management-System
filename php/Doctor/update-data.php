@@ -4,6 +4,7 @@
 <?php
 
 include 'db_conn.php';
+$ID =$_GET['update-data'];
 if(isset($_POST['UPDATEDATA']))
 {
    $ID = $_GET['ID'];
@@ -17,6 +18,12 @@ if(isset($_POST['UPDATEDATA']))
    $sql = " UPDATE `operations` SET `ID`=$ID,`NAME`='$NAME',`EMAIL`='$EMAIL',`ADDRESS`='$ADDRESS',`PHONE`='$PHONE',`CITY`='$CITY',`UPDATED_DATE`='$UPDATED_DATE' WHERE ID = $ID " ;
    $query = mysqli_query($con,$sql); 
 
+   if($query){
+     echo "updated succesfully";
+   }
+   else{
+     die(mysqli_error($conn));
+   }
    header("location:doctor.php");
 }
 
