@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-
+    <title>Ju Medical Center</title>
+    <link rel="shortcut icon" href="https://juniv.edu/images/favicon.ico">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
