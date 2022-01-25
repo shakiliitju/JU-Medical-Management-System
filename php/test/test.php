@@ -194,8 +194,8 @@ table, th, td {
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>T_ID</th>
-                        <th>T_Name</th>
+                        <th>Test_ID</th>
+                        <th>Test_Name</th>
                     </tr>
                 </thead>
 
@@ -204,6 +204,7 @@ table, th, td {
                     include 'db_conn.php';
                     $T_ID = 0;
                     $sql = " SELECT * FROM test ";
+                    $sql = " SELECT T_ID,T_Name FROM test LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                         $T_ID = $T_ID + 1;

@@ -136,8 +136,8 @@ table, th, td {
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>Amb_ID</th>
-                        <th>Amb_Status</th>
+                        <th>Ambulence_ID</th>
+                        <th>Ambulence_Status</th>
 
                     </tr>
                 </thead>
@@ -146,7 +146,7 @@ table, th, td {
                     <?php
                     include 'db_conn.php';
                     $Amb_ID = 0;
-                    $sql = " SELECT * FROM ambulence ";
+                    $sql = " SELECT Amb_ID,Amb_Status FROM ambulence LIMIT 10";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                         $Amb_ID = $Amb_ID + 1;

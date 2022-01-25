@@ -151,8 +151,8 @@ body{
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>S_ID</th>
-                        <th>S_Name</th>
+                        <th>Staff_ID</th>
+                        <th>Staff_Name</th>
                         <th>Gender</th>
                         <th>Work_Day</th>
 
@@ -163,7 +163,8 @@ body{
                     <?php
                     include 'db_conn.php';
                     $S_ID = 0;
-                    $sql = " SELECT * FROM staff ";
+                   
+                    $sql = " SELECT S_ID,S_Name,Gender,Work_Day FROM staff LIMIT 10";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                         $S_ID = $S_ID + 1;
