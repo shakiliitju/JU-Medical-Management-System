@@ -21,38 +21,42 @@
     <!-- Area Chart -->
 
 
-      <div>
-        <h1>Add Staff</h1>
-      </div>
-
-        <br>
-
-        <form action="/php/Doctor/add-doctor-con.php" method="post">
-
-          <div>
-            <h2>Staff Name</h2>
-            <input name="S_Name" type="text" class="form-control" placeholder="" required>
-          </div>
-
-          <div>
-            <h2>Gender</h2>
-            <label for="male" class="form-control"><input type="radio" name="Gender" value="Male" id="male" /> Male</label>
-            <label for="female" class="form-control"><input type="radio" name="Gender" value="Female" id="female" /> Female</label>
-            <label for="others" class="form-control"><input type="radio" name="Gender" value="Others" id="others" /> Others</label>
-          </div>
-
-          <div>
-            <h2>Work_Day:</h2>
-            <input type="date" id="day" class="form-control" name="Work_Day">
-          </div>
-          <br>
-
-          <input type="submit" value="Add Staff" class="btn">
-
-        </form>
-
-      </div>
+    <div>
+      <h1>Add Staff</h1>
     </div>
+
+    <br>
+
+<<<<<<< Updated upstream
+        <form action="/php/Doctor/add-doctor-con.php" method="post">
+=======
+    <form action="/php/staff/add-staff-con.php" method="post">
+>>>>>>> Stashed changes
+
+      <div>
+        <h2>Staff Name</h2>
+        <input name="S_Name" type="text" class="form-control" placeholder="" required>
+      </div>
+
+      <div>
+        <h2>Gender</h2>
+        <label for="male" class="form-control"><input type="radio" name="Gender" value="Male" id="male" /> Male</label>
+        <label for="female" class="form-control"><input type="radio" name="Gender" value="Female" id="female" /> Female</label>
+        <label for="others" class="form-control"><input type="radio" name="Gender" value="Others" id="others" /> Others</label>
+      </div>
+
+      <div>
+        <h2>Work_Day:</h2>
+        <input type="date" id="day" class="form-control" name="Work_Day">
+      </div>
+      <br>
+
+      <input type="submit" value="Add Staff" class="btn">
+
+    </form>
+
+  </div>
+  </div>
 
   </div>
 

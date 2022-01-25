@@ -20,44 +20,41 @@
   <div class="container" style="margin-top: 3%;margin-bottom: 5%;width: 75%;">
     <!-- Area Chart -->
 
+    <div>
+      <h1>Add Doctor</h1>
+    </div><br>
+
+    <form action="/php/Doctor/add-doctor-con.php" method="post">
 
       <div>
-        <h1>Add Doctor</h1>
+        <h2>Doctor Name</h2>
+        <input name="D_Name" type="text" class="form-control" placeholder="" required>
       </div>
 
-        <br>
-
-        <form action="/php/Doctor/add-doctor-con.php" method="post">
-
-          <div>
-            <h2>Doctor Name</h2>
-            <input name="D_Name" type="text" class="form-control" placeholder="" required>
-          </div>
-
-          <div>
-            <h2>Gender</h2>
-            <label for="male" class="form-control"><input type="radio" name="Gender" value="Male" id="male" /> Male</label>
-            <label for="female" class="form-control"><input type="radio" name="Gender" value="Female" id="female" /> Female</label>
-            <label for="others" class="form-control"><input type="radio" name="Gender" value="Others" id="others" /> Others</label>
-          </div>
-
-          <div>
-            <h2>Work_Day:</h2>
-            <input type="date" id="day" class="form-control" name="Work_Day">
-          </div>
-
-          <div>
-            <h2>Speciality</h2>
-            <input name="Speciality" type="text" class="form-control" placeholder="" required>
-          </div>
-          <br>
-
-          <input type="submit" value="Add Doctor" class="btn">
-
-        </form>
-
+      <div>
+        <h2>Gender</h2>
+        <label for="male" class="form-control"><input type="radio" name="Gender" value="Male" id="male" /> Male</label>
+        <label for="female" class="form-control"><input type="radio" name="Gender" value="Female" id="female" /> Female</label>
+        <label for="others" class="form-control"><input type="radio" name="Gender" value="Others" id="others" /> Others</label>
       </div>
-    </div>
+
+      <div>
+        <h2>Work_Day:</h2>
+        <input type="date" id="day" class="form-control" name="Work_Day">
+      </div>
+
+      <div>
+        <h2>Speciality</h2>
+        <input name="Speciality" type="text" class="form-control" placeholder="" required>
+      </div>
+      <br>
+
+      <input type="submit" value="Add Doctor" class="btn">
+
+    </form>
+
+  </div>
+  </div>
 
   </div>
 

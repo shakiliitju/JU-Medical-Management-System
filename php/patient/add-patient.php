@@ -12,19 +12,10 @@
 
     <!-- custom css file link  -->
     <!-- <link rel="stylesheet" href="/css/style.css"> -->
-    
+
 </head>
 
 <body>
-
-    <!-- header section starts  -->
-
-   
-
-    <!-- header section ends -->
-
-
-
     <!-- booking section starts   -->
 
     <section class="book" id="book">
@@ -33,7 +24,7 @@
 
         <div class="row">
             <form action="/php/patient/add-patient-con.php" method="post">
-                
+
                 <h2>Patient Name</h2>
                 <input type="text" placeholder="patient name" name="P_Name" class="" required>
 
@@ -62,31 +53,6 @@
     </section>
 
     <!-- booking section ends -->
-
-
-
-
-    <!-- footer section starts  -->
-
-    
-
-    <!-- footer section ends -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 

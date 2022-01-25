@@ -2,19 +2,16 @@
 <html lang="en">
 
 <head>
-<<<<<<< Updated upstream
 
-<style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-</style>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 
-</head>
-
-<body>
-=======
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,9 +20,11 @@ table, th, td {
 
     <!-- CSS STYILE  -->
 
+
     <style>
         /* navbar style starts here */
         .slidebar {
+
             border: 20px;
             width: 15%;
             height: 700px;
@@ -48,11 +47,10 @@ table, th, td {
             color: rgb(89, 161, 87);
         }
 
-        .slidebar ul {
-
-        }
+        .slidebar ul {}
 
         .slidebar ul li {
+
             list-style: none;
             padding: 10px;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -80,7 +78,9 @@ table, th, td {
             background-color: #8CD2AB;
         }
 
-        table,th,td {
+        table,
+        th,
+        td {
             border: 2px solid black;
             border-collapse: collapse;
             font-weight: bold;
@@ -123,14 +123,20 @@ table, th, td {
             border-radius: 15px;
 
         }
+
+
+
         .tabbutton:hover {
             transform: scale(1.1);
             transition: .5s;
         }
     </style>
+
 </head>
 
 <body>
+
+
     <!-- sildebar starts -->
 
     <div class="slidebar">
@@ -151,7 +157,7 @@ table, th, td {
                 <a href="/php/patient/patient.php"><i class="fas fa-user-injured"></i> Patients</a>
             </li>
             <li>
-                <a href="/php/test/test.php"><i class="fas fa-file-medical-alt"></i> Tests</a>
+                <a href="#"><i class="fas fa-file-medical-alt"></i> Tests</a>
 
             </li>
             <li>
@@ -164,7 +170,6 @@ table, th, td {
             </li>
             <li>
                 <a href="/php/medicine/medicine.php"><i class="fas fa-medkit"></i> Medicine</a>
-
             </li>
 
         </ul>
@@ -172,16 +177,15 @@ table, th, td {
 
     <!-- slidebar ends -->
 
->>>>>>> Stashed changes
 
     <div class="container">
 
         <div class="row">
             <div style="margin-left: 50%; margin-top: 5%;">
-                <h2>Manage <b>Doctor</b></h2>
+                <h2>Manage <b>Test</b></h2>
             </div>
             <div style="margin-left: 85%; margin-top: 3%;">
-                <button><a href="/php/Doctor/add-doctor.php">Add Doctor</a></button>
+                <button><a href="/php/test/add-test.php">Add Test</a></button>
             </div>
         </div>
     </div>
@@ -192,48 +196,31 @@ table, th, td {
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>D_ID</th>
-                        <th>D_Name</th>
-                        <th>Gender</th>
-                        <th>Work_Day</th>
-                        <th>Speciality</th>
+                        <th>Test_ID</th>
+                        <th>Test_Name</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
                     include 'db_conn.php';
-                    $D_ID = 0;
-<<<<<<< Updated upstream
-                    $sql = " SELECT * FROM doctor ";
-=======
-                    $sql = " SELECT D_ID, D_Name, Gender, Work_Day, Speciality FROM doctor LIMIT 5";
-
->>>>>>> Stashed changes
+                    $T_ID = 0;
+                    $sql = " SELECT * FROM test ";
+                    $sql = " SELECT T_ID,T_Name FROM test LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                        $D_ID = $D_ID + 1;
+                        $T_ID = $T_ID + 1;
+
                     ?>
                         <tr>
-                            <td><b><?php echo $D_ID  ?></b></td>
-                            <td><?php echo $Patient_data['D_Name'];  ?></td>
-                            <td><?php echo $Patient_data['Gender'];  ?></td>
-                            <td><?php echo $Patient_data['Work_Day'];  ?></td>
-                            <td><?php echo $Patient_data['Speciality'];  ?></td>
+                            <td><b><?php echo $T_ID  ?></b></td>
+                            <td><?php echo $Patient_data['T_Name'];  ?></td>
+
                             <td style="width: 140px;">
-<<<<<<< Updated upstream
                                 <button> <a href="update-data.php?ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="/php/Doctor/delete-doctor.php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+                                <button><a href="/php/Doctor/delete-data.php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
-=======
-                                <button class="tabbutton" style="background:      rgba(59, 104, 39, 0.819 );">
-                                    <a href="update-data.php?ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a>
-                                </button> &nbsp;
-                                <button class="tabbutton" style="background:      rgba(178, 83, 64, 0.819);">
-                                    <a href="/php/Doctor/delete-doctor.php<?php echo $Patient_data['D_ID']; ?>" class="btn btn-danger">
-                                        <b>Delete</b></a></button>
->>>>>>> Stashed changes
                             </td>
                         </tr>
                     <?php

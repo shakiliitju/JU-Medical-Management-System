@@ -2,30 +2,23 @@
 <html lang="en">
 
 <head>
-<<<<<<< Updated upstream
 
-<style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-</style>
-
-</head>
-
-<body>
-=======
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-    <!-- CSS STYILE  -->
+    <!-- font ends -->
 
     <style>
         /* navbar style starts here */
+        body {
+            background: rgba(96, 193, 138, 0.722);
+        }
+
         .slidebar {
+
             border: 20px;
             width: 15%;
             height: 700px;
@@ -48,9 +41,7 @@ table, th, td {
             color: rgb(89, 161, 87);
         }
 
-        .slidebar ul {
-
-        }
+        .slidebar ul {}
 
         .slidebar ul li {
             list-style: none;
@@ -75,62 +66,16 @@ table, th, td {
 
         /* slidebar ends */
 
-
-        body {
-            background-color: #8CD2AB;
-        }
-
         table,th,td {
-            border: 2px solid black;
+            border: 1px solid black;
             border-collapse: collapse;
-            font-weight: bold;
-            padding: 5px 0px 5px 10px;
-        }
-
-        .row h2 {
-            font-family: 'Mochiy Pop P One', sans-serif;
-            font-size: 30px;
-            color: rgb(30, 60, 62)
-        }
-
-        table th {
-            font-size: 20px;
-            font-family: sans-serif;
-        }
-
-        .docadd {
-            background: none;
-            border: solid black 3px;
-            padding: 5px;
-            border-radius: 15px;
-        }
-
-        .docadd:hover {
-            transform: scale(1.1);
-            transition: .5s;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
-
-        .tabbutton {
-            background: none;
-            border: solid black 3px;
-            padding: 5px;
-            border-radius: 15px;
-
-        }
-        .tabbutton:hover {
-            transform: scale(1.1);
-            transition: .5s;
         }
     </style>
+
 </head>
 
 <body>
+
     <!-- sildebar starts -->
 
     <div class="slidebar">
@@ -164,7 +109,6 @@ table, th, td {
             </li>
             <li>
                 <a href="/php/medicine/medicine.php"><i class="fas fa-medkit"></i> Medicine</a>
-
             </li>
 
         </ul>
@@ -172,19 +116,16 @@ table, th, td {
 
     <!-- slidebar ends -->
 
->>>>>>> Stashed changes
-
     <div class="container">
 
         <div class="row">
             <div style="margin-left: 50%; margin-top: 5%;">
-                <h2>Manage <b>Doctor</b></h2>
+                <h2>Manage <b>Ambulence</b></h2>
             </div>
             <div style="margin-left: 85%; margin-top: 3%;">
-                <button><a href="/php/Doctor/add-doctor.php">Add Doctor</a></button>
+                <button><a href="/php/Ambulence/add-ambulence.php">Add Ambulence</a></button>
             </div>
         </div>
-    </div>
     </div>
 
     <div class="card-body">
@@ -192,48 +133,33 @@ table, th, td {
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>D_ID</th>
-                        <th>D_Name</th>
-                        <th>Gender</th>
-                        <th>Work_Day</th>
-                        <th>Speciality</th>
+                        <th>Ambulence_ID</th>
+                        <th>Ambulence_Status</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
                     include 'db_conn.php';
-                    $D_ID = 0;
-<<<<<<< Updated upstream
-                    $sql = " SELECT * FROM doctor ";
-=======
-                    $sql = " SELECT D_ID, D_Name, Gender, Work_Day, Speciality FROM doctor LIMIT 5";
-
->>>>>>> Stashed changes
+                    $Amb_ID = 0;
+                    $sql = " SELECT Amb_ID,Amb_Status FROM ambulence LIMIT 10";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                        $D_ID = $D_ID + 1;
+                        $Amb_ID = $Amb_ID + 1;
+
                     ?>
                         <tr>
-                            <td><b><?php echo $D_ID  ?></b></td>
-                            <td><?php echo $Patient_data['D_Name'];  ?></td>
-                            <td><?php echo $Patient_data['Gender'];  ?></td>
-                            <td><?php echo $Patient_data['Work_Day'];  ?></td>
-                            <td><?php echo $Patient_data['Speciality'];  ?></td>
+                            <td><b><?php echo $Amb_ID  ?></b></td>
+                            <td><?php echo $Patient_data['Amb_Status'];  ?></td>
                             <td style="width: 140px;">
-<<<<<<< Updated upstream
-                                <button> <a href="update-data.php?ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="/php/Doctor/delete-doctor.php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+                                <button> 
+                                    <a href="update-data.php?ID=<?php echo $Patient_data['Amb_ID'];  ?>" class="btn btn-success"><b>Update</b></a>
+                                </button>
+                                <button>
+                                    <a href="delete-patient.php?php echo $Patient_data['Amb_ID']; ?>" class="btn btn-danger"><b>Delete</b></a>
+                                </button>
 
 
-=======
-                                <button class="tabbutton" style="background:      rgba(59, 104, 39, 0.819 );">
-                                    <a href="update-data.php?ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a>
-                                </button> &nbsp;
-                                <button class="tabbutton" style="background:      rgba(178, 83, 64, 0.819);">
-                                    <a href="/php/Doctor/delete-doctor.php<?php echo $Patient_data['D_ID']; ?>" class="btn btn-danger">
-                                        <b>Delete</b></a></button>
->>>>>>> Stashed changes
                             </td>
                         </tr>
                     <?php
@@ -247,7 +173,6 @@ table, th, td {
         </div>
 
 
-    </div>
     </div>
 
 

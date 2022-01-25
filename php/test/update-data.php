@@ -1,23 +1,8 @@
 // update-data.php
+
+
 <?php
 
-<<<<<<< Updated upstream
-include 'connection.php';
-if(isset($_POST['UPDATEDATA']))
-{
-   $ID = $_GET['ID'];
-   $NAME = $_POST['NAME'];
-   $EMAIL = $_POST['EMAIL'];
-   $ADDRESS = $_POST['ADDRESS'];
-   $PHONE = $_POST['PHONE'];
-   $CITY = $_POST['CITY'];
-   $UPDATED_DATE = $_POST['UPDATED_DATE'];
-
-   $sql = " UPDATE `operations` SET `ID`=$ID,`NAME`='$NAME',`EMAIL`='$EMAIL',`ADDRESS`='$ADDRESS',`PHONE`='$PHONE',`CITY`='$CITY',`UPDATED_DATE`='$UPDATED_DATE' WHERE ID = $ID " ;
-   $query = mysqli_query($con,$sql); 
-
-   header("location:doctor.php");
-=======
 include 'db_conn.php';
 $ID = $_GET['operationsID'];
 if (isset($_POST['submit'])) {
@@ -38,8 +23,8 @@ if (isset($_POST['submit'])) {
     die(mysqli_error($conn));
   }
   header("location:doctor.php");
->>>>>>> Stashed changes
 }
+
 
 
 
