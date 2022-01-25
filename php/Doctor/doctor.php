@@ -338,7 +338,7 @@ text-decoration: none;
                             <td><?php echo $Patient_data['Speciality'];  ?></td>
                             <td style="width: 140px;">
                                 <button class="tabbutton" style="background:      rgba(59, 104, 39, 0.819 );"> <a href="update-data.php?ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button> &nbsp;
-                                <button class="tabbutton" style="background:      rgba(178, 83, 64, 0.819);"><a href="/php/Doctor/delete-data.php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+                                <button class="tabbutton" style="background:      rgba(178, 83, 64, 0.819);"><a href="/php/Doctor/delete-doctor.php?ID=<?php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
                             </td>
