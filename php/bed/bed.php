@@ -200,7 +200,7 @@ transform: scale(1.1);
             <div style="margin-left: 50%; margin-top: 5%;">
                 <h2>Manage <b>Bed</b></h2>
             </div>
-            <div style="margin-left: 85%; margin-top: 3%;">
+            <div style="margin-left: 83%; margin-top: 3%;">
                 <button><a href="/php/bed/add-bed.php">Add Bed</a></button>
             </div>
         </div>
@@ -221,7 +221,7 @@ transform: scale(1.1);
                     <?php
                     include 'db_conn.php';
                     $Bed_Num = 0;
-                    $sql = " SELECT Bed_Num,Bed_Status FROM bed LIMIT 10";
+                    $sql = " SELECT Bed_Num,Bed_Status FROM bed LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                         $Bed_Num = $Bed_Num + 1;

@@ -257,7 +257,7 @@ transform: scale(1.1);
             <div style="margin-left: 50%; margin-top: 5%;">
                 <h2>Manage <b>Test</b></h2>
             </div>
-            <div style="margin-left: 85%; margin-top: 3%;">
+            <div style="margin-left: 82%; margin-top: 3%;">
                 <button><a href="/php/test/add-test.php">Add Test</a></button>
             </div>
         </div>

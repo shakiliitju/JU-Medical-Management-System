@@ -212,7 +212,7 @@ transform: scale(1.1);
             <div style="margin-left: 50%; margin-top: 5%;">
                 <h2>Manage <b>Staff</b></h2>
             </div>
-            <div style="margin-left: 85%; margin-top: 3%;">
+            <div style="margin-left: 82%; margin-top: 3%;">
                 <button><a href="/php/staff/add-staff.php">Add Staff</a></button>
             </div>
         </div>
@@ -236,7 +236,7 @@ transform: scale(1.1);
                     include 'db_conn.php';
                     $S_ID = 0;
                    
-                    $sql = " SELECT S_ID,S_Name,Gender,Work_Day FROM staff LIMIT 10";
+                    $sql = " SELECT S_ID,S_Name,Gender,Work_Day FROM staff LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                         $S_ID = $S_ID + 1;

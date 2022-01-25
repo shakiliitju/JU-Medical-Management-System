@@ -203,7 +203,7 @@ transform: scale(1.1);
             <div style="margin-left: 50%; margin-top: 5%;">
                 <h2>Manage <b>Medicine</b></h2>
             </div>
-            <div style="margin-left: 85%; margin-top: 3%;">
+            <div style="margin-left: 81%; margin-top: 3%;">
                 <button><a href="/php/medicine/add-medicine.php">Add Medicine</a></button>
             </div>
         </div>
@@ -225,7 +225,7 @@ transform: scale(1.1);
                     include 'db_conn.php';
                     $M_Code = 0;
                   
-                    $sql = " SELECT M_Code,Quantity FROM medicine LIMIT 10";
+                    $sql = " SELECT M_Code,Quantity FROM medicine LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                         $M_Code = $M_Code + 1;

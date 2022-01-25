@@ -322,7 +322,7 @@ text-decoration: none;
             <div style="margin-left: 50%; margin-top: 5%;">
                 <h2>Manage <b>Doctor</b></h2>
             </div>
-            <div style="margin-left: 85%; margin-top: 3%;">
+            <div style="margin-left: 83%; margin-top: 3%;">
                 <button class="docadd"><a href="/php/Doctor/add-doctor.php">Add Doctor</a></button>
             </div>
         </div>
