@@ -74,6 +74,60 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
+
+
+/* internal style */
+
+h2{
+    font-size: 40px;
+    
+}
+table{
+    border: 2px solid black;
+}
+tr{
+    
+}
+th{
+padding: 7px;
+border: 2px solid black;
+font-size: 22px;
+
+}
+
+td{
+    border: 2px solid black;
+    padding: 5px 10px 5px 20px;
+    font-size: 15px;
+    font-weight: bolder;
+
+}
+
+button{
+
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 2px 6px;
+    background-color: rgb(167, 127, 169);
+
+}
+button a{
+text-decoration: none;
+color: black;
+font-weight: bolder;
+padding: 2px 3px;
+
+}
+
+button:hover{
+background-color: greenyellow;
+transition: .5s;
+transform: scale(1.1);
+}
+
+/* internal style end */
+
+
 </style>
 
 </head>
@@ -116,6 +170,29 @@ table, th, td {
                </li>
 
           </ul>
+
+          <!-- logoutbutton -->
+          <div>
+                    <style>
+                         .logout {
+                              text-align: center;
+                              margin-top: 50px;
+                              font-family: 'Mochiy Pop P One', sans-serif;
+                              font-weight: bolder;
+                         }
+
+                         .logout:hover {
+                              transform: scale(1.2);
+                              color: red;
+                              transition: 1s;
+                         }
+                    </style>
+                    <a style="text-decoration: none;" href="/php/index.php">
+                         <div class="logout">
+                              Log Out
+                         </div>
+                    </a>
+               </div>
     </div>
 
 <!-- slidebar ends -->
