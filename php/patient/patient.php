@@ -167,7 +167,7 @@ table, th, td {
                             <td><?php echo $Patient_data['P_Type'];  ?></td>
                             <td style="width: 140px;">
                                 <button> <a href="update-data.php?ID=<?php echo $Patient_data['P_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="delete-patient.php?php echo $Patient_data['P_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+                                <button><a href="delete-patient.php?ID=<?php echo $Patient_data['P_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
                             </td>
