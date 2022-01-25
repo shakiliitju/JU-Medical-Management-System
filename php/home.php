@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -145,116 +146,124 @@ color: rgb(85, 12, 99);
         }
     </style>
 
+
 </head>
 
 <body>
 
-    <!-- slidebar -->
 
-    <div class="slidebar">
-        <header>
-            <span>
-                <i class="fas fa-users-cog"></i><br>
-            </span>
-            ADMIN
-        </header>
-        <ul>
-            <li>
-                <a href="#"><i class="fas fa-user-md"></i> Doctors</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-user-nurse"></i> Staffs</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-user-injured"></i> Patients</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-file-medical-alt"></i> Tests</a>
 
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-procedures"></i> Bed</a>
 
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-ambulance"></i> Ambulance</a>
+      
 
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-medkit"></i> Medicine</a>
-            </li>
+     <!-- slidebar -->
 
-        </ul>
-    </div>
+     <div class="slidebar">
+          <header>
+               <span>
+                    <i class="fas fa-users-cog"></i><br>
+               </span>
+               ADMIN
+          </header>
 
-    <!-- mainpart -->
+          <ul>
+               <li>
+                    <a href="/php/Doctor/doctor.php"><i class="fas fa-user-md"></i> Doctors</a>
+               </li>
+               <li>
+                    <a href="/php/staff/staff.php"><i class="fas fa-user-nurse"></i> Staffs</a>
+               </li>
+               <li>
+                    <a href="/php/patient/patient.php"><i class="fas fa-user-injured"></i> Patients</a>
+               </li>
+               <li>
+                    <a href="/php/test/test.php"><i class="fas fa-file-medical-alt"></i> Tests</a>
 
-    <div class="mainpart">
+               </li>
+               <li>
+                    <a href="/php/bed/bed.php"><i class="fas fa-procedures"></i> Bed</a>
 
-        <div class="infocard">
+               </li>
+               <li>
+                    <a href="/php/Ambulence/ambulence.php"><i class="fas fa-ambulance"></i> Ambulance</a>
 
-            <div class="cardspecific" style="width: 26%;">
-                Doctors
+               </li>
+               <li>
+                    <a href="/php/medicine/medicine.php"><i class="fas fa-medkit"></i> Medicine</a>
+               </li>
 
-                <div class="number">
-                    Number
-                </div>
+          </ul>
+          
+     </div>
 
-            </div>
-            <div class="cardspecific" style="width: 26%;">
-                Staffs
+     <!-- mainpart -->
 
-                <div class="number">
-                    Number
-                </div>
-            </div>
-            <div class="cardspecific" style="width: 26%;">
-                patients
+     <div class="mainpart">
 
-                <div class="number">
-                    Number
-                </div>
-            </div>
-            <div class="cardspecific" style="width: 18%;">
-                Test
+          <div class="infocard">
 
-                <div class="number">
-                    Number
-                </div>
-            </div>
-            <div class="cardspecific" style="width: 18%;">
-                Bed
+               <div class="cardspecific" style="width: 26%;">
+                    Doctors
 
-                <div class="number">
-                    Number
-                </div>
-            </div>
-            <div class="cardspecific" style="width: 18%;">
-                Ambulance
+                    <div class="number">
+                         Number
+                    </div>
 
-                <div class="number">
-                    Number
-                </div>
-            </div>
-            <div class="cardspecific" style="width: 18%;">
-                Medicine
+               </div>
+               <div class="cardspecific" style="width: 26%;">
+                    Staffs
 
-                <div class="number">
-                    Number
-                </div>
-            </div>
+                    <div class="number">
+                         Number
+                    </div>
+               </div>
+               <div class="cardspecific" style="width: 26%;">
+                    patients
 
-        </div>
+                    <div class="number">
+                         Number
+                    </div>
+               </div>
+               <div class="cardspecific" style="width: 18%;">
+                    Test
 
-    </div>
+                    <div class="number">
+                         Number
+                    </div>
+               </div>
+               <div class="cardspecific" style="width: 18%;">
+                    Bed
 
-    <div class="log">
-        <h3>
-            <a href="#">
-                LOG OUT
-            </a>
-        </h3>
-    </div>
+                    <div class="number">
+                         Number
+                    </div>
+               </div>
+               <div class="cardspecific" style="width: 18%;">
+                    Ambulance
+
+                    <div class="number">
+                         Number
+                    </div>
+               </div>
+               <div class="cardspecific" style="width: 18%;">
+                    Medicine
+
+                    <div class="number">
+                         Number
+                    </div>
+               </div>
+
+          </div>
+
+     </div>
+
+     <div class="log">
+          <h3>
+               <a href="/php/login.php">
+                    LOG OUT
+               </a>
+          </h3>
+     </div>
 
 </body>
 
