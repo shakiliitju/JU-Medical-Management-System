@@ -59,7 +59,7 @@ table, th, td {
                             <td><?php echo $Patient_data['Speciality'];  ?></td>
                             <td style="width: 140px;">
                                 <button> <a href="update-data.php?ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="/php/Doctor/delete-data.php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+                                <button><a href="/php/Doctor/delete-doctor.php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
                             </td>

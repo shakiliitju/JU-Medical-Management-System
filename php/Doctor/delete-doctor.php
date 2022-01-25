@@ -17,7 +17,7 @@ if(isset($_GET['D_ID'])){
     $result = mysqli_query($conn, $sql);
     if($result){
         echo "Deleted successfull";
-        header("location:doctor.php");
+        // header("location:doctor.php");
     }else{
         die(mysqli_error($conn));
     }
