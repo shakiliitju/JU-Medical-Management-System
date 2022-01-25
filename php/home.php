@@ -173,15 +173,15 @@
 
                </li>
                <li>
-                    <a href="#"><i class="fas fa-procedures"></i> Bed</a>
+                    <a href="/php/bed/bed.php"><i class="fas fa-procedures"></i> Bed</a>
 
                </li>
                <li>
-                    <a href="#"><i class="fas fa-ambulance"></i> Ambulance</a>
+                    <a href="/php/Ambulence/ambulence.php"><i class="fas fa-ambulance"></i> Ambulance</a>
 
                </li>
                <li>
-                    <a href="#"><i class="fas fa-medkit"></i> Medicine</a>
+                    <a href="/php/medicine/medicine.php"><i class="fas fa-medkit"></i> Medicine</a>
                </li>
 
           </ul>
