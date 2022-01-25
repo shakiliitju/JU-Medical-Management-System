@@ -128,6 +128,58 @@ table, th, td {
             transform: scale(1.1);
             transition: .5s;
         }
+
+/* internal style */
+
+h2{
+    font-size: 40px;
+    
+}
+table{
+    border: 2px solid black;
+}
+tr{
+    
+}
+th{
+padding: 7px;
+border: 2px solid black;
+font-size: 22px;
+
+}
+
+td{
+    border: 2px solid black;
+    padding: 5px 10px 5px 20px;
+    font-size: 15px;
+    font-weight: bolder;
+
+}
+
+button{
+
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 2px 6px;
+    background-color: rgb(167, 127, 169);
+
+}
+button a{
+text-decoration: none;
+color: black;
+font-weight: bolder;
+padding: 2px 3px;
+
+}
+
+button:hover{
+background-color: greenyellow;
+transition: .5s;
+transform: scale(1.1);
+}
+
+/* internal style end */
+
     </style>
 
 </head>
