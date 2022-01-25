@@ -171,6 +171,29 @@ table, th, td {
             </li>
 
         </ul>
+
+        <!-- logoutbutton -->
+        <div>
+                    <style>
+                         .logout {
+                              text-align: center;
+                              margin-top: 50px;
+                              font-family: 'Mochiy Pop P One', sans-serif;
+                              font-weight: bolder;
+                         }
+
+                         .logout:hover {
+                              transform: scale(1.2);
+                              color: red;
+                              transition: 1s;
+                         }
+                    </style>
+                    <a style="text-decoration: none;" href="/php/index.php">
+                         <div class="logout">
+                              Log Out
+                         </div>
+                    </a>
+               </div>
     </div>
 
     <!-- slidebar ends -->
