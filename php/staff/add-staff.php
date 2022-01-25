@@ -27,7 +27,7 @@
 
         <br>
 
-        <form action="/php/Doctor/add-doctor-con.php" method="post">
+        <form action="/php/staff/add-staff-con.php" method="post">
 
           <div>
             <h2>Staff Name</h2>
