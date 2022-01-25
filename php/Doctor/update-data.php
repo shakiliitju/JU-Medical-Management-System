@@ -3,7 +3,7 @@
 
 <?php
 
-include 'connection.php';
+include 'db_conn.php';
 if(isset($_POST['UPDATEDATA']))
 {
    $ID = $_GET['ID'];
