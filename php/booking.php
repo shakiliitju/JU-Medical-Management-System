@@ -12,7 +12,7 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/staff.css">
+    <link rel="stylesheet" href="/css/book.css">
 
 </head>
 
@@ -21,6 +21,7 @@
     <!-- header section starts  -->
 
     <header class="header">
+
         <img src="/image/logo-ju-small.png" alt style="height: 70px; width: 65px;">
         <a href="" class="logo">JU Medical Center</a>
 
@@ -43,54 +44,55 @@
 
 
 
+    <!-- booking section starts   -->
+
+    <section class="book" id="book">
+
+        <h1 class="heading"> <span>book</span> now </h1>
+
+        <div class="row">
+            <form action="/php/book.php" method="post">
+                <h3>book appointment</h3>
+
+                <!-- <h2>Patient ID</h2>
+                <input type="number" placeholder="patient id" name="P_ID" class="box"> -->
 
 
+                <h2>Patient Name</h2>
+                <input type="text" placeholder="patient name" name="P_Name" class="box" required>
 
-    <!-- staff section starts  -->
+                <h2>Gender</h2>
+                <label for="male" class="box"><input type="radio" name="Gender" value="Male" id="male" /> Male</label>
+                <label for="female" class="box"><input type="radio" name="Gender" value="Female" id="female" /> Female</label>
+                <label for="others" class="box"><input type="radio" name="Gender" value="Others" id="others" /> Others</label>
 
-    <section class="staff" id="staff">
+                <h2>Patient Age</h2>
+                <input type="number" placeholder="patient age" name="Age" class="box" required>
 
-        <h1 class="heading"> our <span>staff</span> </h1>
+                <h2>Patient Type</h2>
+                <input list="browsers" name="P_Type" id="browser" class="box" required>
+                <datalist id="browsers">
+                    <option value="Student">
+                    <option value="Teacher">
+                    <option value="Staff">
+                </datalist>
 
-        <div class="box-container">
+                <!-- <input type="text" placeholder="patient type" name="P_Type" class="box" required> -->
 
-            <div class="box">
-                <img src="/image/default-img-person.jpg" alt="">
-                <h3>KHONDOKER JAHANGIR ALAM</h3>
-                <span>UDA, Admin(MC)</span>
-                <div class="share">
-                    <h4>Email: medicalju123@gmail.com</h4>
-                    <h4>Office Phone: 01926225044</h4>
-                    <h4>Home Phone: </h4>
-                </div>
-            </div>
-
-            <div class="box">
-                <img src="/image/s2.jpg" alt="">
-                <h3>MD. MOTIAR RAHMAN</h3>
-                <span>Administrative Officer</span>
-                <div class="share">
-                    <h4>Email: medicalju123@gmail.com</h4>
-                    <h4>Office Phone: </h4>
-                    <h4>Home Phone: 01799771622</h4>
-                </div>
-            </div>
-
-
-
-
-
+                <input type="submit" value="book now" class="btn">
+            </form>
 
         </div>
 
     </section>
 
-    <!-- staff section ends -->
+    <!-- booking section ends -->
 
 
 
 
     <!-- footer section starts  -->
+
     <section class="footer">
 
         <div class="box-container">
@@ -104,7 +106,6 @@
                 <a href="http://localhost:3000/php/booking.php"> <i class="fas fa-chevron-right"></i> booking </a>
             </div>
 
-            
             <div class="box">
                 <h3>our services</h3>
                 <a href="#"> <i class="fas fa-chevron-right"></i> Free Checkups </a>
@@ -119,15 +120,12 @@
                 <a href="#"> <i class="fas fa-phone"></i> 1324 </a>
                 <a href="#"> <i class="fas fa-phone"></i> 01715054872 </a>
                 <a href="#"> <i class="fas fa-envelope"></i> medicalju123@gmail.com </a>
-                <a href="https://goo.gl/maps/gCv8rquk261n7FnXA"> <i class="fas fa-map-marker-alt"></i> Jahangirnagar
-                    University, Savar, Dhaka-1342, Bangladesh. </a>
+                <a href="https://goo.gl/maps/gCv8rquk261n7FnXA"> <i class="fas fa-map-marker-alt"></i> Jahangirnagar University, Savar, Dhaka-1342, Bangladesh. </a>
             </div>
 
             <div class="box">
                 <h3>follow us</h3>
-                <a
-                    href="https://www.facebook.com/Medical-Centre-Jahangirnagar-University-111006755903584/?ref=page_internal">
-                    <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="https://www.facebook.com/Medical-Centre-Jahangirnagar-University-111006755903584/?ref=page_internal"> <i class="fab fa-facebook-f"></i> facebook </a>
                 <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
                 <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
                 <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
@@ -141,7 +139,6 @@
     </section>
 
     <!-- footer section ends -->
-
 
 
 

@@ -1,3 +1,27 @@
+<?php
+session_start(); 
+include "db_conn.php";
+
+
+if (isset($_POST['P_Name']) && isset($_POST['Gender']) && isset($_POST['Age']) && isset($_POST['P_Type'])) {
+
+ 
+    $P_Name = $_POST['P_Name'];
+    $Gender = $_POST['Gender'];
+    $Age = $_POST['Age'];
+    $P_Type = $_POST['P_Type'];
+
+
+   $sql = "insert into patient(P_Name,Gender,Age,P_Type) values('$P_Name','$Gender','$Age','$P_Type')";
+   if(mysqli_query($conn,$sql)){
+       echo 'Registration successfully...';
+   }else{
+    echo 'Error';
+   }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +36,7 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/staff.css">
+    <link rel="stylesheet" href="/css/book.css">
 
 </head>
 
@@ -21,6 +45,7 @@
     <!-- header section starts  -->
 
     <header class="header">
+
         <img src="/image/logo-ju-small.png" alt style="height: 70px; width: 65px;">
         <a href="" class="logo">JU Medical Center</a>
 
@@ -42,55 +67,13 @@
     <!-- header section ends -->
 
 
-
-
-
-
-    <!-- staff section starts  -->
-
-    <section class="staff" id="staff">
-
-        <h1 class="heading"> our <span>staff</span> </h1>
-
-        <div class="box-container">
-
-            <div class="box">
-                <img src="/image/default-img-person.jpg" alt="">
-                <h3>KHONDOKER JAHANGIR ALAM</h3>
-                <span>UDA, Admin(MC)</span>
-                <div class="share">
-                    <h4>Email: medicalju123@gmail.com</h4>
-                    <h4>Office Phone: 01926225044</h4>
-                    <h4>Home Phone: </h4>
-                </div>
-            </div>
-
-            <div class="box">
-                <img src="/image/s2.jpg" alt="">
-                <h3>MD. MOTIAR RAHMAN</h3>
-                <span>Administrative Officer</span>
-                <div class="share">
-                    <h4>Email: medicalju123@gmail.com</h4>
-                    <h4>Office Phone: </h4>
-                    <h4>Home Phone: 01799771622</h4>
-                </div>
-            </div>
-
-
-
-
-
-
-        </div>
-
-    </section>
-
-    <!-- staff section ends -->
-
-
+<div style="margin-left: 40%; margin-top: 10%;">
+    <h1>Registration successfully.</h1>
+</div>
 
 
     <!-- footer section starts  -->
+
     <section class="footer">
 
         <div class="box-container">
@@ -104,7 +87,6 @@
                 <a href="http://localhost:3000/php/booking.php"> <i class="fas fa-chevron-right"></i> booking </a>
             </div>
 
-            
             <div class="box">
                 <h3>our services</h3>
                 <a href="#"> <i class="fas fa-chevron-right"></i> Free Checkups </a>
@@ -119,15 +101,12 @@
                 <a href="#"> <i class="fas fa-phone"></i> 1324 </a>
                 <a href="#"> <i class="fas fa-phone"></i> 01715054872 </a>
                 <a href="#"> <i class="fas fa-envelope"></i> medicalju123@gmail.com </a>
-                <a href="https://goo.gl/maps/gCv8rquk261n7FnXA"> <i class="fas fa-map-marker-alt"></i> Jahangirnagar
-                    University, Savar, Dhaka-1342, Bangladesh. </a>
+                <a href="https://goo.gl/maps/gCv8rquk261n7FnXA"> <i class="fas fa-map-marker-alt"></i> Jahangirnagar University, Savar, Dhaka-1342, Bangladesh. </a>
             </div>
 
             <div class="box">
                 <h3>follow us</h3>
-                <a
-                    href="https://www.facebook.com/Medical-Centre-Jahangirnagar-University-111006755903584/?ref=page_internal">
-                    <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="https://www.facebook.com/Medical-Centre-Jahangirnagar-University-111006755903584/?ref=page_internal"> <i class="fab fa-facebook-f"></i> facebook </a>
                 <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
                 <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
                 <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
@@ -141,28 +120,3 @@
     </section>
 
     <!-- footer section ends -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- custom js file link  -->
-    <script src="js/script.js"></script>
-
-</body>
-
-</html>

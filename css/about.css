@@ -1,4 +1,14 @@
+.moreText{
+    display: none;
+}
 
+.read-more-btn{
+    outline: none;
+}
+
+.text.show-more .moreText{
+    display: inline;
+}
 
 .about .row{
     display: flex;

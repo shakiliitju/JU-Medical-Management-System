@@ -144,6 +144,7 @@ color: rgb(85, 12, 99);
 
         }
     </style>
+
 </head>
 
 <body>
@@ -254,6 +255,7 @@ color: rgb(85, 12, 99);
             </a>
         </h3>
     </div>
+
 </body>
 
 </html>
