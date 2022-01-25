@@ -4,8 +4,8 @@
 <?php
 
 include 'db_conn.php';
-$ID =$_GET['update-data'];
-if(isset($_POST['UPDATEDATA']))
+$ID =$_GET['operationsID'];
+if(isset($_POST['submit']))
 {
    $ID = $_GET['ID'];
    $NAME = $_POST['NAME'];
