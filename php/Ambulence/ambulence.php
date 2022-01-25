@@ -231,8 +231,8 @@ transform: scale(1.1);
                             <td><b><?php echo $Amb_ID  ?></b></td>
                             <td><?php echo $Patient_data['Amb_Status'];  ?></td>
                             <td style="width: 140px;">
-                                <button> <a href="update-data.php?ID=<?php echo $Patient_data['Amb_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="delete-patient.php?php echo $Patient_data['Amb_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+                                <button> <a href="/php/Ambulence/add-ambulence.php?ID=<?php echo $Patient_data['Amb_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="ambulence.php?ID=<?php echo $Patient_data['Amb_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
                             </td>

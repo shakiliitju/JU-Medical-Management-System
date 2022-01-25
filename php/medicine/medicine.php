@@ -214,8 +214,8 @@ transform: scale(1.1);
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>Medicine_Code</th>
-                        <th>Quantity</th>
+                        <th> Medicine_Code </th>
+                        <th> Quantity </th>
 
                     </tr>
                 </thead>
@@ -235,8 +235,8 @@ transform: scale(1.1);
                             <td><b><?php echo $M_Code  ?></b></td>
                             <td><?php echo $Patient_data['Quantity'];  ?></td>
                             <td style="width: 140px;">
-                                <button> <a href="update-data.php?ID=<?php echo $Patient_data['M_Code'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="delete-patient.php?php echo $Patient_data['M_Code']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+                                <button> <a href="/php/medicine/add-medicine.php?ID=<?php echo $Patient_data['M_Code'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="medicine.php?ID=<?php echo $Patient_data['M_Code']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
                             </td>
