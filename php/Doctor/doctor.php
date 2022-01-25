@@ -3,12 +3,127 @@
 
 <head>
 
-<style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
+
+<!-- fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- CSS STYILE  -->
+
+
+    <style>
+
+
+
+   /* navbar style starts here */
+   .slidebar {
+
+border: 20px;
+width: 15%;
+height: 700px;
+position: fixed;
+top: 0px;
+background-color: rgba(195, 179, 179, 0.493);
 }
-</style>
+
+.slidebar header {
+padding: 30px 10px;
+text-align: center;
+font-family: 'Mochiy Pop P One', sans-serif;
+font-size: 30px;
+font-weight: bolder;
+color: rgb(16, 95, 98);
+}
+
+.slidebar header span {
+font-size: 50px;
+color: rgb(89, 161, 87);
+}
+
+.slidebar ul {}
+
+.slidebar ul li {
+
+list-style: none;
+padding: 10px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-weight: bolder;
+
+}
+
+.slidebar ul li:hover {
+transform: scale(1.1);
+transition: .5s;
+border-radius: 10px;
+background-color: rgb(89, 150, 152);
+margin-right: 20px;
+}
+
+.slidebar ul li a {
+text-decoration: none;
+}
+
+
+        body {
+            background-color: #8CD2AB;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            font-weight: bold;
+            padding: 5px 0px 5px 10px;
+        }
+
+        .row h2 {
+            font-family: 'Mochiy Pop P One', sans-serif;
+            font-size: 30px;
+            color: rgb(30,60,62)
+        }
+
+        table th {
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+
+        .docadd {
+            background: none;
+            border: solid black 3px;
+            padding: 5px;
+            border-radius: 15px;
+        }
+
+        .docadd:hover {
+            transform: scale(1.1);
+            transition: .5s;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .tabbutton {
+            background: none;
+            border: solid black 3px;
+            padding: 5px;
+            border-radius: 15px;
+
+        }
+
+
+
+        .tabbutton:hover {
+            transform: scale(1.1);
+            transition: .5s;
+        }
+    </style>
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -137,6 +252,7 @@ table, th, td {
 
     <!-- sildebar starts -->
 
+
     <div class="slidebar">
         <header>
             <span>
@@ -168,6 +284,7 @@ table, th, td {
             </li>
             <li>
                 <a href="/php/medicine/medicine.php"><i class="fas fa-medkit"></i> Medicine</a>
+
             </li>
 
         </ul>
@@ -183,10 +300,9 @@ table, th, td {
                 <h2>Manage <b>Doctor</b></h2>
             </div>
             <div style="margin-left: 85%; margin-top: 3%;">
-                <button><a href="/php/Doctor/add-doctor.php">Add Doctor</a></button>
+                <button class="docadd"><a href="/php/Doctor/add-doctor.php">Add Doctor</a></button>
             </div>
         </div>
-    </div>
     </div>
 
     <div class="card-body">
@@ -220,8 +336,8 @@ table, th, td {
                             <td><?php echo $Patient_data['Work_Day'];  ?></td>
                             <td><?php echo $Patient_data['Speciality'];  ?></td>
                             <td style="width: 140px;">
-                                <button> <a href="update-data.php?ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="/php/Doctor/delete-data.php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+                                <button class="tabbutton" style="background:      rgba(59, 104, 39, 0.819 );"> <a href="update-data.php?ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button> &nbsp;
+                                <button class="tabbutton" style="background:      rgba(178, 83, 64, 0.819);"><a href="/php/Doctor/delete-data.php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
                             </td>
@@ -237,7 +353,6 @@ table, th, td {
         </div>
 
 
-    </div>
     </div>
 
 
