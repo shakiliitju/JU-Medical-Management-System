@@ -310,8 +310,8 @@ text-decoration: none;
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>D_ID</th>
-                        <th>D_Name</th>
+                        <th>Doctor_ID</th>
+                        <th>Doctor_Name</th>
                         <th>Gender</th>
                         <th>Work_Day</th>
                         <th>Speciality</th>
@@ -323,7 +323,8 @@ text-decoration: none;
                     <?php
                     include 'db_conn.php';
                     $D_ID = 0;
-                    $sql = " SELECT * FROM doctor ";
+                    $sql = " SELECT D_ID,D_Name,Gender,Work_Day,Speciality FROM doctor LIMIT 5";
+                   
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                         $D_ID = $D_ID + 1;

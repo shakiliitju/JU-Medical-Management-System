@@ -139,11 +139,11 @@ table, th, td {
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>P_ID</th>
-                        <th>P_Name</th>
+                        <th>Patient_ID</th>
+                        <th>Patient_Name</th>
                         <th>Gender</th>
                         <th>Age</th>
-                        <th>P_Type</th>
+                        <th>Patient_Type</th>
 
                     </tr>
                 </thead>
@@ -152,7 +152,8 @@ table, th, td {
                     <?php
                     include 'db_conn.php';
                     $P_ID = 0;
-                    $sql = " SELECT * FROM patient ";
+                   
+                    $sql = " SELECT P_ID,P_Name,Gender,Age,P_Type FROM patient LIMIT 10";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                         $P_ID = $P_ID + 1;
