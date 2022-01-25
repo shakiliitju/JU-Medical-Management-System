@@ -90,7 +90,7 @@
         }
 
         .cardspecific {
-            height: 220px;
+            height: 190px;
             float: left;
             margin: 20px;
             border: solid black 5px;
