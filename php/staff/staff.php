@@ -162,22 +162,33 @@ body{
                 <tbody>
                     <?php
                     include 'db_conn.php';
+<<<<<<< Updated upstream
                     $S_ID = 0;
                    
                     $sql = " SELECT S_ID,S_Name,Gender,Work_Day FROM staff LIMIT 10";
+=======
+              
+
+                    $sql = " SELECT S_ID,S_Name,Gender,Work_Day FROM staff LIMIT 5";
+>>>>>>> Stashed changes
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                        $S_ID = $S_ID + 1;
+        
 
                     ?>
                         <tr>
-                            <td><b><?php echo $S_ID  ?></b></td>
+                            <td><b><?php echo $Patient_data['S_ID'];  ?></b></td>
                             <td><?php echo $Patient_data['S_Name'];  ?></td>
                             <td><?php echo $Patient_data['Gender'];  ?></td>
                             <td><?php echo $Patient_data['Work_Day'];  ?></td>
                             <td style="width: 140px;">
+<<<<<<< Updated upstream
                                 <button> <a href="update-data.php?ID=<?php echo $Patient_data['S_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
                                 <button><a href="/php/Doctor/delete-data.php echo $Patient_data['S_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+=======
+                                <button> <a href="/php/staff/add-staff.php?S_ID=<?php echo $Patient_data['S_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/staff/Delete.php?S_ID=<?php echo $Patient_data['S_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+>>>>>>> Stashed changes
 
 
                             </td>

@@ -151,23 +151,33 @@ table, th, td {
                 <tbody>
                     <?php
                     include 'db_conn.php';
+<<<<<<< Updated upstream
                     $P_ID = 0;
                    
                     $sql = " SELECT P_ID,P_Name,Gender,Age,P_Type FROM patient LIMIT 10";
+=======
+
+
+                    $sql = " SELECT P_ID,P_Name,Gender,Age,P_Type FROM patient LIMIT 5";
+>>>>>>> Stashed changes
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                        $P_ID = $P_ID + 1;
 
                     ?>
                         <tr>
-                            <td><b><?php echo $P_ID  ?></b></td>
+                            <td><b><?php echo $Patient_data['P_ID'];  ?></b></td>
                             <td><?php echo $Patient_data['P_Name'];  ?></td>
                             <td><?php echo $Patient_data['Gender'];  ?></td>
                             <td><?php echo $Patient_data['Age'];  ?></td>
                             <td><?php echo $Patient_data['P_Type'];  ?></td>
                             <td style="width: 140px;">
+<<<<<<< Updated upstream
                                 <button> <a href="update-data.php?ID=<?php echo $Patient_data['P_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
                                 <button><a href="delete-patient.php?ID=<?php echo $Patient_data['P_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+=======
+                                <button> <a href="/php/patient/add-patient.php?P_ID=<?php echo $Patient_data['P_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/patient/Delete.php?P_ID=<?php echo $Patient_data['P_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+>>>>>>> Stashed changes
 
 
                             </td>
