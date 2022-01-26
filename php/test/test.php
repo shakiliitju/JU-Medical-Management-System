@@ -281,21 +281,22 @@
                 <tbody>
                     <?php
                     include 'db_conn.php';
-                    $T_ID = 0;
+        
                     $sql = " SELECT * FROM test ";
                     $sql = " SELECT T_ID,T_Name FROM test LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                        $T_ID = $T_ID + 1;
 
                     ?>
                         <tr>
-                            <td><b><?php echo $T_ID  ?></b></td>
+                            <td><b><?php echo $Patient_data['T_ID'];  ?></b></td>
                             <td><?php echo $Patient_data['T_Name'];  ?></td>
 
                             <td style="width: 140px;">
-                                <button> <a href="/php/test/add-test.php?ID=<?php echo $Patient_data['T_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="test.php?ID=<?php echo $Patient_data['T_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
+                                <button> <a href="/php/test/add-test.php?T_ID=<?php echo $Patient_data['T_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/test/Delete.php?T_ID=<?php echo $Patient_data['T_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
 
 
                             </td>

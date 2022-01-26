@@ -235,22 +235,23 @@
                 <tbody>
                     <?php
                     include 'db_conn.php';
-                    $S_ID = 0;
+
 
                     $sql = " SELECT S_ID,S_Name,Gender,Work_Day FROM staff LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                        $S_ID = $S_ID + 1;
+        
 
                     ?>
                         <tr>
-                            <td><b><?php echo $S_ID  ?></b></td>
+                            <td><b><?php echo $Patient_data['S_ID'];  ?></b></td>
                             <td><?php echo $Patient_data['S_Name'];  ?></td>
                             <td><?php echo $Patient_data['Gender'];  ?></td>
                             <td><?php echo $Patient_data['Work_Day'];  ?></td>
                             <td style="width: 140px;">
-                                <button> <a href="/php/staff/add-staff.php?ID=<?php echo $Patient_data['S_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="staff.php?ID=<?php echo $Patient_data['S_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
+                                <button> <a href="/php/staff/add-staff.php?S_ID=<?php echo $Patient_data['S_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/staff/Delete.php?S_ID=<?php echo $Patient_data['S_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
                             </td>
