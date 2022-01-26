@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-
     <title>Ju Medical Center</title>
     <link rel="shortcut icon" href="https://juniv.edu/images/favicon.ico">
+
+
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -285,6 +286,29 @@
             </li>
 
         </ul>
+
+        <!-- logoutbutton -->
+        <div>
+            <style>
+                .logout {
+                    text-align: center;
+                    margin-top: 50px;
+                    font-family: 'Mochiy Pop P One', sans-serif;
+                    font-weight: bolder;
+                }
+
+                .logout:hover {
+                    transform: scale(1.2);
+                    color: red;
+                    transition: 1s;
+                }
+            </style>
+            <a style="text-decoration: none;" href="/php/index.php">
+                <div class="logout">
+                    Log Out
+                </div>
+            </a>
+        </div>
     </div>
 
     <!-- slidebar ends -->
@@ -296,7 +320,7 @@
             <div style="margin-left: 50%; margin-top: 5%;">
                 <h2>Manage <b>Doctor</b></h2>
             </div>
-            <div style="margin-left: 85%; margin-top: 3%;">
+            <div style="margin-left: 83%; margin-top: 3%;">
                 <button class="docadd"><a href="/php/Doctor/add-doctor.php">Add Doctor</a></button>
             </div>
         </div>
@@ -307,11 +331,11 @@
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>Doctor_ID</th>
-                        <th>Doctor_Name</th>
-                        <th>Gender</th>
-                        <th>Work_Day</th>
-                        <th>Speciality</th>
+                        <th> Doctor_ID </th>
+                        <th> Doctor_Name </th>
+                        <th> Gender </th>
+                        <th> Work_Day </th>
+                        <th> Speciality </th>
 
                     </tr>
                 </thead>
@@ -335,6 +359,9 @@
                             <td style="width: 140px;">
                                 <button class="tabbutton" style="background:      rgba(178, 83, 64, 0.819);"><a href="/php/Doctor/delete-doctor.php?D_ID=<?php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
                                 <button class="tabbutton" style="background:      rgba(59, 104, 39, 0.819 );"> <a href="/php/Doctor/Delete.php?D_ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button> &nbsp;
+
+
+                            </td>
                         </tr>
                     <?php
 

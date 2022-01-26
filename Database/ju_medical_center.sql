@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 25, 2022 at 03:02 PM
+-- Generation Time: Jan 25, 2022 at 04:40 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -321,14 +321,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `user_name`, `password`, `name`) VALUES
-(4, 'shakil', 'fbf832bc8d7e746434993cec0061a682', 'Md. Shakil Hossain');
+(4, 'shakil', 'fbf832bc8d7e746434993cec0061a682', 'Md. Shakil Hossain'),
+(5, 'tokee', 'e72b6570017e99a7c63f473c62f7c149', 'Asfakur Rahman Tokee'),
+(6, 'sharif', '585a097e7ec1f2ba93c7d066d6f7fc5e', 'Md. Shariful Islam'),
+(7, 'amit', '0cb1eb413b8f7cee17701a37a1d74dc3', 'Amit Azim Amit');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
