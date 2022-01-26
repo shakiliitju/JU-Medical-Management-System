@@ -2,13 +2,16 @@
 <html lang="en">
 
 <head>
-
-<style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-</style>
+    <title>Ju Medical Center</title>
+    <link rel="shortcut icon" href="https://juniv.edu/images/favicon.ico">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -128,6 +131,59 @@ table, th, td {
             transform: scale(1.1);
             transition: .5s;
         }
+
+        /* internal style */
+
+        h2 {
+            font-size: 40px;
+
+        }
+
+        table {
+            border: 2px solid black;
+        }
+
+        tr {}
+
+        th {
+            padding: 7px;
+            border: 2px solid black;
+            font-size: 22px;
+
+        }
+
+        td {
+            border: 2px solid black;
+            padding: 5px 10px 5px 20px;
+            font-size: 15px;
+            font-weight: bolder;
+
+        }
+
+        button {
+
+            border: solid 2px black;
+            border-radius: 15px;
+            padding: 2px 6px;
+            background-color: rgb(167, 127, 169);
+
+        }
+
+        button a {
+            text-decoration: none;
+            color: black;
+            font-weight: bolder;
+            padding: 2px 3px;
+
+        }
+
+        button:hover {
+            background-color: greenyellow;
+            transition: .5s;
+            transform: scale(1.1);
+        }
+
+        /* internal style end */
     </style>
 
 </head>
@@ -171,6 +227,29 @@ table, th, td {
             </li>
 
         </ul>
+
+        <!-- logoutbutton -->
+        <div>
+            <style>
+                .logout {
+                    text-align: center;
+                    margin-top: 50px;
+                    font-family: 'Mochiy Pop P One', sans-serif;
+                    font-weight: bolder;
+                }
+
+                .logout:hover {
+                    transform: scale(1.2);
+                    color: red;
+                    transition: 1s;
+                }
+            </style>
+            <a style="text-decoration: none;" href="/php/index.php">
+                <div class="logout">
+                    Log Out
+                </div>
+            </a>
+        </div>
     </div>
 
     <!-- slidebar ends -->
@@ -182,7 +261,7 @@ table, th, td {
             <div style="margin-left: 50%; margin-top: 5%;">
                 <h2>Manage <b>Test</b></h2>
             </div>
-            <div style="margin-left: 85%; margin-top: 3%;">
+            <div style="margin-left: 82%; margin-top: 3%;">
                 <button><a href="/php/test/add-test.php">Add Test</a></button>
             </div>
         </div>
@@ -194,8 +273,8 @@ table, th, td {
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>Test_ID</th>
-                        <th>Test_Name</th>
+                        <th> Test_ID </th>
+                        <th> Test_Name </th>
                     </tr>
                 </thead>
 
@@ -214,13 +293,10 @@ table, th, td {
                             <td><?php echo $Patient_data['T_Name'];  ?></td>
 
                             <td style="width: 140px;">
-<<<<<<< Updated upstream
-                                <button> <a href="update-data.php?ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="/php/Doctor/delete-data.php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
-=======
+
                                 <button> <a href="/php/test/add-test.php?T_ID=<?php echo $Patient_data['T_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
                                 <button><a href="/php/test/Delete.php?T_ID=<?php echo $Patient_data['T_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
->>>>>>> Stashed changes
+
 
 
                             </td>

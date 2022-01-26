@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,9 +45,7 @@
                color: rgb(89, 161, 87);
           }
 
-          .slidebar ul {
-               
-          }
+          .slidebar ul {}
 
           .slidebar ul li {
 
@@ -91,7 +90,7 @@
           }
 
           .cardspecific {
-               height: 220px;
+               height: 190px;
                float: left;
                margin: 20px;
                border: solid black 5px;
@@ -147,9 +146,15 @@
           }
      </style>
 
+
 </head>
 
 <body>
+
+
+
+
+
 
      <!-- slidebar -->
 
@@ -186,9 +191,31 @@
                <li>
                     <a href="/php/medicine/medicine.php"><i class="fas fa-medkit"></i> Medicine</a>
                </li>
-
-          </ul>
+          </ul> 
           
+          <!-- logoutbutton -->
+               <div>
+                    <style>
+                         .logout {
+                              text-align: center;
+                              margin-top: 50px;
+                              font-family: 'Mochiy Pop P One', sans-serif;
+                              font-weight: bolder;
+                         }
+
+                         .logout:hover {
+                              transform: scale(1.2);
+                              color: red;
+                              transition: 1s;
+                         }
+                    </style>
+                    <a style="text-decoration: none;" href="/php/index.php">
+                         <div class="logout">
+                              Log Out
+                         </div>
+                    </a>
+               </div>
+
      </div>
 
      <!-- mainpart -->
@@ -252,6 +279,10 @@
 
      </div>
 
+
+
+
+
      <div class="log">
           <h3>
                <a href="/php/login.php">
@@ -259,6 +290,7 @@
                </a>
           </h3>
      </div>
+
 </body>
 
 </html>

@@ -2,69 +2,66 @@
 <html lang="en">
 
 <head>
+    <title>Ju Medical Center</title>
+    <link rel="shortcut icon" href="https://juniv.edu/images/favicon.ico">
 
-
-<!-- fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
     <!-- CSS STYILE  -->
 
 
     <style>
+        /* navbar style starts here */
+        .slidebar {
 
+            border: 20px;
+            width: 15%;
+            height: 700px;
+            position: fixed;
+            top: 0px;
+            background-color: rgba(195, 179, 179, 0.493);
+        }
 
+        .slidebar header {
+            padding: 30px 10px;
+            text-align: center;
+            font-family: 'Mochiy Pop P One', sans-serif;
+            font-size: 30px;
+            font-weight: bolder;
+            color: rgb(16, 95, 98);
+        }
 
-   /* navbar style starts here */
-   .slidebar {
+        .slidebar header span {
+            font-size: 50px;
+            color: rgb(89, 161, 87);
+        }
 
-border: 20px;
-width: 15%;
-height: 700px;
-position: fixed;
-top: 0px;
-background-color: rgba(195, 179, 179, 0.493);
-}
+        .slidebar ul {}
 
-.slidebar header {
-padding: 30px 10px;
-text-align: center;
-font-family: 'Mochiy Pop P One', sans-serif;
-font-size: 30px;
-font-weight: bolder;
-color: rgb(16, 95, 98);
-}
+        .slidebar ul li {
 
-.slidebar header span {
-font-size: 50px;
-color: rgb(89, 161, 87);
-}
+            list-style: none;
+            padding: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bolder;
 
-.slidebar ul {}
+        }
 
-.slidebar ul li {
+        .slidebar ul li:hover {
+            transform: scale(1.1);
+            transition: .5s;
+            border-radius: 10px;
+            background-color: rgb(89, 150, 152);
+            margin-right: 20px;
+        }
 
-list-style: none;
-padding: 10px;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-font-weight: bolder;
-
-}
-
-.slidebar ul li:hover {
-transform: scale(1.1);
-transition: .5s;
-border-radius: 10px;
-background-color: rgb(89, 150, 152);
-margin-right: 20px;
-}
-
-.slidebar ul li a {
-text-decoration: none;
-}
+        .slidebar ul li a {
+            text-decoration: none;
+        }
 
 
         body {
@@ -83,7 +80,7 @@ text-decoration: none;
         .row h2 {
             font-family: 'Mochiy Pop P One', sans-serif;
             font-size: 30px;
-            color: rgb(30,60,62)
+            color: rgb(30, 60, 62)
         }
 
         table th {
@@ -288,6 +285,30 @@ text-decoration: none;
             </li>
 
         </ul>
+
+        <!-- logoutbutton -->
+        <div>
+            <style>
+                .logout {
+                    text-align: center;
+                    margin-top: 50px;
+                    font-family: 'Mochiy Pop P One', sans-serif;
+                    font-weight: bolder;
+                }
+
+                .logout:hover {
+                    transform: scale(1.2);
+                    color: red;
+                    transition: 1s;
+                }
+            </style>
+            <a style="text-decoration: none;" href="/php/index.php">
+                <div class="logout">
+                    Log Out
+                </div>
+            </a>
+        </div>
+
     </div>
 
     <!-- slidebar ends -->
@@ -299,7 +320,7 @@ text-decoration: none;
             <div style="margin-left: 50%; margin-top: 5%;">
                 <h2>Manage <b>Doctor</b></h2>
             </div>
-            <div style="margin-left: 85%; margin-top: 3%;">
+            <div style="margin-left: 83%; margin-top: 3%;">
                 <button class="docadd"><a href="/php/Doctor/add-doctor.php">Add Doctor</a></button>
             </div>
         </div>
@@ -310,11 +331,11 @@ text-decoration: none;
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>Doctor_ID</th>
-                        <th>Doctor_Name</th>
-                        <th>Gender</th>
-                        <th>Work_Day</th>
-                        <th>Speciality</th>
+                        <th> Doctor_ID </th>
+                        <th> Doctor_Name </th>
+                        <th> Gender </th>
+                        <th> Work_Day </th>
+                        <th> Speciality </th>
 
                     </tr>
                 </thead>
@@ -324,7 +345,7 @@ text-decoration: none;
                     include 'db_conn.php';
                     $D_ID = 0;
                     $sql = " SELECT D_ID,D_Name,Gender,Work_Day,Speciality FROM doctor LIMIT 5";
-                   
+
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                         $D_ID = $D_ID + 1;
@@ -337,8 +358,8 @@ text-decoration: none;
                             <td><?php echo $Patient_data['Work_Day'];  ?></td>
                             <td><?php echo $Patient_data['Speciality'];  ?></td>
                             <td style="width: 140px;">
-                                <button class="tabbutton" style="background:      rgba(59, 104, 39, 0.819 );"> <a href="update-data.php?ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button> &nbsp;
-                                <button class="tabbutton" style="background:      rgba(178, 83, 64, 0.819);"><a href="/php/Doctor/delete-doctor.php?ID=<?php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+                                <button class="tabbutton" style="background:      rgba(59, 104, 39, 0.819 );"> <a href="/php/Doctor/add-doctor.php?ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button> &nbsp;
+                                <button class="tabbutton" style="background:      rgba(178, 83, 64, 0.819);"><a href="doctor.php?ID=<?php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
                             </td>
