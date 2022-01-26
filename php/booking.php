@@ -12,7 +12,7 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/director.css">
+    <link rel="stylesheet" href="/css/book.css">
 
 </head>
 
@@ -21,6 +21,7 @@
     <!-- header section starts  -->
 
     <header class="header">
+
         <img src="/image/logo-ju-small.png" alt style="height: 70px; width: 65px;">
         <a href="" class="logo">JU Medical Center</a>
 
@@ -43,35 +44,49 @@
 
 
 
+    <!-- booking section starts   -->
+
+    <section class="book" id="book">
+
+        <h1 class="heading"> <span>book</span> now </h1>
+
+        <div class="row">
+            <form action="/php/book.php" method="post">
+                <h3>book appointment</h3>
+
+                <!-- <h2>Patient ID</h2>
+                <input type="number" placeholder="patient id" name="P_ID" class="box"> -->
 
 
+                <h2>Patient Name</h2>
+                <input type="text" placeholder="patient name" name="P_Name" class="box" required>
 
-    <!-- director section starts  -->
+                <h2>Gender</h2>
+                <label for="male" class="box"><input type="radio" name="Gender" value="Male" id="male" /> Male</label>
+                <label for="female" class="box"><input type="radio" name="Gender" value="Female" id="female" /> Female</label>
+                <label for="others" class="box"><input type="radio" name="Gender" value="Others" id="others" /> Others</label>
 
-    <section class="director" id="director">
+                <h2>Patient Age</h2>
+                <input type="number" placeholder="patient age" name="Age" class="box" required>
 
-        <h1 class="heading"> our <span>director</span> </h1>
+                <h2>Patient Type</h2>
+                <input list="browsers" name="P_Type" id="browser" class="box" required>
+                <datalist id="browsers">
+                    <option value="Student">
+                    <option value="Teacher">
+                    <option value="Staff">
+                </datalist>
 
-        <div class="box-container">
+                <!-- <input type="text" placeholder="patient type" name="P_Type" class="box" required> -->
 
-            <div class="box">
-                <img src="/image/director.jpg" alt="">
-                <h3>DR. SHAMSUR RAHMAN</h3>
-                <span>Chief Medical Officer (Acting)</span>
-                <div class="share">
-                    <h4>Email: drsrlabu19@gmail.com</h4>
-                    <h4>Email: drsrlabu@yahoo.com</h4>
-                    <h4>Office Phone: 1324</h4>
-                    <h4>Home Phone: 01715054872</h4>
-                </div>
-            </div>
-
+                <input type="submit" value="book now" class="btn">
+            </form>
 
         </div>
 
     </section>
 
-    <!-- director section ends -->
+    <!-- booking section ends -->
 
 
 
@@ -105,8 +120,7 @@
                 <a href="#"> <i class="fas fa-phone"></i> 1324 </a>
                 <a href="#"> <i class="fas fa-phone"></i> 01715054872 </a>
                 <a href="#"> <i class="fas fa-envelope"></i> medicalju123@gmail.com </a>
-                <a href="https://goo.gl/maps/gCv8rquk261n7FnXA"> <i class="fas fa-map-marker-alt"></i> Jahangirnagar University, Savar, Dhaka-1342,
-                    Bangladesh. </a>
+                <a href="https://goo.gl/maps/gCv8rquk261n7FnXA"> <i class="fas fa-map-marker-alt"></i> Jahangirnagar University, Savar, Dhaka-1342, Bangladesh. </a>
             </div>
 
             <div class="box">
@@ -120,11 +134,12 @@
 
         </div>
 
-        <div class="credit"> created by <span>Group 5</span> | all rights reserved </div>
+        <div class="credit"> created by <span>Group 16</span> | all rights reserved </div>
 
     </section>
 
     <!-- footer section ends -->
+
 
 
 
