@@ -344,20 +344,20 @@
                     <?php
                     include 'db_conn.php';
 
-                    $sql = " SELECT D_ID,D_Name,Gender,Work_Day,Speciality FROM doctor LIMIT 5";
+                    $sql = " SELECT * FROM doctor LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
 
 
                     ?>
                         <tr>
-                            <td><b><?php echo  $Patient_data['D_ID']; ?></b></td>
+                            <td><?php echo  $Patient_data['D_ID']; ?></td>
                             <td><?php echo $Patient_data['D_Name'];  ?></td>
                             <td><?php echo $Patient_data['Gender'];  ?></td>
                             <td><?php echo $Patient_data['Work_Day'];  ?></td>
                             <td><?php echo $Patient_data['Speciality'];  ?></td>
                             <td style="width: 140px;">
-                                <button class="tabbutton" style="background:      rgba(178, 83, 64, 0.819);"><a href="/php/Doctor/delete-doctor.php?D_ID=<?php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Update</b></a></button>
+                                <button class="tabbutton" style="background:      rgba(178, 83, 64, 0.819);"><a href="/php/Doctor/update-doctor.php?D_ID=<?php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Update</b></a></button>
                                 <button class="tabbutton" style="background:      rgba(59, 104, 39, 0.819 );"> <a href="/php/Doctor/Delete.php?D_ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Delete</b></a></button> &nbsp;
 
 

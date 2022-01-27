@@ -224,7 +224,7 @@
                     <?php
                     include 'db_conn.php';
 
-                    $sql = " SELECT Bed_Num,Bed_Status FROM bed LIMIT 5";
+                    $sql = " SELECT * FROM bed LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                    

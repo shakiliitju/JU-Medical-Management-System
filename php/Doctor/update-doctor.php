@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,43 +22,46 @@
     <!-- Area Chart -->
 
 
-      <div>
-        <h1>Add Doctor</h1>
-      </div>
-
-        <br>
-
-        <form action="/php/Doctor/add-doctor-con.php" method="post">
-
-          <div>
-            <h2>Doctor Name</h2>
-            <input name="D_Name" type="text" class="form-control" placeholder="" required>
-          </div>
-
-          <div>
-            <h2>Gender</h2>
-            <label for="male" class="form-control"><input type="radio" name="Gender" value="Male" id="male" /> Male</label>
-            <label for="female" class="form-control"><input type="radio" name="Gender" value="Female" id="female" /> Female</label>
-            <label for="others" class="form-control"><input type="radio" name="Gender" value="Others" id="others" /> Others</label>
-          </div>
-
-          <div>
-            <h2>Work_Day:</h2>
-            <input type="date" id="day" class="form-control" name="Work_Day">
-          </div>
-
-          <div>
-            <h2>Speciality</h2>
-            <input name="Speciality" type="text" class="form-control" placeholder="" required>
-          </div>
-          <br>
-
-          <input type="submit" value="Add Doctor" class="btn">
-
-        </form>
-
-      </div>
+    <div>
+      <h1>Update Doctor</h1>
     </div>
+
+    <br>
+
+    <form action="/php/Doctor/update-doctor-con.php" method="post">
+      <div><?php if (isset($message)) {
+              echo $message;
+            } ?>
+      </div>
+      <div>
+        <h2>Doctor Name</h2>
+        <input name="D_Name" type="text" class="form-control" value="<?php echo $Patient_data['D_Name']; ?>" required>
+      </div>
+
+      <div>
+        <h2>Gender</h2>
+        <label for="male" class="form-control"><input type="radio" name="Gender" value="<?php echo $Patient_data['Gender']; ?>" id="male" /> Male</label>
+        <label for="female" class="form-control"><input type="radio" name="Gender" value="<?php echo $Patient_data['Gender']; ?>" id="female" /> Female</label>
+        <label for="others" class="form-control"><input type="radio" name="Gender" value="<?php echo $Patient_data['Gender']; ?>" id="others" /> Others</label>
+      </div>
+
+      <div>
+        <h2>Work_Day:</h2>
+        <input type="date" id="day" class="form-control" name="Work_Day" value="<?php echo $Patient_data['Work_Day']; ?>" required>
+      </div>
+
+      <div>
+        <h2>Speciality</h2>
+        <input name="Speciality" type="text" class="form-control" value="<?php echo $Patient_data['Speciality']; ?>" required>
+      </div>
+      <br>
+
+      <input type="submit" value="Update Doctor" class="btn">
+
+    </form>
+
+  </div>
+  </div>
 
   </div>
 
