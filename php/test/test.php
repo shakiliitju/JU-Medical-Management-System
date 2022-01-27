@@ -282,8 +282,7 @@
                     <?php
                     include 'db_conn.php';
         
-                    $sql = " SELECT * FROM test ";
-                    $sql = " SELECT T_ID,T_Name FROM test LIMIT 5";
+                    $sql = " SELECT * FROM test LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
 

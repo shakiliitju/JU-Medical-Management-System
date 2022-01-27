@@ -40,15 +40,13 @@
       border: red 2px solid;
       background-color: rgb(131, 216, 118);
     }
-    .btn:hover{
+
+    .btn:hover {
       background-color: rgb(96, 9, 67);
       color: white;
-      transform:scale(1.2);
+      transform: scale(1.2);
       transition: .5s;
     }
-
-
-
   </style>
 </head>
 
@@ -58,27 +56,31 @@
     <!-- Area Chart -->
 
 
-      <div>
-        <h1>Add Test</h1>
-      </div>
-
-        <br>
-
-        <form action="/php/test/add-test-con.php" method="post">
-
-          <div>
-            <h2>Test Name</h2>
-            <input name="T_Name" type="text" class="form-control" placeholder="" required>
-          </div>
-
-          <br>
-
-          <input type="submit" value="Submit" class="btn">
-
-        </form>
-
-      </div>
+    <div>
+      <h1>Add Test</h1>
     </div>
+
+    <br>
+
+    <form action="/php/test/add-test-con.php" method="post">
+
+      <div>
+        <h2>Test ID</h2>
+        <input type="number" placeholder="number" name="T_ID" class="" required>
+      </div>
+      <div>
+        <h2>Test Name</h2>
+        <input name="T_Name" type="text" class="form-control" placeholder="" required>
+      </div>
+
+      <br>
+
+      <input type="submit" value="Submit" class="btn">
+
+    </form>
+
+  </div>
+  </div>
 
   </div>
 

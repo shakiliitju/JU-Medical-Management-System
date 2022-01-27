@@ -237,7 +237,7 @@
                     include 'db_conn.php';
 
 
-                    $sql = " SELECT S_ID,S_Name,Gender,Work_Day FROM staff LIMIT 5";
+                    $sql = " SELECT * FROM staff LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
         
