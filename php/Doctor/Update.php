@@ -7,6 +7,9 @@ $message = "Record Modified Successfully";
 $result = mysqli_query($conn,"SELECT * FROM Student WHERE Stu_id='" . $_GET['Stu_id'] . "'");
 $row= mysqli_fetch_array($result);
 ?>
+
+
+
 <html>
 <head>
 <title>Update Student Data</title>

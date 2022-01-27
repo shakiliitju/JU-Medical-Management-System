@@ -54,8 +54,8 @@
             <form action="/php/book.php" method="post">
                 <h3>book appointment</h3>
 
-                <!-- <h2>Patient ID</h2>
-                <input type="number" placeholder="patient id" name="P_ID" class="box"> -->
+                <h2>Patient ID</h2>
+                <input type="number" placeholder="patient id" name="P_ID" class="box" required>
 
 
                 <h2>Patient Name</h2>
