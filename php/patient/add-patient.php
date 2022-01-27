@@ -70,6 +70,9 @@
 
         <div class="row">
             <form action="/php/patient/add-patient-con.php" method="post">
+
+            <h2>Patient ID</h2>
+        <input type="number" placeholder="number" name="P_ID" class="" required>
                 
                 <h2>Patient Name</h2>
                 <input type="text" placeholder="patient name" name="P_Name" class="" required>

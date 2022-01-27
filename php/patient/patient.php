@@ -230,7 +230,7 @@
                     include 'db_conn.php';
 
 
-                    $sql = " SELECT P_ID,P_Name,Gender,Age,P_Type FROM patient LIMIT 5";
+                    $sql = " SELECT * FROM patient LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
 

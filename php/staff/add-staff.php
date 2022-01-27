@@ -66,9 +66,14 @@
 
         <form action="/php/staff/add-staff-con.php" method="post">
 
+        <div>
+        <h2>Staff ID</h2>
+        <input type="number" placeholder="number" name="S_ID" class="" required>
+        </div>
+
           <div>
             <h2>Staff Name</h2>
-            <input name="S_Name" type="text" class="form-control" placeholder="" required>
+            <input name="S_Name" type="text" class="form-control" placeholder="text" required>
           </div>
 
           <div>
