@@ -218,6 +218,7 @@
                 <thead>
                     <tr>
                         <th> Medicine_Code </th>
+                        <th> Medicine_Name </th>
                         <th> Quantity </th>
 
                     </tr>
@@ -228,7 +229,7 @@
                     include 'db_conn.php';
 
 
-                    $sql = " SELECT M_Code,Quantity FROM medicine LIMIT 5";
+                    $sql = " SELECT * FROM medicine LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                 
@@ -236,6 +237,7 @@
                     ?>
                         <tr>
                             <td><b><?php echo $Patient_data['M_Code']; ?></b></td>
+                            <td><?php echo $Patient_data['M_Name']; ?></td>
                             <td><?php echo $Patient_data['Quantity'];  ?></td>
                             <td style="width: 140px;">
 
