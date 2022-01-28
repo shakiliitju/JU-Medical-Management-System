@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <title>Ju Medical Center</title>
     <link rel="shortcut icon" href="https://juniv.edu/images/favicon.ico">
     <!-- fonts -->
@@ -68,6 +67,8 @@
 
 
         /* slidebar ends */
+
+
 
         table,
         th,
@@ -201,19 +202,20 @@
 
         <div class="row">
             <div style="margin-left: 50%; margin-top: 5%;">
-                <h2>Manage <b>Ambulence</b></h2>
+                <h2>Manage <b>Patient</b></h2>
             </div>
-            <div style="margin-left: 80%; margin-top: 3%;">
-                <button><a href="/php/Ambulence/add-ambulence.php">Add Ambulence</a></button>
+            <div style="margin-left: 82%; margin-top: 3%;">
+                <button><a href="add-patient.php">Add Patient</a></button>
             </div>
         </div>
     </div>
 
+
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
 
-        <!-- (A) SEARCH FORM -->
-        <form method="post" action="search.php">
+          <!-- (A) SEARCH FORM -->
+          <form method="post" action="search.php">
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
@@ -222,28 +224,34 @@
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>Ambulence_ID</th>
-                        <th>Ambulence_Status</th>
+                        <th> Patient_ID </th>
+                        <th> Patient_Name </th>
+                        <th> Gender </th>
+                        <th> Age </th>
+                        <th> Patient_Type </th>
                         <th> Operation </th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
+                    $search = $_POST['search'];
                     include 'db_conn.php';
-
-                    $sql = " SELECT * FROM ambulence LIMIT 5";
+                    $sql = "select * from patient where P_ID like '%$search%' OR P_Name like '%$search%' OR Gender like '%$search%' OR Age like '%$search%' OR P_Type like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
 
                     ?>
                         <tr>
-                            <td><b><?php echo $Patient_data['Amb_ID']; ?></b></td>
-                            <td><?php echo $Patient_data['Amb_Status'];  ?></td>
+                            <td><b><?php echo $Patient_data['P_ID'];  ?></b></td>
+                            <td><?php echo $Patient_data['P_Name'];  ?></td>
+                            <td><?php echo $Patient_data['Gender'];  ?></td>
+                            <td><?php echo $Patient_data['Age'];  ?></td>
+                            <td><?php echo $Patient_data['P_Type'];  ?></td>
                             <td style="width: 140px;">
 
-                                <button> <a href="/php/Ambulence/update.php?ID=<?php echo $Patient_data['Amb_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="/php/Ambulence/Delete.php?Amb_ID=<?php echo $Patient_data['Amb_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+                                <button> <a href="/php/patient/add-patient.php?P_ID=<?php echo $Patient_data['P_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/patient/Delete.php?P_ID=<?php echo $Patient_data['P_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
 
@@ -261,6 +269,7 @@
 
 
     </div>
+
 
 
 </body>

@@ -344,7 +344,7 @@
                         <th> Gender </th>
                         <th> Work_Day </th>
                         <th> Speciality </th>
-
+                        <th> Operation </th>
                     </tr>
                 </thead>
 

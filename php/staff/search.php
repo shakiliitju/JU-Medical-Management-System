@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-
     <title>Ju Medical Center</title>
     <link rel="shortcut icon" href="https://juniv.edu/images/favicon.ico">
+
+
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,12 +70,20 @@
 
         /* slidebar ends */
 
+
+
         table,
         th,
         td {
             border: 1px solid black;
             border-collapse: collapse;
         }
+
+        body {
+            background: rgba(96, 193, 138, 0.722);
+        }
+
+
 
         /* internal style */
 
@@ -197,14 +206,15 @@
 
     <!-- slidebar ends -->
 
+
     <div class="container">
 
         <div class="row">
             <div style="margin-left: 50%; margin-top: 5%;">
-                <h2>Manage <b>Ambulence</b></h2>
+                <h2>Manage <b>Staff</b></h2>
             </div>
-            <div style="margin-left: 80%; margin-top: 3%;">
-                <button><a href="/php/Ambulence/add-ambulence.php">Add Ambulence</a></button>
+            <div style="margin-left: 82%; margin-top: 3%;">
+                <button><a href="/php/staff/add-staff.php">Add Staff</a></button>
             </div>
         </div>
     </div>
@@ -212,8 +222,8 @@
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
 
-        <!-- (A) SEARCH FORM -->
-        <form method="post" action="search.php">
+           <!-- (A) SEARCH FORM -->
+           <form method="post" action="search.php">
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
@@ -222,29 +232,34 @@
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>Ambulence_ID</th>
-                        <th>Ambulence_Status</th>
+                        <th> Staff_ID </th>
+                        <th> Staff_Name </th>
+                        <th> Gender </th>
+                        <th> Work_Day </th>
                         <th> Operation </th>
+
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
+                     $search = $_POST['search'];
                     include 'db_conn.php';
-
-                    $sql = " SELECT * FROM ambulence LIMIT 5";
+                    $sql = "select * from staff where S_ID like '%$search%' OR S_Name like '%$search%'  OR Gender like '%$search%'  OR Work_Day like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
+        
 
                     ?>
                         <tr>
-                            <td><b><?php echo $Patient_data['Amb_ID']; ?></b></td>
-                            <td><?php echo $Patient_data['Amb_Status'];  ?></td>
+                            <td><b><?php echo $Patient_data['S_ID'];  ?></b></td>
+                            <td><?php echo $Patient_data['S_Name'];  ?></td>
+                            <td><?php echo $Patient_data['Gender'];  ?></td>
+                            <td><?php echo $Patient_data['Work_Day'];  ?></td>
                             <td style="width: 140px;">
 
-                                <button> <a href="/php/Ambulence/update.php?ID=<?php echo $Patient_data['Amb_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="/php/Ambulence/Delete.php?Amb_ID=<?php echo $Patient_data['Amb_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
-
+                                <button> <a href="/php/staff/add-staff.php?S_ID=<?php echo $Patient_data['S_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/staff/Delete.php?S_ID=<?php echo $Patient_data['S_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
                             </td>

@@ -270,11 +270,21 @@
 
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
+
+           <!-- (A) SEARCH FORM -->
+           <form method="post" action="search.php">
+                <input type="text" name="search" required />
+                <input type="submit" value="Search" />
+            </form>
+            <br>
+            
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
                         <th> Test_ID </th>
                         <th> Test_Name </th>
+                        <th> Test_Price </th>
+                        <th> Operation </th>
                     </tr>
                 </thead>
 
@@ -290,6 +300,7 @@
                         <tr>
                             <td><b><?php echo $Patient_data['T_ID'];  ?></b></td>
                             <td><?php echo $Patient_data['T_Name'];  ?></td>
+                            <td><?php echo $Patient_data['T_Price'];  ?></td>
 
                             <td style="width: 140px;">
 

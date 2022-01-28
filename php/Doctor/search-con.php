@@ -330,7 +330,7 @@
         <div style="margin-left: 20%; margin-top: 1%;">
 
             <!-- (A) SEARCH FORM -->
-            <form method="post" action="">
+            <form method="post" action="search-con.php">
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
@@ -344,7 +344,7 @@
                         <th> Gender </th>
                         <th> Work_Day </th>
                         <th> Speciality </th>
-
+                        <th> Operation </th>
                     </tr>
                 </thead>
 
