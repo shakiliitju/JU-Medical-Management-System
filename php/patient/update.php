@@ -2,7 +2,7 @@
 include_once 'db_conn.php';
 if (count($_POST) > 0) {
 
-  mysqli_query($conn, "UPDATE doctor set D_ID='" . $_POST['D_ID'] . "', D_Name='" . $_POST['D_Name'] . "' ,Gender='" . $_POST['Gender'] . "' ,Work_Day='" . $_POST['Work_Day'] . "' ,Speciality='" . $_POST['Speciality'] . "' WHERE D_ID='" . $_POST['D_ID'] . "'");
+  mysqli_query($conn, "UPDATE doctor set D_ID='" . $_POST['D_ID'] . "', D_Name='" . $_POST['D_Name'] . "' ,Work_Day='" . $_POST['Work_Day'] . "' ,Speciality='" . $_POST['Speciality'] . "' WHERE D_ID='" . $_POST['D_ID'] . "'");
   $message = "Record Modified Successfully";
 }
 $query = mysqli_query($conn, "SELECT * FROM doctor");
@@ -50,7 +50,6 @@ $Patient_data = mysqli_fetch_array($query);
         <h2>Doctor Name</h2>
         <input name="D_Name" type="text" class="form-control" value="<?php echo $Patient_data['D_Name']; ?>" required>
       </div>
-
 
       <div>
         <h2>Gender</h2>
