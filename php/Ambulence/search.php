@@ -218,7 +218,7 @@
                 <input type="submit" value="Search" />
             </form>
             <br>
-
+            
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
@@ -230,9 +230,9 @@
 
                 <tbody>
                     <?php
+                    $search = $_POST['search'];
                     include 'db_conn.php';
-
-                    $sql = " SELECT * FROM ambulence LIMIT 5";
+                    $sql = "select * from ambulence where Amb_ID like '%$search%' OR Amb_Status like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
 

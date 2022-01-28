@@ -43,7 +43,6 @@
             color: rgb(89, 161, 87);
         }
 
-        .slidebar ul {}
 
         .slidebar ul li {
 
@@ -87,7 +86,7 @@
             border: 2px solid black;
         }
 
-        tr {}
+
 
         th {
             padding: 7px;
@@ -211,12 +210,20 @@
 
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
+
+         <!-- (A) SEARCH FORM -->
+         <form method="post" action="search.php">
+                <input type="text" name="search" required />
+                <input type="submit" value="Search" />
+            </form>
+            <br>
+
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
                         <th>Bed_Number</th>
                         <th>Bed_Status</th>
-
+                        <th> Operation </th>
                     </tr>
                 </thead>
 

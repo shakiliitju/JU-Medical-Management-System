@@ -72,7 +72,10 @@
         <h2>Test Name</h2>
         <input name="T_Name" type="text" class="form-control" placeholder="" required>
       </div>
-
+      <div>
+        <h2>Test Price</h2>
+        <input type="number" placeholder="number" name="T_Price" class="" required>
+      </div>
       <br>
 
       <input type="submit" value="Submit" class="btn">

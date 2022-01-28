@@ -201,10 +201,10 @@
 
         <div class="row">
             <div style="margin-left: 50%; margin-top: 5%;">
-                <h2>Manage <b>Ambulence</b></h2>
+                <h2>Manage <b>Bed</b></h2>
             </div>
-            <div style="margin-left: 80%; margin-top: 3%;">
-                <button><a href="/php/Ambulence/add-ambulence.php">Add Ambulence</a></button>
+            <div style="margin-left: 83%; margin-top: 3%;">
+                <button><a href="/php/bed/add-bed.php">Add Bed</a></button>
             </div>
         </div>
     </div>
@@ -212,8 +212,8 @@
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
 
-        <!-- (A) SEARCH FORM -->
-        <form method="post" action="search.php">
+         <!-- (A) SEARCH FORM -->
+         <form method="post" action="search.php">
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
@@ -222,28 +222,30 @@
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>Ambulence_ID</th>
-                        <th>Ambulence_Status</th>
+                        <th>Bed_Number</th>
+                        <th>Bed_Status</th>
                         <th> Operation </th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
+                     $search = $_POST['search'];
                     include 'db_conn.php';
 
-                    $sql = " SELECT * FROM ambulence LIMIT 5";
+                    $sql = "select * from bed where Bed_Num like '%$search%' OR Bed_Status like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
+                   
 
                     ?>
                         <tr>
-                            <td><b><?php echo $Patient_data['Amb_ID']; ?></b></td>
-                            <td><?php echo $Patient_data['Amb_Status'];  ?></td>
+                            <td><b><?php echo $Patient_data['Bed_Num'];  ?></b></td>
+                            <td><?php echo $Patient_data['Bed_Status'];  ?></td>
                             <td style="width: 140px;">
 
-                                <button> <a href="/php/Ambulence/update.php?ID=<?php echo $Patient_data['Amb_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="/php/Ambulence/Delete.php?Amb_ID=<?php echo $Patient_data['Amb_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+                                <button> <a href="/php/bed/add-bed.php?ID=<?php echo $Patient_data['Bed_Num'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/bed/Delete.php?Bed_Num=<?php echo $Patient_data['Bed_Num']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
 

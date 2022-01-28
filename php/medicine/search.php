@@ -69,12 +69,15 @@
 
         /* slidebar ends */
 
+
+
         table,
         th,
         td {
             border: 1px solid black;
             border-collapse: collapse;
         }
+
 
         /* internal style */
 
@@ -201,10 +204,10 @@
 
         <div class="row">
             <div style="margin-left: 50%; margin-top: 5%;">
-                <h2>Manage <b>Ambulence</b></h2>
+                <h2>Manage <b>Medicine</b></h2>
             </div>
-            <div style="margin-left: 80%; margin-top: 3%;">
-                <button><a href="/php/Ambulence/add-ambulence.php">Add Ambulence</a></button>
+            <div style="margin-left: 81%; margin-top: 3%;">
+                <button><a href="/php/medicine/add-medicine.php">Add Medicine</a></button>
             </div>
         </div>
     </div>
@@ -212,8 +215,8 @@
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
 
-        <!-- (A) SEARCH FORM -->
-        <form method="post" action="search.php">
+         <!-- (A) SEARCH FORM -->
+         <form method="post" action="search.php">
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
@@ -222,29 +225,31 @@
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>Ambulence_ID</th>
-                        <th>Ambulence_Status</th>
+                        <th> Medicine_Code </th>
+                        <th> Medicine_Name </th>
+                        <th> Quantity </th>
                         <th> Operation </th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
-                    include 'db_conn.php';
-
-                    $sql = " SELECT * FROM ambulence LIMIT 5";
+                     $search = $_POST['search'];
+                     include 'db_conn.php';
+                     $sql = "select * from medicine where M_Code like '%$search%' OR M_Name like '%$search%' OR Quantity like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
+                
 
                     ?>
                         <tr>
-                            <td><b><?php echo $Patient_data['Amb_ID']; ?></b></td>
-                            <td><?php echo $Patient_data['Amb_Status'];  ?></td>
+                            <td><b><?php echo $Patient_data['M_Code']; ?></b></td>
+                            <td><?php echo $Patient_data['M_Name']; ?></td>
+                            <td><?php echo $Patient_data['Quantity'];  ?></td>
                             <td style="width: 140px;">
 
-                                <button> <a href="/php/Ambulence/update.php?ID=<?php echo $Patient_data['Amb_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="/php/Ambulence/Delete.php?Amb_ID=<?php echo $Patient_data['Amb_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
-
+                                <button> <a href="/php/medicine/add-medicine.php?M_Code=<?php echo $Patient_data['M_Code'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/medicine/Delete.php?M_Code=<?php echo $Patient_data['M_Code']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
                             </td>
