@@ -1,3 +1,14 @@
+<?php
+include_once 'db_conn.php';
+if (count($_POST) > 0) {
+
+  mysqli_query($conn, "UPDATE doctor set D_ID='" . $_POST['D_ID'] . "', D_Name='" . $_POST['D_Name'] . "' ,Work_Day='" . $_POST['Work_Day'] . "' ,Speciality='" . $_POST['Speciality'] . "' WHERE D_ID='" . $_POST['D_ID'] . "'");
+  $message = "Record Modified Successfully";
+}
+$query = mysqli_query($conn, "SELECT * FROM doctor");
+$Patient_data = mysqli_fetch_array($query);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,17 +33,19 @@
     <!-- Area Chart -->
 
 
-    <div>
-      <h1>Update Doctor</h1>
-    </div>
-
-    <br>
-
-    <form action="/php/Doctor/update-doctor-con.php" method="post">
+    <form action="" method="post">
       <div><?php if (isset($message)) {
               echo $message;
             } ?>
       </div>
+
+      <div>
+        <h2>Doctor ID</h2>
+        <input type="hidden" name="D_ID" class="form-control" value="<?php echo $Patient_data['D_ID']; ?>">
+        <input type="number" name="D_ID" value="<?php echo $Patient_data['D_ID']; ?>">
+        <br>
+      </div>
+
       <div>
         <h2>Doctor Name</h2>
         <input name="D_Name" type="text" class="form-control" value="<?php echo $Patient_data['D_Name']; ?>" required>
@@ -46,7 +59,7 @@
       </div>
 
       <div>
-        <h2>Work_Day:</h2>
+        <h2>Work_Day</h2>
         <input type="date" id="day" class="form-control" name="Work_Day" value="<?php echo $Patient_data['Work_Day']; ?>" required>
       </div>
 
@@ -56,7 +69,7 @@
       </div>
       <br>
 
-      <input type="submit" value="Update Doctor" class="btn">
+      <input type="submit" value="Update" class="btn">
 
     </form>
 
