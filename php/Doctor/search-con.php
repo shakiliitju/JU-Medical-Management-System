@@ -330,7 +330,7 @@
         <div style="margin-left: 20%; margin-top: 1%;">
 
             <!-- (A) SEARCH FORM -->
-            <form method="post" action="search-con.php">
+            <form method="post" action="">
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
@@ -350,9 +350,9 @@
 
                 <tbody>
                     <?php
+                    $search = $_POST['search'];
                     include 'db_conn.php';
-
-                    $sql = " SELECT * FROM doctor LIMIT 5";
+                    $sql = "select * from doctor where D_ID like '%$search%' OR D_Name like '%$search%' OR Gender like '%$search%' OR Work_Day like '%$search%' OR Speciality like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
 
