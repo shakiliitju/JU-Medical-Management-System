@@ -69,15 +69,12 @@
 
         /* slidebar ends */
 
-
-
         table,
         th,
         td {
             border: 1px solid black;
             border-collapse: collapse;
         }
-
 
         /* internal style */
 
@@ -207,18 +204,16 @@
 
         <div class="row">
             <div style="margin-left: 50%; margin-top: 5%;">
-                <h2>Manage <b>Medicine</b></h2>
+                <h2>Manage <b>Bed</b></h2>
             </div>
-            <div style="margin-left: 81%; margin-top: 3%;">
-                <button><a href="/php/medicine/add-medicine.php">Add Medicine</a></button>
+            <div style="margin-left: 83%; margin-top: 3%;">
+                <button><a href="/php/bed/add-bed.php">Add Bed</a></button>
             </div>
         </div>
     </div>
 
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
-<<<<<<< Updated upstream
-=======
 
             <!-- (A) SEARCH FORM -->
             <form method="post" action="search.php">
@@ -227,37 +222,36 @@
             </form>
             <br>
 
->>>>>>> Stashed changes
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th> Medicine_Code </th>
-                        <th> Quantity </th>
-
+                        <th>Bed_Number</th>
+                        <th>Date</th>
+                        <th>Bed_Status</th>
+                        <th> Operation </th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
+                    $search = $_POST['search'];
                     include 'db_conn.php';
-                    $M_Code = 0;
 
-                    $sql = " SELECT M_Code,Quantity FROM medicine LIMIT 5";
+                    $sql = "select * from bed where Bed_Num like '%$search%' OR Date like '%$search%' OR Bed_Status like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-<<<<<<< Updated upstream
-                        $M_Code = $M_Code + 1;
-=======
 
->>>>>>> Stashed changes
 
                     ?>
                         <tr>
-                            <td><b><?php echo $M_Code  ?></b></td>
-                            <td><?php echo $Patient_data['Quantity'];  ?></td>
+                            <td><b><?php echo $Patient_data['Bed_Num'];  ?></b></td>
+                            <td><?php echo $Patient_data['Date'];  ?></td>
+                            <td><?php echo $Patient_data['Bed_Status'];  ?></td>
                             <td style="width: 140px;">
-                                <button> <a href="/php/medicine/add-medicine.php?ID=<?php echo $Patient_data['M_Code'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="medicine.php?ID=<?php echo $Patient_data['M_Code']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
+                                <button> <a href="/php/bed/add-bed.php?ID=<?php echo $Patient_data['Bed_Num'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/bed/Delete.php?Bed_Num=<?php echo $Patient_data['Bed_Num']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
 
 
                             </td>

@@ -143,7 +143,11 @@
             border: 2px solid black;
         }
 
+<<<<<<< Updated upstream
         tr {}
+=======
+
+>>>>>>> Stashed changes
 
         th {
             padding: 7px;
@@ -201,6 +205,9 @@
             ADMIN
         </header>
         <ul>
+            <li>
+                <a href="/php/home.php"><i class="fas fa-home"></i> Home</a>
+            </li>
             <li>
                 <a href="/php/Doctor/doctor.php"><i class="fas fa-user-md"></i> Doctors</a>
             </li>
@@ -270,6 +277,17 @@
 
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
+<<<<<<< Updated upstream
+=======
+
+            <!-- (A) SEARCH FORM -->
+            <form method="post" action="search.php">
+                <input type="text" name="search" required />
+                <input type="submit" value="Search" />
+            </form>
+            <br>
+
+>>>>>>> Stashed changes
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
@@ -281,9 +299,14 @@
                 <tbody>
                     <?php
                     include 'db_conn.php';
+<<<<<<< Updated upstream
                     $T_ID = 0;
                     $sql = " SELECT * FROM test ";
                     $sql = " SELECT T_ID,T_Name FROM test LIMIT 5";
+=======
+
+                    $sql = " SELECT * FROM test LIMIT 5";
+>>>>>>> Stashed changes
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                         $T_ID = $T_ID + 1;

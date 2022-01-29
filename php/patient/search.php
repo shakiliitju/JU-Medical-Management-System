@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <title>Ju Medical Center</title>
     <link rel="shortcut icon" href="https://juniv.edu/images/favicon.ico">
     <!-- fonts -->
@@ -77,7 +76,6 @@
             border: 1px solid black;
             border-collapse: collapse;
         }
-
 
         /* internal style */
 
@@ -207,18 +205,17 @@
 
         <div class="row">
             <div style="margin-left: 50%; margin-top: 5%;">
-                <h2>Manage <b>Medicine</b></h2>
+                <h2>Manage <b>Patient</b></h2>
             </div>
-            <div style="margin-left: 81%; margin-top: 3%;">
-                <button><a href="/php/medicine/add-medicine.php">Add Medicine</a></button>
+            <div style="margin-left: 82%; margin-top: 3%;">
+                <button><a href="add-patient.php">Add Patient</a></button>
             </div>
         </div>
     </div>
 
+
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
-<<<<<<< Updated upstream
-=======
 
             <!-- (A) SEARCH FORM -->
             <form method="post" action="search.php">
@@ -227,37 +224,40 @@
             </form>
             <br>
 
->>>>>>> Stashed changes
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th> Medicine_Code </th>
-                        <th> Quantity </th>
-
+                        <th> Patient_ID </th>
+                        <th> Patient_Name </th>
+                        <th> Gender </th>
+                        <th> Age </th>
+                        <th> Patient_Type </th>
+                        <th> Admit Date </th>
+                        <th> Operation </th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
+                    $search = $_POST['search'];
                     include 'db_conn.php';
-                    $M_Code = 0;
-
-                    $sql = " SELECT M_Code,Quantity FROM medicine LIMIT 5";
+                    $sql = "select * from patient where P_ID like '%$search%' OR P_Name like '%$search%' OR Gender like '%$search%' OR Age like '%$search%' OR P_Type like '%$search%' OR A_Date like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-<<<<<<< Updated upstream
-                        $M_Code = $M_Code + 1;
-=======
-
->>>>>>> Stashed changes
 
                     ?>
                         <tr>
-                            <td><b><?php echo $M_Code  ?></b></td>
-                            <td><?php echo $Patient_data['Quantity'];  ?></td>
+                            <td><b><?php echo $Patient_data['P_ID'];  ?></b></td>
+                            <td><?php echo $Patient_data['P_Name'];  ?></td>
+                            <td><?php echo $Patient_data['Gender'];  ?></td>
+                            <td><?php echo $Patient_data['Age'];  ?></td>
+                            <td><?php echo $Patient_data['P_Type'];  ?></td>
+                            <td><?php echo $Patient_data['A_Date'];  ?></td>
                             <td style="width: 140px;">
-                                <button> <a href="/php/medicine/add-medicine.php?ID=<?php echo $Patient_data['M_Code'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="medicine.php?ID=<?php echo $Patient_data['M_Code']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
+                                <button> <a href="/php/patient/add-patient.php?P_ID=<?php echo $Patient_data['P_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/patient/Delete.php?P_ID=<?php echo $Patient_data['P_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
 
 
                             </td>
@@ -274,6 +274,7 @@
 
 
     </div>
+
 
 
 </body>

@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-
     <title>Ju Medical Center</title>
     <link rel="shortcut icon" href="https://juniv.edu/images/favicon.ico">
+
+
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,6 +78,11 @@
             border: 1px solid black;
             border-collapse: collapse;
         }
+
+        body {
+            background: rgba(96, 193, 138, 0.722);
+        }
+
 
 
         /* internal style */
@@ -203,22 +209,21 @@
 
     <!-- slidebar ends -->
 
+
     <div class="container">
 
         <div class="row">
             <div style="margin-left: 50%; margin-top: 5%;">
-                <h2>Manage <b>Medicine</b></h2>
+                <h2>Manage <b>Staff</b></h2>
             </div>
-            <div style="margin-left: 81%; margin-top: 3%;">
-                <button><a href="/php/medicine/add-medicine.php">Add Medicine</a></button>
+            <div style="margin-left: 82%; margin-top: 3%;">
+                <button><a href="/php/staff/add-staff.php">Add Staff</a></button>
             </div>
         </div>
     </div>
 
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
-<<<<<<< Updated upstream
-=======
 
             <!-- (A) SEARCH FORM -->
             <form method="post" action="search.php">
@@ -227,37 +232,37 @@
             </form>
             <br>
 
->>>>>>> Stashed changes
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th> Medicine_Code </th>
-                        <th> Quantity </th>
+                        <th> Staff_ID </th>
+                        <th> Staff_Name </th>
+                        <th> Gender </th>
+                        <th> Work_Day </th>
+                        <th> Operation </th>
 
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
+                    $search = $_POST['search'];
                     include 'db_conn.php';
-                    $M_Code = 0;
-
-                    $sql = " SELECT M_Code,Quantity FROM medicine LIMIT 5";
+                    $sql = "select * from staff where S_ID like '%$search%' OR S_Name like '%$search%'  OR Gender like '%$search%'  OR Work_Day like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-<<<<<<< Updated upstream
-                        $M_Code = $M_Code + 1;
-=======
 
->>>>>>> Stashed changes
 
                     ?>
                         <tr>
-                            <td><b><?php echo $M_Code  ?></b></td>
-                            <td><?php echo $Patient_data['Quantity'];  ?></td>
+                            <td><b><?php echo $Patient_data['S_ID'];  ?></b></td>
+                            <td><?php echo $Patient_data['S_Name'];  ?></td>
+                            <td><?php echo $Patient_data['Gender'];  ?></td>
+                            <td><?php echo $Patient_data['Work_Day'];  ?></td>
                             <td style="width: 140px;">
-                                <button> <a href="/php/medicine/add-medicine.php?ID=<?php echo $Patient_data['M_Code'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="medicine.php?ID=<?php echo $Patient_data['M_Code']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
+                                <button> <a href="/php/staff/add-staff.php?S_ID=<?php echo $Patient_data['S_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/staff/Delete.php?S_ID=<?php echo $Patient_data['S_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
                             </td>
