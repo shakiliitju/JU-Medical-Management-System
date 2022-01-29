@@ -2,10 +2,10 @@
 include_once 'db_conn.php';
 if (count($_POST) > 0) {
 
-  mysqli_query($conn, "UPDATE doctor set D_ID='" . $_POST['D_ID'] . "', D_Name='" . $_POST['D_Name'] . "' ,Work_Day='" . $_POST['Work_Day'] . "' ,Speciality='" . $_POST['Speciality'] . "' WHERE D_ID='" . $_POST['D_ID'] . "'");
+  mysqli_query($conn, "UPDATE staff set S_ID='" . $_POST['S_ID'] . "', S_Name='" . $_POST['S_Name'] . "' ,Gender='" . $_POST['Gender'] . "' ,Work_Day='" . $_POST['Work_Day'] ."' WHERE D_ID='" . $_POST['D_ID'] . "'");
   $message = "Record Modified Successfully";
 }
-$query = mysqli_query($conn, "SELECT * FROM doctor");
+$query = mysqli_query($conn, "SELECT * FROM staff");
 $Patient_data = mysqli_fetch_array($query);
 
 ?>
@@ -40,15 +40,15 @@ $Patient_data = mysqli_fetch_array($query);
       </div>
 
       <div>
-        <h2>Doctor ID</h2>
-        <input type="hidden" name="D_ID" class="form-control" value="<?php echo $Patient_data['D_ID']; ?>">
-        <input type="number" name="D_ID" value="<?php echo $Patient_data['D_ID']; ?>">
+        <h2>Staff ID</h2>
+        <input type="hidden" name="S_ID" class="form-control" value="<?php echo $Patient_data['S_ID']; ?>" required>
+        <input type="number" name="S_ID" value="<?php echo $Patient_data['S_ID']; ?>" required>
         <br>
       </div>
 
       <div>
-        <h2>Doctor Name</h2>
-        <input name="D_Name" type="text" class="form-control" value="<?php echo $Patient_data['D_Name']; ?>" required>
+        <h2>Staff Name</h2>
+        <input name="S_Name" type="text" class="form-control" value="<?php echo $Patient_data['S_Name']; ?>" required>
       </div>
 
       <div>
@@ -61,11 +61,6 @@ $Patient_data = mysqli_fetch_array($query);
       <div>
         <h2>Work_Day</h2>
         <input type="date" id="day" class="form-control" name="Work_Day" value="<?php echo $Patient_data['Work_Day']; ?>" required>
-      </div>
-
-      <div>
-        <h2>Speciality</h2>
-        <input name="Speciality" type="text" class="form-control" value="<?php echo $Patient_data['Speciality']; ?>" required>
       </div>
       <br>
 

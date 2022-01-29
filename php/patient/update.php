@@ -76,7 +76,7 @@ $Patient_data = mysqli_fetch_array($query);
 
       <div>
         <h3>Admit Date</h3>
-        <input type="date" id="day"  value="<?php echo $Patient_data['A_Date']; ?>" class="" name="A_Date">
+        <input type="date" id="day"  value="<?php echo $Patient_data['A_Date']; ?>" class="" name="A_Date" required>
       </div>
       <br>
 
