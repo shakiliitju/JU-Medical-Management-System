@@ -227,98 +227,119 @@
      <div class="mainpart">
 
           <div class="infocard">
-                <h1>JU Medical Center</h1>
-               <div class="cardspecific" style="width: 26%;">
-                    Doctors
-                    <div class="number">
-                         <?php
-                         include 'db_conn.php';
-                         $sql = "select count(*) as total from doctor";
-                         $result = mysqli_query($conn, $sql);
-                         $data = mysqli_fetch_assoc($result);
-                         echo $data['total'];
-                         ?>
-                    </div>
+               <h1>JU Medical Center</h1>
 
-               </div>
-               <div class="cardspecific" style="width: 26%;">
-                    Staffs
+               <a href="/php/Doctor/doctor.php" rel="">
+                    <div class="cardspecific" style="width: 26%;">
+                         Doctors
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from doctor";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
 
-                    <div class="number">
-                         <?php
-                         include 'db_conn.php';
-                         $sql = "select count(*) as total from staff";
-                         $result = mysqli_query($conn, $sql);
-                         $data = mysqli_fetch_assoc($result);
-                         echo $data['total'];
-                         ?>
                     </div>
-               </div>
-               <div class="cardspecific" style="width: 26%;">
-                    patients
+               </a>
 
-                    <div class="number">
-                         <?php
-                         include 'db_conn.php';
-                         $sql = "select count(*) as total from patient";
-                         $result = mysqli_query($conn, $sql);
-                         $data = mysqli_fetch_assoc($result);
-                         echo $data['total'];
-                         ?>
-                    </div>
-               </div>
-               <div class="cardspecific" style="width: 18%;">
-                    Test
+               <a href="/php/staff/staff.php" rel="">
+                    <div class="cardspecific" style="width: 26%;">
+                         Staffs
 
-                    <div class="number">
-                         <?php
-                         include 'db_conn.php';
-                         $sql = "select count(*) as total from test";
-                         $result = mysqli_query($conn, $sql);
-                         $data = mysqli_fetch_assoc($result);
-                         echo $data['total'];
-                         ?>
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from staff";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
                     </div>
-               </div>
-               <div class="cardspecific" style="width: 18%;">
-                    Bed
+               </a>
 
-                    <div class="number">
-                         <?php
-                         include 'db_conn.php';
-                         $sql = "select count(*) as total from bed";
-                         $result = mysqli_query($conn, $sql);
-                         $data = mysqli_fetch_assoc($result);
-                         echo $data['total'];
-                         ?>
-                    </div>
-               </div>
-               <div class="cardspecific" style="width: 18%;">
-                    Ambulance
+               <a href="/php/patient/patient.php" rel="">
+                    <div class="cardspecific" style="width: 26%;">
+                         patients
 
-                    <div class="number">
-                         <?php
-                         include 'db_conn.php';
-                         $sql = "select count(*) as total from ambulence";
-                         $result = mysqli_query($conn, $sql);
-                         $data = mysqli_fetch_assoc($result);
-                         echo $data['total'];
-                         ?>
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from patient";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
                     </div>
-               </div>
-               <div class="cardspecific" style="width: 18%;">
-                    Medicine
+               </a>
 
-                    <div class="number">
-                         <?php
-                         include 'db_conn.php';
-                         $sql = "select count(*) as total from medicine";
-                         $result = mysqli_query($conn, $sql);
-                         $data = mysqli_fetch_assoc($result);
-                         echo $data['total'];
-                         ?>
+               <a href="/php/test/test.php" rel="">
+                    <div class="cardspecific" style="width: 18%;">
+                         Test
+
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from test";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
                     </div>
-               </div>
+               </a>
+
+               <a href="/php/bed/bed.php" rel="">
+                    <div class="cardspecific" style="width: 18%;">
+                         Bed
+
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from bed";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
+                    </div>
+               </a>
+
+               <a href="/php/Ambulence/ambulence.php" rel="">
+                    <div class="cardspecific" style="width: 18%;">
+                         Ambulance
+
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from ambulence";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
+                    </div>
+               </a>
+
+               <a href="/php/medicine/medicine.php" rel="">
+                    <div class="cardspecific" style="width: 18%;">
+                         Medicine
+
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from medicine";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
+                    </div>
+               </a>
 
           </div>
 
@@ -329,7 +350,7 @@
 
 
      <div class="log">
-          
+
           <h3>
                <a href="/php/login.php">
                     LOG OUT
