@@ -229,6 +229,7 @@
                         <th> Gender </th>
                         <th> Age </th>
                         <th> Patient_Type </th>
+                        <th> Admit Date </th>
                         <th> Operation </th>
                     </tr>
                 </thead>
@@ -237,7 +238,7 @@
                     <?php
                     $search = $_POST['search'];
                     include 'db_conn.php';
-                    $sql = "select * from patient where P_ID like '%$search%' OR P_Name like '%$search%' OR Gender like '%$search%' OR Age like '%$search%' OR P_Type like '%$search%'";
+                    $sql = "select * from patient where P_ID like '%$search%' OR P_Name like '%$search%' OR Gender like '%$search%' OR Age like '%$search%' OR P_Type like '%$search%' OR A_Date like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
 
@@ -248,6 +249,7 @@
                             <td><?php echo $Patient_data['Gender'];  ?></td>
                             <td><?php echo $Patient_data['Age'];  ?></td>
                             <td><?php echo $Patient_data['P_Type'];  ?></td>
+                            <td><?php echo $Patient_data['A_Date'];  ?></td>
                             <td style="width: 140px;">
 
                                 <button> <a href="/php/patient/add-patient.php?P_ID=<?php echo $Patient_data['P_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>

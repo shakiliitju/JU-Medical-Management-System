@@ -229,6 +229,7 @@
                         <th> Gender </th>
                         <th> Age </th>
                         <th> Patient_Type </th>
+                        <th> Admit Date </th>
                         <th> Operation </th>
 
                     </tr>
@@ -250,6 +251,7 @@
                             <td><?php echo $Patient_data['Gender'];  ?></td>
                             <td><?php echo $Patient_data['Age'];  ?></td>
                             <td><?php echo $Patient_data['P_Type'];  ?></td>
+                            <td><?php echo $Patient_data['A_Date'];  ?></td>
                             <td style="width: 140px;">
 
                                 <button> <a href="/php/patient/add-patient.php?P_ID=<?php echo $Patient_data['P_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>

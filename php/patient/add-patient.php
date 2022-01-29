@@ -91,6 +91,10 @@
           <option value="Staff">
         </datalist>
 
+      
+        <h2>Admit Date</h2>
+        <input type="date" id="day" class="" name="A_Date">
+
 
         <input type="submit" value="Add Patient" class="btn">
       </form>
