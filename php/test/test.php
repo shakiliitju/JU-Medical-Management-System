@@ -282,7 +282,7 @@
                     <tr>
                         <th> Test_ID </th>
                         <th> Test_Name </th>
-                        <th> Test_Price </th>
+                        <th> Test_Price (TK) </th>
                         <th> Operation </th>
                     </tr>
                 </thead>
