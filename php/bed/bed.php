@@ -144,6 +144,9 @@
         </header>
         <ul>
             <li>
+                <a href="/php/home.php"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
                 <a href="/php/Doctor/doctor.php"><i class="fas fa-user-md"></i> Doctors</a>
             </li>
             <li>
@@ -211,6 +214,7 @@
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
 
+
          <!-- (A) SEARCH FORM -->
          <form method="post" action="search.php">
                 <input type="text" name="search" required />
@@ -235,7 +239,6 @@
                     $sql = " SELECT * FROM bed LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                   
 
                     ?>
                         <tr>

@@ -202,6 +202,9 @@
         </header>
         <ul>
             <li>
+                <a href="/php/home.php"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
                 <a href="/php/Doctor/doctor.php"><i class="fas fa-user-md"></i> Doctors</a>
             </li>
             <li>
@@ -271,8 +274,9 @@
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
 
-           <!-- (A) SEARCH FORM -->
-           <form method="post" action="search.php">
+            <!-- (A) SEARCH FORM -->
+            <form method="post" action="search.php">
+
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
@@ -290,7 +294,8 @@
 
                 <tbody>
                     <?php
-                     $search = $_POST['search'];
+                    $search = $_POST['search'];
+
                     include 'db_conn.php';
                     $sql = "select * from test where T_ID like '%$search%' OR T_Name like '%$search%' OR T_Price like '%$search%'";
                     $query = mysqli_query($conn, $sql);

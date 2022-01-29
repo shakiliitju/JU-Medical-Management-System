@@ -148,6 +148,9 @@
         </header>
         <ul>
             <li>
+                <a href="/php/home.php"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
                 <a href="/php/Doctor/doctor.php"><i class="fas fa-user-md"></i> Doctors</a>
             </li>
             <li>
@@ -217,6 +220,7 @@
 
          <!-- (A) SEARCH FORM -->
          <form method="post" action="search.php">
+
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
@@ -234,12 +238,13 @@
 
                 <tbody>
                     <?php
+
                      $search = $_POST['search'];
                      include 'db_conn.php';
                      $sql = "select * from medicine where M_Code like '%$search%' OR M_Name like '%$search%' OR Quantity like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                
+          
 
                     ?>
                         <tr>
