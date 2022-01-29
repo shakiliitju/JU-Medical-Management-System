@@ -80,7 +80,7 @@
 
           .infocard {
                margin: 30px;
-               margin-top: 90px;
+               margin-top: 20px;
                width: 80%;
                height: 580px;
                position: fixed;
@@ -227,10 +227,9 @@
      <div class="mainpart">
 
           <div class="infocard">
-
+                <h1>JU Medical Center</h1>
                <div class="cardspecific" style="width: 26%;">
                     Doctors
-
                     <div class="number">
                          <?php
                          include 'db_conn.php';
@@ -330,6 +329,7 @@
 
 
      <div class="log">
+          
           <h3>
                <a href="/php/login.php">
                     LOG OUT
