@@ -77,6 +77,10 @@
                     <option value="Staff">
                 </datalist>
 
+                <h2>Admit Date</h2>
+                <input type="date" id="day" class="box" name="A_Date">
+
+
                 <!-- <input type="text" placeholder="patient type" name="P_Type" class="box" required> -->
 
                 <input type="submit" value="book now" class="btn">

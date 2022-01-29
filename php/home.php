@@ -142,7 +142,7 @@
           .log h3:hover {
                transition: .5s;
                transform: scale(1.1);
-               background: rgb(22, 122, 17);
+               background: red;
 
           }
      </style>
