@@ -41,8 +41,6 @@
             color: rgb(89, 161, 87);
         }
 
-        .slidebar ul {}
-
         .slidebar ul li {
 
             list-style: none;
@@ -158,7 +156,6 @@
             color: rgb(89, 161, 87);
         }
 
-        .slidebar ul {}
 
         .slidebar ul li {
 
@@ -296,7 +293,7 @@
             <style>
                 .logout {
                     text-align: center;
-                    margin-top: 50px;
+                    margin-top: 10px;
                     font-family: 'Mochiy Pop P One', sans-serif;
                     font-weight: bolder;
                 }
