@@ -5,7 +5,7 @@ if (count($_POST) > 0) {
   mysqli_query($conn, "UPDATE medicine set M_Code='" . $_POST['M_Code'] . "', M_Name='" . $_POST['M_Name'] . "' ,Quantity='" . $_POST['Quantity'] . "' WHERE M_Code='" . $_POST['M_Code'] . "'");
   $message = "Record Modified Successfully";
 }
-$query = mysqli_query($conn, "SELECT * FROM medicine");
+$query = mysqli_query($conn, "SELECT * FROM medicine WHERE M_Code='" . $_GET['M_Code'] . "'");
 $Patient_data = mysqli_fetch_array($query);
 
 ?>

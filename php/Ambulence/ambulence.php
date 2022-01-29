@@ -247,7 +247,7 @@
                             <td><?php echo $Patient_data['Amb_Status'];  ?></td>
                             <td style="width: 140px;">
 
-                                <button> <a href="/php/Ambulence/update.php?ID=<?php echo $Patient_data['Amb_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button> <a href="/php/Ambulence/update.php?Amb_ID=<?php echo $Patient_data['Amb_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
                                 <button><a href="/php/Ambulence/Delete.php?Amb_ID=<?php echo $Patient_data['Amb_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
