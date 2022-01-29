@@ -249,7 +249,7 @@
                             <td><?php echo $Patient_data['Quantity'];  ?></td>
                             <td style="width: 140px;">
 
-                                <button> <a href="/php/medicine/add-medicine.php?M_Code=<?php echo $Patient_data['M_Code'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button> <a href="/php/medicine/update.php?M_Code=<?php echo $Patient_data['M_Code'];  ?>" class="btn btn-success"><b>Update</b></a></button>
                                 <button><a href="/php/medicine/Delete.php?M_Code=<?php echo $Patient_data['M_Code']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
