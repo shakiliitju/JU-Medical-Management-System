@@ -2,10 +2,10 @@
 include_once 'db_conn.php';
 if (count($_POST) > 0) {
 
-  mysqli_query($conn, "UPDATE doctor set D_ID='" . $_POST['D_ID'] . "', D_Name='" . $_POST['D_Name'] . "' ,Work_Day='" . $_POST['Work_Day'] . "' ,Speciality='" . $_POST['Speciality'] . "' WHERE D_ID='" . $_POST['D_ID'] . "'");
+  mysqli_query($conn, "UPDATE medicine set M_Code='" . $_POST['M_Code'] . "', M_Name='" . $_POST['M_Name'] . "' ,Quantity='" . $_POST['Quantity'] . "' WHERE M_Code='" . $_POST['M_Code'] . "'");
   $message = "Record Modified Successfully";
 }
-$query = mysqli_query($conn, "SELECT * FROM doctor");
+$query = mysqli_query($conn, "SELECT * FROM medicine");
 $Patient_data = mysqli_fetch_array($query);
 
 ?>
@@ -40,33 +40,23 @@ $Patient_data = mysqli_fetch_array($query);
       </div>
 
       <div>
-        <h2>Doctor ID</h2>
-        <input type="hidden" name="D_ID" class="form-control" value="<?php echo $Patient_data['D_ID']; ?>">
-        <input type="number" name="D_ID" value="<?php echo $Patient_data['D_ID']; ?>">
+        <h2>Medicine Code</h2>
+        <input type="hidden" name="M_Code" class="form-control" value="<?php echo $Patient_data['M_Code']; ?>">
+        <input type="number" name="M_Code" value="<?php echo $Patient_data['M_Code']; ?>">
         <br>
       </div>
 
       <div>
-        <h2>Doctor Name</h2>
-        <input name="D_Name" type="text" class="form-control" value="<?php echo $Patient_data['D_Name']; ?>" required>
+        <h2>Medicine Name</h2>
+        <input name="M_Name" type="text" class="form-control" value="<?php echo $Patient_data['M_Name']; ?>" required>
       </div>
 
       <div>
-        <h2>Gender</h2>
-        <label for="male" class="form-control"><input type="radio" name="Gender" value="<?php echo $Patient_data['Gender']; ?>" id="male" /> Male</label>
-        <label for="female" class="form-control"><input type="radio" name="Gender" value="<?php echo $Patient_data['Gender']; ?>" id="female" /> Female</label>
-        <label for="others" class="form-control"><input type="radio" name="Gender" value="<?php echo $Patient_data['Gender']; ?>" id="others" /> Others</label>
+        <h2>Quantity</h2>
+        <input type="number" name="Quantity" value="<?php echo $Patient_data['Quantity']; ?>">
+        <br>
       </div>
-
-      <div>
-        <h2>Work_Day</h2>
-        <input type="date" id="day" class="form-control" name="Work_Day" value="<?php echo $Patient_data['Work_Day']; ?>" required>
-      </div>
-
-      <div>
-        <h2>Speciality</h2>
-        <input name="Speciality" type="text" class="form-control" value="<?php echo $Patient_data['Speciality']; ?>" required>
-      </div>
+    
       <br>
 
       <input type="submit" value="Update" class="btn">
