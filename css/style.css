@@ -113,7 +113,11 @@ section:nth-child(even){
 }
 
 .header .navbar a:hover{
-    color: var(--green);
+    color: white;
+    padding: 5px;
+    background-color: #8CD2AB;
+    border-radius: 20%;
+    font-weight: 700;
 }
 
 #menu-btn{

@@ -43,7 +43,6 @@
             color: rgb(89, 161, 87);
         }
 
-        .slidebar ul {}
 
         .slidebar ul li {
 
@@ -90,7 +89,6 @@
             border: 2px solid black;
         }
 
-        tr {}
 
         th {
             padding: 7px;
@@ -148,6 +146,9 @@
         </header>
         <ul>
             <li>
+                <a href="/php/home.php"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
                 <a href="/php/Doctor/doctor.php"><i class="fas fa-user-md"></i> Doctors</a>
             </li>
             <li>
@@ -179,7 +180,7 @@
             <style>
                 .logout {
                     text-align: center;
-                    margin-top: 50px;
+                    margin-top: 10px;
                     font-family: 'Mochiy Pop P One', sans-serif;
                     font-weight: bolder;
                 }
@@ -217,6 +218,7 @@
 
          <!-- (A) SEARCH FORM -->
          <form method="post" action="search.php">
+
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
@@ -234,12 +236,13 @@
 
                 <tbody>
                     <?php
+
                      $search = $_POST['search'];
                      include 'db_conn.php';
                      $sql = "select * from medicine where M_Code like '%$search%' OR M_Name like '%$search%' OR Quantity like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                
+          
 
                     ?>
                         <tr>
