@@ -6,7 +6,8 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>ADMIN PAGE</title>
+     <title>Ju Medical Center</title>
+     <link rel="shortcut icon" href="https://juniv.edu/images/favicon.ico">
      <!-- fonts -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,7 +91,7 @@
           }
 
           .cardspecific {
-               height: 190px;
+               height: 160px;
                float: left;
                margin: 20px;
                border: solid black 5px;
@@ -100,7 +101,7 @@
                font-size: 30px;
                font-family: 'Mochiy Pop P One', sans-serif;
                padding: 10px;
-               padding-top: 20px;
+               padding-top: 10px;
 
           }
 
@@ -114,13 +115,13 @@
 
           .number {
                font-size: 25px;
-               padding-top: 60px;
+               padding-top: 40px;
                color: rgb(85, 12, 99);
           }
 
 
           /* logout button */
-          .log {}
+
 
           .log h3 {
                position: fixed;
@@ -191,30 +192,30 @@
                <li>
                     <a href="/php/medicine/medicine.php"><i class="fas fa-medkit"></i> Medicine</a>
                </li>
-          </ul> 
-          
-          <!-- logoutbutton -->
-               <div>
-                    <style>
-                         .logout {
-                              text-align: center;
-                              margin-top: 50px;
-                              font-family: 'Mochiy Pop P One', sans-serif;
-                              font-weight: bolder;
-                         }
+          </ul>
 
-                         .logout:hover {
-                              transform: scale(1.2);
-                              color: red;
-                              transition: 1s;
-                         }
-                    </style>
-                    <a style="text-decoration: none;" href="/php/index.php">
-                         <div class="logout">
-                              Log Out
-                         </div>
-                    </a>
-               </div>
+          <!-- logoutbutton -->
+          <div>
+               <style>
+                    .logout {
+                         text-align: center;
+                         margin-top: 50px;
+                         font-family: 'Mochiy Pop P One', sans-serif;
+                         font-weight: bolder;
+                    }
+
+                    .logout:hover {
+                         transform: scale(1.2);
+                         color: red;
+                         transition: 1s;
+                    }
+               </style>
+               <a style="text-decoration: none;" href="/php/index.php">
+                    <div class="logout">
+                         Log Out
+                    </div>
+               </a>
+          </div>
 
      </div>
 
@@ -228,7 +229,13 @@
                     Doctors
 
                     <div class="number">
-                         Number
+                         <?php
+                         include 'db_conn.php';
+                         $sql = "select count(*) as total from doctor";
+                         $result = mysqli_query($conn, $sql);
+                         $data = mysqli_fetch_assoc($result);
+                         echo $data['total'];
+                         ?>
                     </div>
 
                </div>
@@ -236,42 +243,78 @@
                     Staffs
 
                     <div class="number">
-                         Number
+                         <?php
+                         include 'db_conn.php';
+                         $sql = "select count(*) as total from staff";
+                         $result = mysqli_query($conn, $sql);
+                         $data = mysqli_fetch_assoc($result);
+                         echo $data['total'];
+                         ?>
                     </div>
                </div>
                <div class="cardspecific" style="width: 26%;">
                     patients
 
                     <div class="number">
-                         Number
+                         <?php
+                         include 'db_conn.php';
+                         $sql = "select count(*) as total from patient";
+                         $result = mysqli_query($conn, $sql);
+                         $data = mysqli_fetch_assoc($result);
+                         echo $data['total'];
+                         ?>
                     </div>
                </div>
                <div class="cardspecific" style="width: 18%;">
                     Test
 
                     <div class="number">
-                         Number
+                         <?php
+                         include 'db_conn.php';
+                         $sql = "select count(*) as total from test";
+                         $result = mysqli_query($conn, $sql);
+                         $data = mysqli_fetch_assoc($result);
+                         echo $data['total'];
+                         ?>
                     </div>
                </div>
                <div class="cardspecific" style="width: 18%;">
                     Bed
 
                     <div class="number">
-                         Number
+                         <?php
+                         include 'db_conn.php';
+                         $sql = "select count(*) as total from bed";
+                         $result = mysqli_query($conn, $sql);
+                         $data = mysqli_fetch_assoc($result);
+                         echo $data['total'];
+                         ?>
                     </div>
                </div>
                <div class="cardspecific" style="width: 18%;">
                     Ambulance
 
                     <div class="number">
-                         Number
+                         <?php
+                         include 'db_conn.php';
+                         $sql = "select count(*) as total from ambulence";
+                         $result = mysqli_query($conn, $sql);
+                         $data = mysqli_fetch_assoc($result);
+                         echo $data['total'];
+                         ?>
                     </div>
                </div>
                <div class="cardspecific" style="width: 18%;">
                     Medicine
 
                     <div class="number">
-                         Number
+                         <?php
+                         include 'db_conn.php';
+                         $sql = "select count(*) as total from medicine";
+                         $result = mysqli_query($conn, $sql);
+                         $data = mysqli_fetch_assoc($result);
+                         echo $data['total'];
+                         ?>
                     </div>
                </div>
 
