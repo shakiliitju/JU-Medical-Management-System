@@ -48,7 +48,6 @@
             color: rgb(89, 161, 87);
         }
 
-        .slidebar ul {}
 
         .slidebar ul li {
 
@@ -143,7 +142,7 @@
             border: 2px solid black;
         }
 
-        tr {}
+    
 
         th {
             padding: 7px;

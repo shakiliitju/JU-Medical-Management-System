@@ -70,7 +70,12 @@
       <form action="/php/bed/add-bed-con.php" method="post">
 
         <h2>Bed Number</h2>
-        <input type="number" placeholder="number" name="Bed_Num" class="box" required>
+        <input type="number" placeholder="number" name="Bed_Num" class="" required>
+
+
+        <h2>Date</h2>
+        <input type="date"  class="" name="Date">
+  
 
         <h2>Bed_Status</h2>
         <input list="browsers" name="Bed_Status" id="browser" class="" required>

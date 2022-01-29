@@ -46,14 +46,14 @@ $Patient_data = mysqli_fetch_array($query);
       </div>
 
       <div>
-      <h2>Amb_Status</h2>
+        <h2>Amb_Status</h2>
         <input list="browsers" name="Amb_Status" id="browser" class="" required>
         <datalist id="browsers">
           <option value="<?php echo $Patient_data['Amb_Status']; ?>">
           <option value="<?php echo $Patient_data['Amb_Status']; ?>">
         </datalist>
       </div>
-
+      <br>
       <input type="submit" value="Update" class="btn">
 
     </form>

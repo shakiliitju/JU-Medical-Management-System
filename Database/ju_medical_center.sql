@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 28, 2022 at 07:26 PM
+-- Generation Time: Jan 29, 2022 at 03:10 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -55,21 +55,21 @@ INSERT INTO `ambulence` (`Amb_ID`, `Amb_Status`, `P_ID`) VALUES
 DROP TABLE IF EXISTS `bed`;
 CREATE TABLE IF NOT EXISTS `bed` (
   `Bed_Num` int(11) NOT NULL,
+  `Date` date NOT NULL,
   `Bed_Status` enum('Available','Not Available') NOT NULL,
   `P_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`Bed_Num`),
   UNIQUE KEY `Bed_Num` (`Bed_Num`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bed`
 --
 
-INSERT INTO `bed` (`Bed_Num`, `Bed_Status`, `P_ID`) VALUES
-(1, 'Available', NULL),
-(3, 'Not Available', NULL),
-(6, 'Available', NULL),
-(7, 'Not Available', NULL);
+INSERT INTO `bed` (`Bed_Num`, `Date`, `Bed_Status`, `P_ID`) VALUES
+(1, '2022-02-05', 'Available', NULL),
+(2, '2022-01-22', 'Available', NULL),
+(3, '2022-01-22', 'Not Available', NULL);
 
 -- --------------------------------------------------------
 
@@ -247,6 +247,16 @@ CREATE TABLE IF NOT EXISTS `test` (
   PRIMARY KEY (`T_ID`),
   UNIQUE KEY `T_ID` (`T_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `test`
+--
+
+INSERT INTO `test` (`T_ID`, `T_Name`, `T_Price`) VALUES
+(1, 'amniocentesis', 100),
+(2, 'blood count', 50),
+(3, 'enzyme analysis', 150),
+(4, 'hematocrit', 200);
 
 -- --------------------------------------------------------
 

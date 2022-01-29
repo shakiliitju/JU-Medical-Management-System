@@ -223,6 +223,7 @@
                 <thead>
                     <tr>
                         <th>Bed_Number</th>
+                        <th>Date</th>
                         <th>Bed_Status</th>
                         <th> Operation </th>
                     </tr>
@@ -233,7 +234,7 @@
                      $search = $_POST['search'];
                     include 'db_conn.php';
 
-                    $sql = "select * from bed where Bed_Num like '%$search%' OR Bed_Status like '%$search%'";
+                    $sql = "select * from bed where Bed_Num like '%$search%' OR Date like '%$search%' OR Bed_Status like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
                    
@@ -241,6 +242,7 @@
                     ?>
                         <tr>
                             <td><b><?php echo $Patient_data['Bed_Num'];  ?></b></td>
+                            <td><?php echo $Patient_data['Date'];  ?></td>
                             <td><?php echo $Patient_data['Bed_Status'];  ?></td>
                             <td style="width: 140px;">
 

@@ -221,8 +221,9 @@
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>Bed_Number</th>
-                        <th>Bed_Status</th>
+                        <th> Bed_Number </th>
+                        <th> Date </th>
+                        <th> Bed_Status </th>
                         <th> Operation </th>
                     </tr>
                 </thead>
@@ -239,6 +240,7 @@
                     ?>
                         <tr>
                             <td><b><?php echo $Patient_data['Bed_Num'];  ?></b></td>
+                            <td><?php echo $Patient_data['Date'];  ?></td>
                             <td><?php echo $Patient_data['Bed_Status'];  ?></td>
                             <td style="width: 140px;">
 
