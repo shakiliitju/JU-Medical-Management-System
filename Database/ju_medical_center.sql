@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 29, 2022 at 03:10 AM
+-- Generation Time: Jan 29, 2022 at 03:31 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -164,6 +164,7 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `Gender` enum('Male','Female','Others') NOT NULL,
   `Age` int(11) NOT NULL,
   `P_Type` varchar(225) NOT NULL,
+  `A_Date` date NOT NULL,
   PRIMARY KEY (`P_ID`),
   UNIQUE KEY `P_ID` (`P_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -172,10 +173,10 @@ CREATE TABLE IF NOT EXISTS `patient` (
 -- Dumping data for table `patient`
 --
 
-INSERT INTO `patient` (`P_ID`, `P_Name`, `Gender`, `Age`, `P_Type`) VALUES
-(9, 'Tokee', 'Male', 21, 'Student'),
-(1, 'Amit', 'Male', 22, 'Student'),
-(2, 'Tokee', 'Male', 22, 'Student');
+INSERT INTO `patient` (`P_ID`, `P_Name`, `Gender`, `Age`, `P_Type`, `A_Date`) VALUES
+(1, 'Amit', 'Male', 21, 'Student', '2022-01-29'),
+(2, 'Tokee', 'Male', 21, 'Student', '2022-01-22'),
+(3, 'sharif', 'Male', 22, 'Student', '2022-01-29');
 
 -- --------------------------------------------------------
 
