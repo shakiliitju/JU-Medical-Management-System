@@ -43,7 +43,6 @@
             color: rgb(89, 161, 87);
         }
 
-        .slidebar ul {}
 
         .slidebar ul li {
 
@@ -87,7 +86,7 @@
             border: 2px solid black;
         }
 
-        tr {}
+
 
         th {
             padding: 7px;
@@ -214,46 +213,43 @@
 
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
-<<<<<<< Updated upstream
-=======
 
-            <!-- (A) SEARCH FORM -->
-            <form method="post" action="search.php">
+
+         <!-- (A) SEARCH FORM -->
+         <form method="post" action="search.php">
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
             <br>
 
->>>>>>> Stashed changes
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th>Bed_Number</th>
-                        <th>Bed_Status</th>
-
+                        <th> Bed_Number </th>
+                        <th> Date </th>
+                        <th> Bed_Status </th>
+                        <th> Operation </th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
                     include 'db_conn.php';
-                    $Bed_Num = 0;
-                    $sql = " SELECT Bed_Num,Bed_Status FROM bed LIMIT 5";
+
+                    $sql = " SELECT * FROM bed LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-<<<<<<< Updated upstream
-                        $Bed_Num = $Bed_Num + 1;
-=======
-
->>>>>>> Stashed changes
 
                     ?>
                         <tr>
-                            <td><b><?php echo $Bed_Num  ?></b></td>
+                            <td><b><?php echo $Patient_data['Bed_Num'];  ?></b></td>
+                            <td><?php echo $Patient_data['Date'];  ?></td>
                             <td><?php echo $Patient_data['Bed_Status'];  ?></td>
                             <td style="width: 140px;">
-                                <button> <a href="/php/bed/add-bed.php?ID=<?php echo $Patient_data['Bed_Num'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="bed.php?php echo $Patient_data['Bed_Num']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
+                                <button> <a href="/php/bed/update.php?Bed_Num=<?php echo $Patient_data['Bed_Num'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/bed/Delete.php?Bed_Num=<?php echo $Patient_data['Bed_Num']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
 
 
                             </td>

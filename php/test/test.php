@@ -48,7 +48,6 @@
             color: rgb(89, 161, 87);
         }
 
-        .slidebar ul {}
 
         .slidebar ul li {
 
@@ -143,11 +142,6 @@
             border: 2px solid black;
         }
 
-<<<<<<< Updated upstream
-        tr {}
-=======
-
->>>>>>> Stashed changes
 
         th {
             padding: 7px;
@@ -277,48 +271,43 @@
 
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
-<<<<<<< Updated upstream
-=======
+
 
             <!-- (A) SEARCH FORM -->
             <form method="post" action="search.php">
+
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
             <br>
-
->>>>>>> Stashed changes
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
                         <th> Test_ID </th>
                         <th> Test_Name </th>
+                        <th> Test_Price (TK) </th>
+                        <th> Operation </th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
                     include 'db_conn.php';
-<<<<<<< Updated upstream
-                    $T_ID = 0;
-                    $sql = " SELECT * FROM test ";
-                    $sql = " SELECT T_ID,T_Name FROM test LIMIT 5";
-=======
-
                     $sql = " SELECT * FROM test LIMIT 5";
->>>>>>> Stashed changes
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                        $T_ID = $T_ID + 1;
 
                     ?>
                         <tr>
-                            <td><b><?php echo $T_ID  ?></b></td>
+                            <td><b><?php echo $Patient_data['T_ID'];  ?></b></td>
                             <td><?php echo $Patient_data['T_Name'];  ?></td>
+                            <td><?php echo $Patient_data['T_Price'];  ?></td>
 
                             <td style="width: 140px;">
-                                <button> <a href="/php/test/add-test.php?ID=<?php echo $Patient_data['T_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="test.php?ID=<?php echo $Patient_data['T_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
+                                <button> <a href="/php/test/update.php?T_ID=<?php echo $Patient_data['T_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/test/Delete.php?T_ID=<?php echo $Patient_data['T_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
 
 
                             </td>

@@ -276,6 +276,7 @@
 
             <!-- (A) SEARCH FORM -->
             <form method="post" action="search.php">
+
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
@@ -294,6 +295,7 @@
                 <tbody>
                     <?php
                     $search = $_POST['search'];
+
                     include 'db_conn.php';
                     $sql = "select * from test where T_ID like '%$search%' OR T_Name like '%$search%' OR T_Price like '%$search%'";
                     $query = mysqli_query($conn, $sql);

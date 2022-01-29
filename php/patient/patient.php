@@ -216,17 +216,14 @@
 
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
-<<<<<<< Updated upstream
-=======
 
-            <!-- (A) SEARCH FORM -->
-            <form method="post" action="search.php">
+          <!-- (A) SEARCH FORM -->
+          <form method="post" action="search.php">
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
             <br>
 
->>>>>>> Stashed changes
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
@@ -235,6 +232,8 @@
                         <th> Gender </th>
                         <th> Age </th>
                         <th> Patient_Type </th>
+                        <th> Admit Date </th>
+                        <th> Operation </th>
 
                     </tr>
                 </thead>
@@ -242,23 +241,25 @@
                 <tbody>
                     <?php
                     include 'db_conn.php';
-                    $P_ID = 0;
 
-                    $sql = " SELECT P_ID,P_Name,Gender,Age,P_Type FROM patient LIMIT 5";
+
+                    $sql = " SELECT * FROM patient LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                        $P_ID = $P_ID + 1;
 
                     ?>
                         <tr>
-                            <td><b><?php echo $P_ID  ?></b></td>
+                            <td><b><?php echo $Patient_data['P_ID'];  ?></b></td>
                             <td><?php echo $Patient_data['P_Name'];  ?></td>
                             <td><?php echo $Patient_data['Gender'];  ?></td>
                             <td><?php echo $Patient_data['Age'];  ?></td>
                             <td><?php echo $Patient_data['P_Type'];  ?></td>
+                            <td><?php echo $Patient_data['A_Date'];  ?></td>
                             <td style="width: 140px;">
-                                <button> <a href="/php/patient/add-patient.php?ID=<?php echo $Patient_data['P_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="patient.php?ID=<?php echo $Patient_data['P_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
+                                <button> <a href="/php/patient/update.php?P_ID=<?php echo $Patient_data['P_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/patient/Delete.php?P_ID=<?php echo $Patient_data['P_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
 
 
                             </td>

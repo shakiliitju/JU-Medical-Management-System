@@ -214,42 +214,42 @@
 
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
-<<<<<<< Updated upstream
-=======
 
-            <!-- (A) SEARCH FORM -->
-            <form method="post" action="search.php">
+
+        <!-- (A) SEARCH FORM -->
+        <form method="post" action="search.php">
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
             <br>
 
->>>>>>> Stashed changes
+
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
                         <th>Ambulence_ID</th>
                         <th>Ambulence_Status</th>
-
+                        <th> Operation </th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
                     include 'db_conn.php';
-                    $Amb_ID = 0;
-                    $sql = " SELECT Amb_ID,Amb_Status FROM ambulence LIMIT 5";
+
+                    $sql = " SELECT * FROM ambulence LIMIT 5";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-                        $Amb_ID = $Amb_ID + 1;
 
                     ?>
                         <tr>
-                            <td><b><?php echo $Amb_ID  ?></b></td>
+                            <td><b><?php echo $Patient_data['Amb_ID']; ?></b></td>
                             <td><?php echo $Patient_data['Amb_Status'];  ?></td>
                             <td style="width: 140px;">
-                                <button> <a href="/php/Ambulence/add-ambulence.php?ID=<?php echo $Patient_data['Amb_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="ambulence.php?ID=<?php echo $Patient_data['Amb_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
+                                <button> <a href="/php/Ambulence/update.php?ID=<?php echo $Patient_data['Amb_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/Ambulence/Delete.php?Amb_ID=<?php echo $Patient_data['Amb_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
+
 
 
                             </td>

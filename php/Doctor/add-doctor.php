@@ -40,15 +40,13 @@
       border: red 2px solid;
       background-color: rgb(131, 216, 118);
     }
-    .btn:hover{
+
+    .btn:hover {
       background-color: rgb(96, 9, 67);
       color: white;
-      transform:scale(1.2);
+      transform: scale(1.2);
       transition: .5s;
     }
-
-
-
   </style>
 
 </head>
@@ -67,6 +65,10 @@
 
     <form action="/php/Doctor/add-doctor-con.php" method="post">
 
+      <div>
+        <h2>Doctor ID</h2>
+        <input type="number" placeholder="number" name="D_ID" class="" required>
+      </div>
       <div>
         <h2>Doctor Name</h2>
         <input name="D_Name" type="text" class="form-control" placeholder="" required>

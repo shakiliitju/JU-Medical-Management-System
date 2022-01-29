@@ -215,8 +215,9 @@
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
 
-            <!-- (A) SEARCH FORM -->
-            <form method="post" action="search.php">
+
+         <!-- (A) SEARCH FORM -->
+         <form method="post" action="search.php">
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
@@ -234,13 +235,14 @@
 
                 <tbody>
                     <?php
+
                     $search = $_POST['search'];
+
                     include 'db_conn.php';
 
                     $sql = "select * from bed where Bed_Num like '%$search%' OR Date like '%$search%' OR Bed_Status like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-
 
                     ?>
                         <tr>

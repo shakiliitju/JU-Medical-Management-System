@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 25, 2022 at 04:40 PM
+-- Generation Time: Jan 29, 2022 at 03:31 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `ambulence`;
 CREATE TABLE IF NOT EXISTS `ambulence` (
-  `Amb_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Amb_ID` int(11) NOT NULL,
   `Amb_Status` enum('Available','Not Available') NOT NULL,
   `P_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`Amb_ID`),
@@ -42,17 +42,9 @@ CREATE TABLE IF NOT EXISTS `ambulence` (
 --
 
 INSERT INTO `ambulence` (`Amb_ID`, `Amb_Status`, `P_ID`) VALUES
-(1, 'Available', NULL),
-(2, 'Not Available', NULL),
-(3, 'Not Available', NULL),
-(4, 'Available', NULL),
-(5, 'Available', NULL),
-(6, 'Not Available', NULL),
-(7, 'Available', NULL),
-(8, 'Available', NULL),
-(9, 'Not Available', NULL),
-(10, 'Available', NULL),
-(11, 'Not Available', NULL);
+(3, 'Available', NULL),
+(2, 'Available', NULL),
+(1, 'Not Available', NULL);
 
 -- --------------------------------------------------------
 
@@ -62,28 +54,22 @@ INSERT INTO `ambulence` (`Amb_ID`, `Amb_Status`, `P_ID`) VALUES
 
 DROP TABLE IF EXISTS `bed`;
 CREATE TABLE IF NOT EXISTS `bed` (
-  `Bed_Num` int(11) NOT NULL AUTO_INCREMENT,
+  `Bed_Num` int(11) NOT NULL,
+  `Date` date NOT NULL,
   `Bed_Status` enum('Available','Not Available') NOT NULL,
   `P_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`Bed_Num`),
   UNIQUE KEY `Bed_Num` (`Bed_Num`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bed`
 --
 
-INSERT INTO `bed` (`Bed_Num`, `Bed_Status`, `P_ID`) VALUES
-(1, 'Available', NULL),
-(2, 'Available', NULL),
-(3, 'Not Available', NULL),
-(4, 'Not Available', NULL),
-(5, 'Not Available', NULL),
-(6, 'Available', NULL),
-(7, 'Not Available', NULL),
-(8, 'Not Available', NULL),
-(9, 'Not Available', NULL),
-(10, 'Not Available', NULL);
+INSERT INTO `bed` (`Bed_Num`, `Date`, `Bed_Status`, `P_ID`) VALUES
+(1, '2022-02-05', 'Available', NULL),
+(2, '2022-01-22', 'Available', NULL),
+(3, '2022-01-22', 'Not Available', NULL);
 
 -- --------------------------------------------------------
 
@@ -93,29 +79,22 @@ INSERT INTO `bed` (`Bed_Num`, `Bed_Status`, `P_ID`) VALUES
 
 DROP TABLE IF EXISTS `doctor`;
 CREATE TABLE IF NOT EXISTS `doctor` (
-  `D_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `D_ID` int(11) NOT NULL,
   `D_Name` varchar(225) NOT NULL,
   `Gender` enum('Male','Female','Others') NOT NULL,
   `Work_Day` date NOT NULL,
   `Speciality` varchar(225) NOT NULL,
   PRIMARY KEY (`D_ID`),
   UNIQUE KEY `D_ID` (`D_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `doctor`
 --
 
 INSERT INTO `doctor` (`D_ID`, `D_Name`, `Gender`, `Work_Day`, `Speciality`) VALUES
-(6, 'DR. LIKHAN CHANDRA BALA', 'Male', '2022-01-25', 'Cardiologists'),
-(7, 'DR. ASMA SIDDIQA', 'Female', '2022-01-26', 'Pathologists'),
-(8, 'DR. MD. ROKONUGGAMAN', 'Male', '2022-01-25', 'Podiatrists'),
-(9, 'DR. TOWHID HASSAN SHAH CHOWDHURY', 'Male', '2022-01-26', 'Urologists'),
-(10, 'DR. MAHABUBA JANNATH', 'Male', '2022-01-26', 'Critical Care Medicine Specialists'),
-(11, 'DR. BIRENDRO KUMAR BISWAS', 'Male', '2022-01-25', 'Dermatologists'),
-(12, 'DR.RIZWANUR RAHMAN', 'Male', '2022-01-26', 'Gastroenterologists'),
-(13, 'DR. MD. SHAMSUL ALAM KHAN (LITON)', 'Male', '2022-01-25', 'Neurologists'),
-(14, 'DR. MAMOTA MALLIKA', 'Female', '2022-01-25', 'Anesthesiologists');
+(1, 'Nahidul Islam', 'Male', '2022-01-29', 'Anesthesiology'),
+(2, 'Nahida', 'Female', '2022-01-26', 'EYE');
 
 -- --------------------------------------------------------
 
@@ -155,27 +134,22 @@ CREATE TABLE IF NOT EXISTS `doc_staff` (
 
 DROP TABLE IF EXISTS `medicine`;
 CREATE TABLE IF NOT EXISTS `medicine` (
-  `M_Code` int(11) NOT NULL AUTO_INCREMENT,
+  `M_Code` int(11) NOT NULL,
+  `M_Name` varchar(225) NOT NULL,
   `Quantity` int(11) NOT NULL,
   PRIMARY KEY (`M_Code`),
-  UNIQUE KEY `M_Code` (`M_Code`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+  UNIQUE KEY `M_Code` (`M_Code`),
+  UNIQUE KEY `M_Name` (`M_Name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `medicine`
 --
 
-INSERT INTO `medicine` (`M_Code`, `Quantity`) VALUES
-(1, 100),
-(2, 2),
-(3, 45),
-(4, 58),
-(5, 34),
-(6, 56),
-(7, 5),
-(8, 123),
-(9, 678),
-(10, 34);
+INSERT INTO `medicine` (`M_Code`, `M_Name`, `Quantity`) VALUES
+(1, 'Napa', 100),
+(3, 'Ace', 50),
+(4, 'Deslor', 0);
 
 -- --------------------------------------------------------
 
@@ -185,40 +159,24 @@ INSERT INTO `medicine` (`M_Code`, `Quantity`) VALUES
 
 DROP TABLE IF EXISTS `patient`;
 CREATE TABLE IF NOT EXISTS `patient` (
-  `P_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `P_ID` int(11) NOT NULL,
   `P_Name` varchar(225) NOT NULL,
   `Gender` enum('Male','Female','Others') NOT NULL,
   `Age` int(11) NOT NULL,
   `P_Type` varchar(225) NOT NULL,
+  `A_Date` date NOT NULL,
   PRIMARY KEY (`P_ID`),
   UNIQUE KEY `P_ID` (`P_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient`
 --
 
-INSERT INTO `patient` (`P_ID`, `P_Name`, `Gender`, `Age`, `P_Type`) VALUES
-(3, 'Tokee', 'Male', 22, 'Student'),
-(10, 'sumiya', 'Female', 21, 'Student'),
-(9, 'Tokee', 'Male', 55, 'Teacher'),
-(6, 'sharif', 'Male', 22, 'Student'),
-(8, 'Amit', 'Male', 20, 'Student'),
-(11, 'Amit Azim', 'Male', 22, 'Student'),
-(12, 'Amit Azim', 'Male', 22, 'Student'),
-(13, 'Shakil', 'Male', 32, 'Staff'),
-(14, 'MAruf', 'Female', 43, 'Student'),
-(15, 'MAruf', 'Female', 43, 'Student'),
-(16, 'Monir', 'Female', 16, 'Student'),
-(17, 'Monir Hossain', 'Male', 21, 'Student'),
-(18, 'Maruf Ahmed', 'Male', 25, 'Student'),
-(19, 'Maruf Ahmed', 'Male', 25, 'Student'),
-(20, 'Sumaiya Siddika', 'Female', 33, 'Teacher'),
-(21, 'Ashfaqur Tokee', 'Male', 28, 'Staff'),
-(22, 'Shakil Ahmed', 'Male', 40, 'Teacher'),
-(23, 'Sidratul Afrida', 'Female', 20, 'Staff'),
-(24, 'Sidratul Afrida', 'Female', 20, 'Staff'),
-(25, 'Marufa Akter', 'Female', 26, 'Student');
+INSERT INTO `patient` (`P_ID`, `P_Name`, `Gender`, `Age`, `P_Type`, `A_Date`) VALUES
+(1, 'Amit', 'Male', 21, 'Student', '2022-01-29'),
+(2, 'Tokee', 'Male', 21, 'Student', '2022-01-22'),
+(3, 'sharif', 'Male', 22, 'Student', '2022-01-29');
 
 -- --------------------------------------------------------
 
@@ -257,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `patient_takes_test` (
 
 DROP TABLE IF EXISTS `staff`;
 CREATE TABLE IF NOT EXISTS `staff` (
-  `S_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `S_ID` int(11) NOT NULL,
   `S_Name` varchar(225) NOT NULL,
   `Gender` enum('Male','Female','Others') NOT NULL,
   `Work_Day` date NOT NULL,
@@ -273,9 +231,8 @@ CREATE TABLE IF NOT EXISTS `staff` (
 INSERT INTO `staff` (`S_ID`, `S_Name`, `Gender`, `Work_Day`, `T_ID`) VALUES
 (1, 'KHONDOKER JAHANGIR ALAM', 'Male', '2022-01-26', NULL),
 (2, 'MD. MOTIAR RAHMAN', 'Male', '2022-01-26', NULL),
-(3, 'Shakila ', 'Female', '2022-01-25', NULL),
-(4, 'Shakila ', 'Female', '2022-01-25', NULL),
-(5, 'Monira Akter', 'Male', '2022-01-26', NULL);
+(5, 'Monira Akter', 'Male', '2022-01-26', NULL),
+(3, 'shakil', 'Male', '2022-01-14', NULL);
 
 -- --------------------------------------------------------
 
@@ -285,28 +242,22 @@ INSERT INTO `staff` (`S_ID`, `S_Name`, `Gender`, `Work_Day`, `T_ID`) VALUES
 
 DROP TABLE IF EXISTS `test`;
 CREATE TABLE IF NOT EXISTS `test` (
-  `T_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `T_Name` varchar(225) NOT NULL,
+  `T_ID` int(11) NOT NULL,
+  `T_Name` varchar(255) NOT NULL,
+  `T_Price` int(11) NOT NULL,
   PRIMARY KEY (`T_ID`),
   UNIQUE KEY `T_ID` (`T_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `test`
 --
 
-INSERT INTO `test` (`T_ID`, `T_Name`) VALUES
-(1, 'amniocentesis'),
-(2, 'blood count'),
-(3, 'enzyme analysis'),
-(4, 'hematocrit'),
-(5, 'serological test'),
-(6, 'cholecystography'),
-(7, 'brain scanning '),
-(8, 'toxicology test'),
-(9, 'thoracentesis'),
-(10, 'syphilis test'),
-(11, 'pregnancy test');
+INSERT INTO `test` (`T_ID`, `T_Name`, `T_Price`) VALUES
+(1, 'amniocentesis', 100),
+(2, 'blood count', 50),
+(3, 'enzyme analysis', 150),
+(4, 'hematocrit', 200);
 
 -- --------------------------------------------------------
 

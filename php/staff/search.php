@@ -227,6 +227,7 @@
 
             <!-- (A) SEARCH FORM -->
             <form method="post" action="search.php">
+
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
@@ -246,12 +247,12 @@
 
                 <tbody>
                     <?php
+          
                     $search = $_POST['search'];
                     include 'db_conn.php';
                     $sql = "select * from staff where S_ID like '%$search%' OR S_Name like '%$search%'  OR Gender like '%$search%'  OR Work_Day like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
-
 
                     ?>
                         <tr>
