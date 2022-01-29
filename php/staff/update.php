@@ -2,10 +2,10 @@
 include_once 'db_conn.php';
 if (count($_POST) > 0) {
 
-  mysqli_query($conn, "UPDATE staff set S_ID='" . $_POST['S_ID'] . "', S_Name='" . $_POST['S_Name'] . "' ,Gender='" . $_POST['Gender'] . "' ,Work_Day='" . $_POST['Work_Day'] ."' WHERE D_ID='" . $_POST['D_ID'] . "'");
+  mysqli_query($conn, "UPDATE staff set S_ID='" . $_POST['S_ID'] . "', S_Name='" . $_POST['S_Name'] . "' ,Work_Day='" . $_POST['Work_Day'] ."' WHERE S_ID='" . $_POST['S_ID'] . "'");
   $message = "Record Modified Successfully";
 }
-$query = mysqli_query($conn, "SELECT * FROM staff");
+$query = mysqli_query($conn, "SELECT * FROM staff WHERE S_ID='" . $_GET['S_ID'] . "'");
 $Patient_data = mysqli_fetch_array($query);
 
 ?>
