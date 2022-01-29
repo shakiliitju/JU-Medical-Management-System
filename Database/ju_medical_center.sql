@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
+<<<<<<< Updated upstream
 -- Generation Time: Jan 29, 2022 at 03:31 AM
+=======
+-- Generation Time: Jan 29, 2022 at 04:10 PM
+>>>>>>> Stashed changes
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -149,7 +153,15 @@ CREATE TABLE IF NOT EXISTS `medicine` (
 INSERT INTO `medicine` (`M_Code`, `M_Name`, `Quantity`) VALUES
 (1, 'Napa', 100),
 (3, 'Ace', 50),
+<<<<<<< Updated upstream
 (4, 'Deslor', 0);
+=======
+(2, 'OR-Saline', 50),
+(4, 'Deslor', 45),
+(5, 'Abaclor', 300),
+(6, 'Abetis Plus ', 240),
+(7, 'Metro', 30);
+>>>>>>> Stashed changes
 
 -- --------------------------------------------------------
 
