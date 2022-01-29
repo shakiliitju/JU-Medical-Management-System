@@ -55,7 +55,7 @@
                 <h3>book appointment</h3>
 
                 <h2>Patient ID</h2>
-                <input type="number" placeholder="patient id" name="P_ID" class="box" required>
+                <input type="number" placeholder="number" name="P_ID" class="box" required>
 
 
                 <h2>Patient Name</h2>
@@ -67,7 +67,7 @@
                 <label for="others" class="box"><input type="radio" name="Gender" value="Others" id="others" /> Others</label>
 
                 <h2>Patient Age</h2>
-                <input type="number" placeholder="patient age" name="Age" class="box" required>
+                <input type="number" placeholder="number" name="Age" class="box" required>
 
                 <h2>Patient Type</h2>
                 <input list="browsers" name="P_Type" id="browser" class="box" required>
@@ -78,10 +78,7 @@
                 </datalist>
 
                 <h2>Admit Date</h2>
-                <input type="date" id="day" class="box" name="A_Date">
-
-
-                <!-- <input type="text" placeholder="patient type" name="P_Type" class="box" required> -->
+                <input type="date" id="day" class="box" name="A_Date" required>
 
                 <input type="submit" value="book now" class="btn">
             </form>
