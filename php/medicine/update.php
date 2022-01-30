@@ -25,6 +25,37 @@ $Patient_data = mysqli_fetch_array($query);
 
   <!-- custom css file link  -->
   <!-- <link rel="stylesheet" href="/css/style.css"> -->
+
+  <style>
+    body {
+
+      background-color: #8CD2AB;
+
+    }
+
+    .container {
+
+      width: 60%;
+      float: right;
+      font-size: large;
+      font-family: sans-serif;
+
+    }
+
+    .btn{
+      border: 2px solid black;
+      border-radius: 10px;
+      font-weight: bolder;
+      padding: 5px 10px;
+    }
+    .btn:hover{
+      transform: scale(1.1);
+      transition: .5s;
+      background-color: greenyellow;
+    }
+  </style>
+
+
 </head>
 
 <body>
