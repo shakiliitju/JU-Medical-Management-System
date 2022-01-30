@@ -6,7 +6,8 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>ADMIN PAGE</title>
+     <title>Ju Medical Center</title>
+     <link rel="shortcut icon" href="https://juniv.edu/images/favicon.ico">
      <!-- fonts -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,7 +80,7 @@
 
           .infocard {
                margin: 30px;
-               margin-top: 90px;
+               margin-top: 20px;
                width: 80%;
                height: 580px;
                position: fixed;
@@ -90,7 +91,7 @@
           }
 
           .cardspecific {
-               height: 190px;
+               height: 160px;
                float: left;
                margin: 20px;
                border: solid black 5px;
@@ -100,7 +101,7 @@
                font-size: 30px;
                font-family: 'Mochiy Pop P One', sans-serif;
                padding: 10px;
-               padding-top: 20px;
+               padding-top: 10px;
 
           }
 
@@ -114,13 +115,13 @@
 
           .number {
                font-size: 25px;
-               padding-top: 60px;
+               padding-top: 40px;
                color: rgb(85, 12, 99);
           }
 
 
           /* logout button */
-          .log {}
+
 
           .log h3 {
                position: fixed;
@@ -141,7 +142,7 @@
           .log h3:hover {
                transition: .5s;
                transform: scale(1.1);
-               background: rgb(22, 122, 17);
+               background: red;
 
           }
      </style>
@@ -168,6 +169,9 @@
 
           <ul>
                <li>
+                    <a href="/php/home.php"><i class="fas fa-home"></i> Home</a>
+               </li>
+               <li>
                     <a href="/php/Doctor/doctor.php"><i class="fas fa-user-md"></i> Doctors</a>
                </li>
                <li>
@@ -191,30 +195,30 @@
                <li>
                     <a href="/php/medicine/medicine.php"><i class="fas fa-medkit"></i> Medicine</a>
                </li>
-          </ul> 
-          
-          <!-- logoutbutton -->
-               <div>
-                    <style>
-                         .logout {
-                              text-align: center;
-                              margin-top: 50px;
-                              font-family: 'Mochiy Pop P One', sans-serif;
-                              font-weight: bolder;
-                         }
+          </ul>
 
-                         .logout:hover {
-                              transform: scale(1.2);
-                              color: red;
-                              transition: 1s;
-                         }
-                    </style>
-                    <a style="text-decoration: none;" href="/php/index.php">
-                         <div class="logout">
-                              Log Out
-                         </div>
-                    </a>
-               </div>
+          <!-- logoutbutton -->
+          <div>
+               <style>
+                    .logout {
+                         text-align: center;
+                         margin-top: 10px;
+                         font-family: 'Mochiy Pop P One', sans-serif;
+                         font-weight: bolder;
+                    }
+
+                    .logout:hover {
+                         transform: scale(1.2);
+                         color: red;
+                         transition: 1s;
+                    }
+               </style>
+               <a style="text-decoration: none;" href="/php/index.php">
+                    <div class="logout">
+                         Log Out
+                    </div>
+               </a>
+          </div>
 
      </div>
 
@@ -223,57 +227,119 @@
      <div class="mainpart">
 
           <div class="infocard">
+               <h1>JU Medical Center</h1>
 
-               <div class="cardspecific" style="width: 26%;">
-                    Doctors
+               <a href="/php/Doctor/doctor.php" rel="">
+                    <div class="cardspecific" style="width: 26%;">
+                         Doctors
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from doctor";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
 
-                    <div class="number">
-                         Number
                     </div>
+               </a>
 
-               </div>
-               <div class="cardspecific" style="width: 26%;">
-                    Staffs
+               <a href="/php/staff/staff.php" rel="">
+                    <div class="cardspecific" style="width: 26%;">
+                         Staffs
 
-                    <div class="number">
-                         Number
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from staff";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
                     </div>
-               </div>
-               <div class="cardspecific" style="width: 26%;">
-                    patients
+               </a>
 
-                    <div class="number">
-                         Number
-                    </div>
-               </div>
-               <div class="cardspecific" style="width: 18%;">
-                    Test
+               <a href="/php/patient/patient.php" rel="">
+                    <div class="cardspecific" style="width: 26%;">
+                         patients
 
-                    <div class="number">
-                         Number
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from patient";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
                     </div>
-               </div>
-               <div class="cardspecific" style="width: 18%;">
-                    Bed
+               </a>
 
-                    <div class="number">
-                         Number
-                    </div>
-               </div>
-               <div class="cardspecific" style="width: 18%;">
-                    Ambulance
+               <a href="/php/test/test.php" rel="">
+                    <div class="cardspecific" style="width: 18%;">
+                         Test
 
-                    <div class="number">
-                         Number
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from test";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
                     </div>
-               </div>
-               <div class="cardspecific" style="width: 18%;">
-                    Medicine
+               </a>
 
-                    <div class="number">
-                         Number
+               <a href="/php/bed/bed.php" rel="">
+                    <div class="cardspecific" style="width: 18%;">
+                         Bed
+
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from bed";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
                     </div>
-               </div>
+               </a>
+
+               <a href="/php/Ambulence/ambulence.php" rel="">
+                    <div class="cardspecific" style="width: 18%;">
+                         Ambulance
+
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from ambulence";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
+                    </div>
+               </a>
+
+               <a href="/php/medicine/medicine.php" rel="">
+                    <div class="cardspecific" style="width: 18%;">
+                         Medicine
+
+                         <div class="number">
+                              <?php
+                              include 'db_conn.php';
+                              $sql = "select count(*) as total from medicine";
+                              $result = mysqli_query($conn, $sql);
+                              $data = mysqli_fetch_assoc($result);
+                              echo $data['total'];
+                              ?>
+                         </div>
+                    </div>
+               </a>
 
           </div>
 
@@ -284,6 +350,7 @@
 
 
      <div class="log">
+
           <h3>
                <a href="/php/login.php">
                     LOG OUT

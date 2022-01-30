@@ -48,6 +48,7 @@
             color: rgb(89, 161, 87);
         }
 
+        .slidebar ul {}
 
         .slidebar ul li {
 
@@ -142,6 +143,7 @@
             border: 2px solid black;
         }
 
+        tr {}
 
         th {
             padding: 7px;
@@ -272,7 +274,6 @@
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
 
-
             <!-- (A) SEARCH FORM -->
             <form method="post" action="search.php">
 
@@ -280,6 +281,7 @@
                 <input type="submit" value="Search" />
             </form>
             <br>
+
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
@@ -292,8 +294,10 @@
 
                 <tbody>
                     <?php
+                    $search = $_POST['search'];
+
                     include 'db_conn.php';
-                    $sql = " SELECT * FROM test LIMIT 5";
+                    $sql = "select * from test where T_ID like '%$search%' OR T_Name like '%$search%' OR T_Price like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
 
@@ -305,7 +309,7 @@
 
                             <td style="width: 140px;">
 
-                                <button> <a href="/php/test/update.php?T_ID=<?php echo $Patient_data['T_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button> <a href="/php/test/add-test.php?T_ID=<?php echo $Patient_data['T_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
                                 <button><a href="/php/test/Delete.php?T_ID=<?php echo $Patient_data['T_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 

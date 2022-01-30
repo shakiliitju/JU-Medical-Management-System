@@ -2,28 +2,23 @@
 <html lang="en">
 
 <head>
+
     <title>Ju Medical Center</title>
     <link rel="shortcut icon" href="https://juniv.edu/images/favicon.ico">
-    <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-    </style>
-
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-    <!-- CSS STYILE  -->
-
+    <!-- font ends -->
 
     <style>
         /* navbar style starts here */
+        body {
+            background: rgba(96, 193, 138, 0.722);
+        }
+
         .slidebar {
 
             border: 20px;
@@ -74,62 +69,14 @@
         /* slidebar ends */
 
 
-        body {
-            background-color: #8CD2AB;
-        }
 
         table,
         th,
         td {
-            border: 2px solid black;
+            border: 1px solid black;
             border-collapse: collapse;
-            font-weight: bold;
-            padding: 5px 0px 5px 10px;
         }
 
-        .row h2 {
-            font-family: 'Mochiy Pop P One', sans-serif;
-            font-size: 30px;
-            color: rgb(30, 60, 62)
-        }
-
-        table th {
-            font-size: 20px;
-            font-family: sans-serif;
-        }
-
-        .docadd {
-            background: none;
-            border: solid black 3px;
-            padding: 5px;
-            border-radius: 15px;
-        }
-
-        .docadd:hover {
-            transform: scale(1.1);
-            transition: .5s;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
-
-        .tabbutton {
-            background: none;
-            border: solid black 3px;
-            padding: 5px;
-            border-radius: 15px;
-
-        }
-
-
-
-        .tabbutton:hover {
-            transform: scale(1.1);
-            transition: .5s;
-        }
 
         /* internal style */
 
@@ -188,7 +135,6 @@
 
 <body>
 
-
     <!-- sildebar starts -->
 
     <div class="slidebar">
@@ -212,7 +158,7 @@
                 <a href="/php/patient/patient.php"><i class="fas fa-user-injured"></i> Patients</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-file-medical-alt"></i> Tests</a>
+                <a href="/php/test/test.php"><i class="fas fa-file-medical-alt"></i> Tests</a>
 
             </li>
             <li>
@@ -255,59 +201,58 @@
 
     <!-- slidebar ends -->
 
-
     <div class="container">
 
         <div class="row">
             <div style="margin-left: 50%; margin-top: 5%;">
-                <h2>Manage <b>Test</b></h2>
+                <h2>Manage <b>Medicine</b></h2>
             </div>
-            <div style="margin-left: 82%; margin-top: 3%;">
-                <button><a href="/php/test/add-test.php">Add Test</a></button>
+            <div style="margin-left: 81%; margin-top: 3%;">
+                <button><a href="/php/medicine/add-medicine.php">Add Medicine</a></button>
             </div>
         </div>
-    </div>
     </div>
 
     <div class="card-body">
         <div style="margin-left: 20%; margin-top: 1%;">
 
-
-            <!-- (A) SEARCH FORM -->
-            <form method="post" action="search.php">
+         <!-- (A) SEARCH FORM -->
+         <form method="post" action="search.php">
 
                 <input type="text" name="search" required />
                 <input type="submit" value="Search" />
             </form>
             <br>
+
             <table id="dataTable" width="90%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th> Test_ID </th>
-                        <th> Test_Name </th>
-                        <th> Test_Price (TK) </th>
+                        <th> Medicine_Code </th>
+                        <th> Medicine_Name </th>
+                        <th> Quantity </th>
                         <th> Operation </th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <?php
-                    include 'db_conn.php';
-                    $sql = " SELECT * FROM test LIMIT 5";
+
+                     $search = $_POST['search'];
+                     include 'db_conn.php';
+                     $sql = "select * from medicine where M_Code like '%$search%' OR M_Name like '%$search%' OR Quantity like '%$search%'";
                     $query = mysqli_query($conn, $sql);
                     while ($Patient_data = mysqli_fetch_array($query)) {
+          
 
                     ?>
                         <tr>
-                            <td><b><?php echo $Patient_data['T_ID'];  ?></b></td>
-                            <td><?php echo $Patient_data['T_Name'];  ?></td>
-                            <td><?php echo $Patient_data['T_Price'];  ?></td>
-
+                            <td><b><?php echo $Patient_data['M_Code']; ?></b></td>
+                            <td><?php echo $Patient_data['M_Name']; ?></td>
+                            <td><?php echo $Patient_data['Quantity'];  ?></td>
                             <td style="width: 140px;">
 
-                                <button> <a href="/php/test/update.php?T_ID=<?php echo $Patient_data['T_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
-                                <button><a href="/php/test/Delete.php?T_ID=<?php echo $Patient_data['T_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
-
+                                <button> <a href="/php/medicine/add-medicine.php?M_Code=<?php echo $Patient_data['M_Code'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button><a href="/php/medicine/Delete.php?M_Code=<?php echo $Patient_data['M_Code']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
                             </td>
@@ -323,7 +268,6 @@
         </div>
 
 
-    </div>
     </div>
 
 

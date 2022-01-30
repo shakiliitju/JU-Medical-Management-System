@@ -55,6 +55,7 @@ $Patient_data = mysqli_fetch_array($query);
     }
   </style>
 
+
 </head>
 
 <body>

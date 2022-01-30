@@ -56,15 +56,11 @@ $Patient_data = mysqli_fetch_array($query);
   </style>
 
 
-
 </head>
 
 <body>
-
-
   <!-- Begin Page Content -->
-
-
+  
   <div class="container" style="margin-top: 3%;margin-bottom: 5%;width: 75%;">
     <!-- Area Chart -->
 
@@ -112,7 +108,6 @@ $Patient_data = mysqli_fetch_array($query);
 
   </div>
   </div>
-
 
 
 </body>

@@ -25,6 +25,7 @@ $Patient_data = mysqli_fetch_array($query);
 
   <!-- custom css file link  -->
   <!-- <link rel="stylesheet" href="/css/style.css"> -->
+
   <style>
     body {
 
@@ -53,6 +54,7 @@ $Patient_data = mysqli_fetch_array($query);
       background-color: greenyellow;
     }
   </style>
+
 
 </head>
 
