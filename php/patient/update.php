@@ -1,8 +1,9 @@
 <?php
+$Gender = isset($_POST['Gender']) ? $_POST['Gender'] : '';
 include_once 'db_conn.php';
 if (count($_POST) > 0) {
 
-  mysqli_query($conn, "UPDATE patient set P_ID='" . $_POST['P_ID'] . "', P_Name='" . $_POST['P_Name'] . "' ,Age='" . $_POST['Age'] . "',P_Type='" . $_POST['P_Type'] . "' ,A_Date='" . $_POST['A_Date'] . "' WHERE P_ID='" . $_POST['P_ID'] . "'");
+  mysqli_query($conn, "UPDATE patient set P_ID='" . $_POST['P_ID'] . "', P_Name='" . $_POST['P_Name'] . "' ,Gender='" . $_POST['Gender'] . "' ,Age='" . $_POST['Age'] . "',P_Type='" . $_POST['P_Type'] . "' ,A_Date='" . $_POST['A_Date'] . "' WHERE P_ID='" . $_POST['P_ID'] . "'");
   $message = "Record Modified Successfully";
 }
 $query = mysqli_query($conn, "SELECT * FROM patient WHERE P_ID='" . $_GET['P_ID'] . "'");
@@ -84,9 +85,9 @@ $Patient_data = mysqli_fetch_array($query);
 
       <div>
         <h3>Gender</h3>
-        <label for="male" class="form-control"><input type="radio" name="Gender" value="<?php echo $Patient_data['Gender']; ?>" id="male" /> Male</label>
-        <label for="female" class="form-control"><input type="radio" name="Gender" value="<?php echo $Patient_data['Gender']; ?>" id="female" /> Female</label>
-        <label for="others" class="form-control"><input type="radio" name="Gender" value="<?php echo $Patient_data['Gender']; ?>" id="others" /> Others</label>
+        <label for="male" class="form-control"><input type="radio" name="Gender" value="Male" <?php echo ($Gender == 'Male') ? ' checked=""' : ''; ?>/> Male</label>
+        <label for="female" class="form-control"><input type="radio" name="Gender" value="Female" <?php echo ($Gender == 'Female') ? ' checked=""' : ''; ?> /> Female</label>
+        <label for="others" class="form-control"><input type="radio" name="Gender" value="Others" <?php echo ($Gender == 'Others') ? ' checked=""' : ''; ?> /> Others</label>
       </div>
 
       <div>
