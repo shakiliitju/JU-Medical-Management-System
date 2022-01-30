@@ -3,8 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
-
--- Generation Time: Jan 29, 2022 at 04:10 PM
+-- Generation Time: Jan 30, 2022 at 05:48 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -45,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `ambulence` (
 INSERT INTO `ambulence` (`Amb_ID`, `Amb_Status`, `P_ID`) VALUES
 (3, 'Available', NULL),
 (2, 'Available', NULL),
-(1, 'Not Available', NULL),
+(1, 'Available', NULL),
 (4, 'Available', NULL),
 (5, 'Not Available', NULL);
 
@@ -72,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `bed` (
 INSERT INTO `bed` (`Bed_Num`, `Date`, `Bed_Status`, `P_ID`) VALUES
 (1, '2022-02-05', 'Available', NULL),
 (2, '2022-01-22', 'Available', NULL),
-(3, '2022-01-22', 'Not Available', NULL),
+(3, '2022-01-22', 'Available', NULL),
 (4, '2022-01-30', 'Available', NULL),
 (5, '2022-01-31', 'Not Available', NULL),
 (6, '2022-01-30', 'Not Available', NULL);
@@ -101,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `doctor` (
 INSERT INTO `doctor` (`D_ID`, `D_Name`, `Gender`, `Work_Day`, `Speciality`) VALUES
 (1, 'DR. LIKHAN CHANDRA BALA', 'Male', '2022-01-29', 'Cardiologists'),
 (2, 'DR. ASMA SIDDIQA', 'Female', '2022-01-30', 'Pathologists'),
-(3, 'DR. MD. ROKONUGGAMAN', 'Male', '2022-01-28', 'Podiatrists'),
+(3, 'DR. MD. ROKONUGGAMAN', 'Male', '2022-01-29', 'Podiatrists'),
 (4, 'DR. TOWHID HASSAN SHAH CHOWDHURY', 'Male', '2022-01-30', 'Urologists'),
 (5, 'DR. MAHABUBA JANNATH', 'Female', '2022-01-30', 'Eye Specialist'),
 (6, 'DR. BIRENDRO KUMAR BISWAS', 'Male', '2022-01-29', 'Urologists'),
@@ -162,9 +161,8 @@ CREATE TABLE IF NOT EXISTS `medicine` (
 INSERT INTO `medicine` (`M_Code`, `M_Name`, `Quantity`) VALUES
 (1, 'Napa', 100),
 (3, 'Ace', 50),
-(4, 'Deslor', 0),
 (2, 'OR-Saline', 50),
-(4, 'Deslor', 45),
+(4, 'Deslor', 50),
 (5, 'Abaclor', 300),
 (6, 'Abetis Plus ', 240),
 (7, 'Metro', 30);
@@ -193,9 +191,9 @@ CREATE TABLE IF NOT EXISTS `patient` (
 
 INSERT INTO `patient` (`P_ID`, `P_Name`, `Gender`, `Age`, `P_Type`, `A_Date`) VALUES
 (2, 'Amit Azim', 'Male', 28, 'Staff', '2022-01-27'),
-(1, 'Maruf Ahmed', 'Male', 22, 'Student', '2022-01-29'),
+(1, 'Maruf Ahmed', 'Male', 22, 'Student', '2022-01-30'),
 (3, 'Sumaiya Siddika', 'Female', 30, 'Teacher', '2022-01-27'),
-(4, 'Ashfaqur Tokee', 'Male', 33, 'Teacher', '2022-01-28'),
+(4, 'Ashfaqur Tokee', 'Male', 33, 'Teacher', '2022-01-30'),
 (5, 'Shariful Islam', 'Male', 22, 'Student', '2022-01-24');
 
 -- --------------------------------------------------------
@@ -252,7 +250,7 @@ INSERT INTO `staff` (`S_ID`, `S_Name`, `Gender`, `Work_Day`, `T_ID`) VALUES
 (1, 'KHONDOKER JAHANGIR ALAM', 'Male', '2022-01-26', NULL),
 (2, 'MD. MOTIAR RAHMAN', 'Male', '2022-01-26', NULL),
 (3, 'MONIRA AKTER', 'Female', '2022-01-29', NULL),
-(4, 'MARUFA BEGUM', 'Female', '2022-01-30', NULL),
+(4, 'MARUFA BEGUM', 'Female', '2022-01-29', NULL),
 (5, 'SHAKIL AHMED', 'Male', '2022-01-29', NULL);
 
 -- --------------------------------------------------------
@@ -276,7 +274,7 @@ CREATE TABLE IF NOT EXISTS `test` (
 
 INSERT INTO `test` (`T_ID`, `T_Name`, `T_Price`) VALUES
 (1, 'amniocentesis', 100),
-(2, 'blood count', 50),
+(2, 'blood count', 60),
 (3, 'enzyme analysis', 150),
 (4, 'hematocrit', 200),
 (5, 'Blood Test', 0),
