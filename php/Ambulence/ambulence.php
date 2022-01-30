@@ -203,7 +203,7 @@
     <div class="container">
 
         <div class="row">
-            <div style="margin-left: 50%; margin-top: 5%;">
+            <div style="margin-left: 45%; margin-top: 5%;">
                 <h2>Manage <b>Ambulence</b></h2>
             </div>
             <div style="margin-left: 80%; margin-top: 3%;">

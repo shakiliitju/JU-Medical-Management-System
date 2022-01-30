@@ -366,8 +366,8 @@
                             <td><?php echo $Patient_data['Work_Day'];  ?></td>
                             <td><?php echo $Patient_data['Speciality'];  ?></td>
                             <td style="width: 140px;">
-                                <button class="tabbutton" style="background:      rgba(178, 83, 64, 0.819);"><a href="/php/Doctor/update-doctor.php?D_ID=<?php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Update</b></a></button>
-                                <button class="tabbutton" style="background:      rgba(59, 104, 39, 0.819 );"> <a href="/php/Doctor/Delete.php?D_ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Delete</b></a></button> &nbsp;
+                                <button class="tabbutton" style="background:yellow;"><a href="/php/Doctor/update-doctor.php?D_ID=<?php echo $Patient_data['D_ID']; ?>" class="btn btn-danger"><b>Update</b></a></button>
+                                <button class="tabbutton" style="background:red;"> <a href="/php/Doctor/Delete.php?D_ID=<?php echo $Patient_data['D_ID'];  ?>" class="btn btn-success"><b>Delete</b></a></button> &nbsp;
 
 
                             </td>
