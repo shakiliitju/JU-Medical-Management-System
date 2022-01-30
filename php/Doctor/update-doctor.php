@@ -40,32 +40,32 @@ $Patient_data = mysqli_fetch_array($query);
       </div>
 
       <div>
-        <h2>Doctor ID</h2>
+        <h3>Doctor ID</h3>
         <input type="hidden" name="D_ID" class="form-control" value="<?php echo $Patient_data['D_ID']; ?>">
         <input type="number" name="D_ID" value="<?php echo $Patient_data['D_ID']; ?>">
         <br>
       </div>
 
       <div>
-        <h2>Doctor Name</h2>
+        <h3>Doctor Name</h3>
         <input name="D_Name" type="text" class="form-control" value="<?php echo $Patient_data['D_Name']; ?>" required>
       </div>
 
 
       <div>
-        <h2>Gender</h2>
+        <h3>Gender</h3>
         <label for="male" class="form-control"><input type="radio" name="Gender" value="<?php echo $Patient_data['Gender']; ?>" id="male" /> Male</label>
         <label for="female" class="form-control"><input type="radio" name="Gender" value="<?php echo $Patient_data['Gender']; ?>" id="female" /> Female</label>
         <label for="others" class="form-control"><input type="radio" name="Gender" value="<?php echo $Patient_data['Gender']; ?>" id="others" /> Others</label>
       </div>
 
       <div>
-        <h2>Work_Day</h2>
+        <h3>Work_Day</h3>
         <input type="date" id="day" class="form-control" name="Work_Day" value="<?php echo $Patient_data['Work_Day']; ?>" required>
       </div>
 
       <div>
-        <h2>Speciality</h2>
+        <h3>Speciality</h3>
         <input name="Speciality" type="text" class="form-control" value="<?php echo $Patient_data['Speciality']; ?>" required>
       </div>
       <br>
