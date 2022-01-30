@@ -262,7 +262,7 @@
                             <td><?php echo $Patient_data['Work_Day'];  ?></td>
                             <td style="width: 140px;">
 
-                                <button> <a href="/php/staff/add-staff.php?S_ID=<?php echo $Patient_data['S_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button> <a href="/php/staff/update.php?S_ID=<?php echo $Patient_data['S_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
                                 <button><a href="/php/staff/Delete.php?S_ID=<?php echo $Patient_data['S_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 

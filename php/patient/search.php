@@ -256,7 +256,7 @@
                             <td><?php echo $Patient_data['A_Date'];  ?></td>
                             <td style="width: 140px;">
 
-                                <button> <a href="/php/patient/add-patient.php?P_ID=<?php echo $Patient_data['P_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
+                                <button> <a href="/php/patient/update.php?P_ID=<?php echo $Patient_data['P_ID'];  ?>" class="btn btn-success"><b>Update</b></a></button>
                                 <button><a href="/php/patient/Delete.php?P_ID=<?php echo $Patient_data['P_ID']; ?>" class="btn btn-danger"><b>Delete</b></a></button>
 
 
