@@ -85,9 +85,6 @@
                height: 580px;
                position: fixed;
                text-align: center;
-
-
-
           }
 
           .cardspecific {
@@ -109,8 +106,6 @@
                transform: scale(1.1);
                background: rgba(108, 154, 117, 0.813);
                transition: 1s;
-
-
           }
 
           .number {
@@ -143,7 +138,6 @@
                transition: .5s;
                transform: scale(1.1);
                background: red;
-
           }
      </style>
 
