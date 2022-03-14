@@ -91,11 +91,11 @@ if (isset($_POST['P_ID']) && isset($_POST['P_Name']) && isset($_POST['Gender']) 
 
             <div class="box">
                 <h3>our services</h3>
-                <a href="#"> <i class="fas fa-chevron-right"></i> Free Checkups </a>
-                <a href="#"> <i class="fas fa-chevron-right"></i> 24/7 Ambulance </a>
-                <a href="#"> <i class="fas fa-chevron-right"></i> Medicines </a>
-                <a href="#"> <i class="fas fa-chevron-right"></i> Expert Doctors </a>
-                <a href="#"> <i class="fas fa-chevron-right"></i> Bed Facility </a>
+                <a href="/html/services.html"> <i class="fas fa-chevron-right"></i> Free Checkups </a>
+                <a href="/html/services.html"> <i class="fas fa-chevron-right"></i> 24/7 Ambulance </a>
+                <a href="/html/services.html"> <i class="fas fa-chevron-right"></i> Medicines </a>
+                <a href="/html/doctors.html"> <i class="fas fa-chevron-right"></i> Expert Doctors </a>
+                <a href="/html/services.html"> <i class="fas fa-chevron-right"></i> Bed Facility </a>
             </div>
 
             <div class="box">
