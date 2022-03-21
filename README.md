@@ -36,3 +36,39 @@ ambulance. Each Ambulance has a ambulance number(Amb_ID) and we will also
 track if that ambulance is present or not.(Amb status).
 
 
+
+## ER Diagram
+
+<img src="https://github.com/amitazim/JU-Medical-Center/blob/main/image/ER%20Diagram.jpg" alt="ER Diagram">
+
+
+## Database
+
+<img src="https://github.com/amitazim/JU-Medical-Center/blob/main/image/database.jpg" alt="Database">
+
+
+## Front-End Home Page
+
+<img src="https://github.com/amitazim/JU-Medical-Center/blob/main/image/Screenshot_2.jpg" alt="Home Page">
+
+
+## About Medical
+
+<img src="https://github.com/amitazim/JU-Medical-Center/blob/main/image/Screenshot_4.jpg" alt="About Medical">
+
+
+## Back-End Home Page
+
+<img src="https://github.com/amitazim/JU-Medical-Center/blob/main/image/Screenshot_10.jpg" alt="Home Page">
+
+
+## Front-End Doctor Page
+
+<img src="https://github.com/amitazim/JU-Medical-Center/blob/main/image/Screenshot_6.jpg" alt="Doctor Page">
+
+
+## Back-End Doctor Page
+
+<img src="https://github.com/amitazim/JU-Medical-Center/blob/main/image/Screenshot_11.jpg" alt="Doctor Page">
+
+
